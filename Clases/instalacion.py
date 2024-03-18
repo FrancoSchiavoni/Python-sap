@@ -63,9 +63,9 @@ class Instalacion:
         self.sap.session.findById("wnd[1]/tbar[0]/btn[5]").press()
 
     
-    def CargaOperandos(self,datos):
+    def CargaOperandos(self,datosOperandos):
         self.sap.session.findById("wnd[0]/usr/btnEANLD-FACTSBUT").press() 
-        for key, value in datos["Create_OPERAND"].items():
+        for key, value in datosOperandos.items():
             if value["carga"]:
                 if value["tipo"] == "RATE":
                     self.carga_operando_rate(key, value["f_hasta"], value["clase tarifa"], value['grValoresConcretos'])

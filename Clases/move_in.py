@@ -8,6 +8,7 @@ class Movein:
         self.segmento = ""
         self.cdc = ""        
         self.fac_conj = ""
+        self.sap = sap
 
     def StartContrato(self, PS, CC, INS):
         self.sap.session.findById("wnd[0]/usr/subMIMOTABSTRIP:SAPLEC60:1120/subMIKOPF:SAPLEC60:1002/ctxtEUMZDKOPF-EINZDAT").text = self.f_alta

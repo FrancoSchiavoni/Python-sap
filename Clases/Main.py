@@ -10,14 +10,17 @@ import connector as s
 
 import json_magnament as j
 datos = j.read_json()
+print(datos)
+
 
 sap = s.SapConnector()
 
-for row in input:
+for row in datos:
+    print(row)
     # Objeto Cuenta Contrato
     CuentaContrato = cc.CuentaContrato(sap)
     cc_data = row.get('Create_CC', {})
-    # Asigna los valores correspondientes a las variables de tu objeto CuentaContrato
+        # Asigna los valores correspondientes a las variables de tu objeto CuentaContrato
     CuentaContrato.id = cc_data.get('id', '')
     CuentaContrato.trxCreateCC = cc_data.get('trxCreateCC', '/nCAA1')
     CuentaContrato.trxUpdateCC = cc_data.get('trxUpdateCC', '/nCAA2')
@@ -45,7 +48,7 @@ for row in input:
     # Objeto Punto Suministro
     PuntoSuministro = ps.PuntoSuministro(sap)
     ps_data = row.get('Create_PS', {})
-    # Asigna los valores correspondientes a las variables de tu objeto PuntoSuministro
+        # Asigna los valores correspondientes a las variables de tu objeto PuntoSuministro
     PuntoSuministro.id = ps_data.get('id', '')
     PuntoSuministro.trxCreatePS = ps_data.get('trxCreatePS', '/nES60')
     PuntoSuministro.trxUpdatePS = ps_data.get('trxUpdatePS', '/nES61')
@@ -55,7 +58,7 @@ for row in input:
     # Objeto UbicacionAparato
     UbicacionAparato = ua.UbicacionAparato(sap)
     ua_data = row.get('Create_UA', {})
-    # Asigna los valores correspondientes a las variables de tu objeto UbicacionAparato
+        # Asigna los valores correspondientes a las variables de tu objeto UbicacionAparato
     UbicacionAparato.id = ua_data.get('id', '')
     UbicacionAparato.trxCreateUA = ua_data.get('trxCreateUA', '/nES65')
     UbicacionAparato.trxUpdateUA = ua_data.get('trxUpdateUA', '/nES66')
@@ -66,7 +69,7 @@ for row in input:
     # Objeto Instalacion
     Instalacion = ins.Instalacion(sap)
     ins_data = row.get('Create_INST', {})
-    # Asigna los valores correspondientes a las variables de tu objeto Instalacion
+        # Asigna los valores correspondientes a las variables de tu objeto Instalacion
     Instalacion.id = ins_data.get('id', '')
     Instalacion.trxCreateINS = ins_data.get('trxCreateINS', '/nES30')
     Instalacion.trxUpdateINS = ins_data.get('trxUpdateINS', '/nES31')
@@ -81,7 +84,7 @@ for row in input:
     # Objeto Movein
     Movein = mi.Movein(sap)
     movein_data = row.get('Create_movein', {})
-    # Asigna los valores correspondientes a las variables de tu objeto Movein
+        # Asigna los valores correspondientes a las variables de tu objeto Movein
     Movein.id = movein_data.get('id', '')
     Movein.trxCreateMovein = movein_data.get('trxCreateMovein', '/nEC50E')
     Movein.f_alta = movein_data.get('f_alta', '')
@@ -93,7 +96,7 @@ for row in input:
     # Objeto Montaje
     Montaje = mon.Montaje(sap)
     montaje_data = row.get('Create_montaje', {})
-    # Asigna los valores correspondientes a las variables de tu objeto Montaje
+        # Asigna los valores correspondientes a las variables de tu objeto Montaje
     Montaje.id = montaje_data.get('id', '')
     Montaje.trxCreateMON = montaje_data.get('trxCreateMON', '/nEG31')
     Montaje.sap = montaje_data.get('sap', sap)
@@ -105,7 +108,7 @@ for row in input:
     # Objeto ContratoPotencia
     ContratoPotencia = cp.ContratoPotencia(sap)
     cp_data = row.get('Create_CP', {})
-    # Asigna los valores correspondientes a las variables de tu objeto ContratoPotencia
+        # Asigna los valores correspondientes a las variables de tu objeto ContratoPotencia
     ContratoPotencia.id = cp_data.get('id', '')
     ContratoPotencia.trxCP = cp_data.get('trxCP', '/nZDM_CONTRATOS_GC')
     ContratoPotencia.sap = cp_data.get('sap', sap)
@@ -117,48 +120,67 @@ for row in input:
 
     ####################################################################################
 
+
     obj_data = row.get('OBJETOS', {})
+    
     # #Cuenta Contrato
-    CuentaContrato.StartCuentaContrato(obj_data.IC)
+    sap.StartTransaction(CuentaContrato.trxCreateCC)
+    CuentaContrato.StartCuentaContrato(IC = obj_data['IC'])
     CuentaContrato.SetDatosGenerales()
     CuentaContrato.SetPagosImpuestos()
-    CuentaContrato.SetReclamacion()
+    CuentaContrato.SetReclamacion(IC = obj_data['IC'])
+    sap.StartTransaction(CuentaContrato.trxUpdateCC)
     CuentaContrato.BuscaNroCC()
     print("CC: ", CuentaContrato.id)
-    CuentaContrato.SetNroReferencia()
+    CuentaContrato.SetNroReferencia(CuentaContrato.id)
 
     # #Punto Suministro
-    PuntoSuministro.CreatePS(obj_data.OC)
+    sap.StartTransaction(PuntoSuministro.trxCreatePS)
+    PuntoSuministro.CreatePS(obj_data['OC'])
     PuntoSuministro.UpdatePS()
     print("PS: ",PuntoSuministro.id)
 
     # #Ubicacion de Aparato
-    UbicacionAparato.CreateUA(PuntoSuministro.id, obj_data.OC)
+    sap.StartTransaction(UbicacionAparato.trxCreateUA)
+    UbicacionAparato.CreateUA(PuntoSuministro.id, obj_data['OC'])
     UbicacionAparato.UpdateUA()
     print("UA: ",UbicacionAparato.id)
 
     # #Instalacion
+    sap.StartTransaction(Instalacion.trxCreateINS)
     Instalacion.StartInst()
     Instalacion.SetDatosIniciales(PuntoSuministro.id)
-    Instalacion.CargaOperandos()
+    datosOperandos = row.get('Create_OPERAND', {})
+    Instalacion.CargaOperandos(datosOperandos)
     Instalacion.GuardaInstalacion()
-    print("INS ",UbicacionAparato.id)
+    print("INS ",Instalacion.id)
 
     # #MoveIN
+    sap.StartTransaction(Movein.trxCreateMovein)
     Movein.StartContrato(PuntoSuministro.id, CuentaContrato.id, Instalacion.id)
     Movein.InitContrato()
     Movein.SetValoresContrato()
     Movein.GuardaContrato(Instalacion.id)
 
     # #Montaje
+    sap.StartTransaction(Montaje.trxCreateMON)
     Montaje.SetDatosGenerales(UbicacionAparato.id, Instalacion.id)
     Montaje.SetNumeradores()
     Montaje.Guardar()
 
     # #ContratoPotencia
-    ContratoPotencia.InitContratoPotencia(obj_data.IC, CuentaContrato.id, Instalacion.id)
+    sap.StartTransaction(ContratoPotencia.trxCP)
+    ContratoPotencia.InitContratoPotencia(obj_data['IC'], CuentaContrato.id, Instalacion.id)
     ContratoPotencia.SetValoresCP()
     ContratoPotencia.GuardarCP()
+
+    #Escribir Json
+    row['OBJETOS']['CC'] = CuentaContrato.id
+    row['OBJETOS']['PS'] = PuntoSuministro.id
+    row['OBJETOS']['UA'] = UbicacionAparato.id
+    row['OBJETOS']['INS'] = Instalacion.id
+    row['OBJETOS']['CONTRATO'] = Movein.id
+    row['OBJETOS']['CP'] = ContratoPotencia.id
 
 sap.Close_connection()
 

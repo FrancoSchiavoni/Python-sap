@@ -24,16 +24,18 @@ class CuentaContrato:
         self.sap = sap
         self.reclamacion = "Z1"
         self.mail = "MAIL"
+        self.nro_referencia = ""
 
     def StartCuentaContrato(self, IC):
         self.sap.session.findById("wnd[0]/usr/subA01P01:SAPLFKKC:0100/ctxtFKKVKP-GPART").text = IC
         self.sap.session.findById("wnd[0]/usr/subA01P01:SAPLFKKC:0100/ctxtFKKVK-VKTYP").setFocus()
         self.sap.session.findById("wnd[0]/usr/subA01P01:SAPLFKKC:0100/ctxtFKKVK-VKTYP").text = self.tp_cta_contrato
-        self.sap.session.findById("wnd[0]/usr/subA01P01:SAPLFKKC:0100/ctxtFKKVK-VKTYP").setFocus
+        self.sap.session.findById("wnd[0]/usr/subA01P01:SAPLFKKC:0100/ctxtFKKVK-VKTYP").setFocus()
         self.sap.session.findById("wnd[0]/usr/subA01P01:SAPLFKKC:0100/ctxtFKKVK-VKTYP").caretPosition = 2
         self.sap.session.findById("wnd[0]").sendVKey(0)
 
     def SetDatosGenerales(self):
+        self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR01/ssubGENSUB:SAPLBUSS:7005/subA03P01:SAPLFKKC:0210/txtFKKVK-VKBEZ").text = self.name
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR01/ssubGENSUB:SAPLBUSS:7005/subA03P03:SAPLFKKC:0260/cmbFKKVKP-TOGRU").key = self.togru
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR01/ssubGENSUB:SAPLBUSS:7005/subA03P03:SAPLFKKC:0260/cmbFKKVKP-IKEY").key = self.ikey
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR01/ssubGENSUB:SAPLBUSS:7005/subA03P04:SAPLES35:0320/ctxtSI_FKKVKPR-REGIOGR_CA_T").text = self.estrRegion
@@ -57,8 +59,8 @@ class CuentaContrato:
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR03").select()
 
 
-    def SetReclamacion(self):
-        self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR03/ssubGENSUB:SAPLBUSS:7006/subA02P01:SAPLFKKC:0220/ctxtFKKVKP-ABWMA").text = self.p_ic
+    def SetReclamacion(self,IC):
+        self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR03/ssubGENSUB:SAPLBUSS:7006/subA02P01:SAPLFKKC:0220/ctxtFKKVKP-ABWMA").text = IC
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR03/ssubGENSUB:SAPLBUSS:7006/subA02P01:SAPLFKKC:0220/cmbFKKVKP-MGRUP").key = "Z1"
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR03/ssubGENSUB:SAPLBUSS:7006/subA02P01:SAPLFKKC:0220/cmbFKKVKP-MAHNV").key = self.proc_rec_tension
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR03/ssubGENSUB:SAPLBUSS:7006/subA03P02:SAPLES35:0240/ctxtSI_FKKVKPR-SENDCONTROL_GP").text = self.mail
@@ -67,16 +69,19 @@ class CuentaContrato:
     def BuscaNroCC(self):
         self.id = self.sap.session.findById("wnd[0]/usr/subA01P01:SAPLFKKC:0100/ctxtFKKVKP-VKONT").text
 
-    def SetNroReferencia(self):
-        self.sap.session.findById("wnd[0]").sendVKey(0)
-        self.nro_referencia = str(self.gen_nro_referencia(self.id))
-        self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR01/ssubGENSUB:SAPLBUSS:7005/subA03P02:SAPLFKKC:0265/txtFKKVKP-EXVKO").text = self.nro_referencia
-        self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
-        self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press()
-
-    def gen_nro_referencia(valor):
+    @classmethod
+    def gen_nro_referencia(cls,valor):
         codigo_izquierda = valor[:1]
         codigo_derecha = valor[-7:]
         resultado = "285" + codigo_izquierda + "9" + codigo_derecha
         return resultado
+
+    def SetNroReferencia(self,nroCC):
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.nro_referencia = str(self.gen_nro_referencia(nroCC))
+        self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR01/ssubGENSUB:SAPLBUSS:7005/subA03P02:SAPLFKKC:0265/txtFKKVKP-EXVKO").text = self.nro_referencia
+        self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
+        self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press()
+
+   
         

@@ -15,5 +15,5 @@ class SapConnector:
 
     def StartTransaction(self,trx):
         self.session.findById("wnd[0]").maximize()
-        self.sap.session.findById("wnd[0]/tbar[0]/okcd").text = trx
-        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.session.findById("wnd[0]/tbar[0]/okcd").text = trx
+        self.session.findById("wnd[0]").sendVKey(0)

@@ -13,7 +13,7 @@
         "Create_CC": {
             "tp_cta_contrato": "PJ",
             "estrRegion": "S6020A22",
-            "nombre": "&AUTOPY FRANCO TEST 001",
+            "nombre": "&AUTOPY FRANCO8 TEST 001",
             "cdc": "PL",
             "catcta": "G003",
             "condicion_pago": "Z002",
@@ -100,7 +100,7 @@
         },
         "Create_montaje": {
             "f_alta": "01.01.2023",
-            "dipositivo": "218",
+            "dipositivo": "219",
             "tp_aparato": "700034",
             "motivo": "05"
         }
@@ -207,7 +207,7 @@
         },
         "Create_montaje": {
             "f_alta": "01.01.2023",
-            "dipositivo": "218",
+            "dipositivo": "220",
             "tp_aparato": "700034",
             "motivo": "05"
         }
