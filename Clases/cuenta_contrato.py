@@ -1,6 +1,6 @@
 class CuentaContrato:
     
-    def __init__(self, sap):
+    def __init__(self, sap ):
         self.id = ""
         self.trxCreateCC = "/nCAA1"
         self.trxUpdateCC = "/nCAA2"
