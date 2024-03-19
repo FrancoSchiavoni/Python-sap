@@ -10,13 +10,10 @@ import connector as s
 
 import json_magnament as j
 datos = j.read_json()
-print(datos)
-
-
+i=0
 sap = s.SapConnector()
-
+resultados = []
 for row in datos:
-    print(row)
     # Objeto Cuenta Contrato
     CuentaContrato = cc.CuentaContrato(sap)
     cc_data = row.get('Create_CC', {})
@@ -131,20 +128,20 @@ for row in datos:
     CuentaContrato.SetReclamacion(IC = obj_data['IC'])
     sap.StartTransaction(CuentaContrato.trxUpdateCC)
     CuentaContrato.BuscaNroCC()
-    print("CC: ", CuentaContrato.id)
+    
     CuentaContrato.SetNroReferencia(CuentaContrato.id)
 
     # #Punto Suministro
     sap.StartTransaction(PuntoSuministro.trxCreatePS)
     PuntoSuministro.CreatePS(obj_data['OC'])
     PuntoSuministro.UpdatePS()
-    print("PS: ",PuntoSuministro.id)
+  
 
     # #Ubicacion de Aparato
     sap.StartTransaction(UbicacionAparato.trxCreateUA)
     UbicacionAparato.CreateUA(PuntoSuministro.id, obj_data['OC'])
     UbicacionAparato.UpdateUA()
-    print("UA: ",UbicacionAparato.id)
+  
 
     # #Instalacion
     sap.StartTransaction(Instalacion.trxCreateINS)
@@ -153,7 +150,7 @@ for row in datos:
     datosOperandos = row.get('Create_OPERAND', {})
     Instalacion.CargaOperandos(datosOperandos)
     Instalacion.GuardaInstalacion()
-    print("INS ",Instalacion.id)
+  
 
     # #MoveIN
     sap.StartTransaction(Movein.trxCreateMovein)
@@ -174,15 +171,26 @@ for row in datos:
     ContratoPotencia.SetValoresCP()
     ContratoPotencia.GuardarCP()
 
-    #Escribir Json
+    #Guarda Valores
     row['OBJETOS']['CC'] = CuentaContrato.id
     row['OBJETOS']['PS'] = PuntoSuministro.id
     row['OBJETOS']['UA'] = UbicacionAparato.id
     row['OBJETOS']['INS'] = Instalacion.id
     row['OBJETOS']['CONTRATO'] = Movein.id
     row['OBJETOS']['CP'] = ContratoPotencia.id
+    
+    resultados.append(row['OBJETOS'])
+
+    
+    #Escribir Json
+    j.escribir_jsonObjetos(row['OBJETOS'],i)
+
+    i = i + 1
 
 sap.Close_connection()
+
+print("Resultado Final")
+print(resultados)
 
 
 

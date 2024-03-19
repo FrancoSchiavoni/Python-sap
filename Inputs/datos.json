@@ -3,17 +3,17 @@
         "OBJETOS": {
             "IC": "200001277",
             "OC": "610000000002298",
-            "CC": "",
-            "PS": "",
-            "UA": "",
-            "INS": "",
-            "CONTRATO": "",
-            "CP": ""
+            "CC": "700011237",
+            "PS": "600002153",
+            "UA": "650000000002197",
+            "INS": "400002131",
+            "CONTRATO": "300002060",
+            "CP": "0000041022"
         },
         "Create_CC": {
             "tp_cta_contrato": "PJ",
             "estrRegion": "S6020A22",
-            "nombre": "&AUTOPY FRANCO8 TEST 001",
+            "nombre": "&Test4 py F CC",
             "cdc": "PL",
             "catcta": "G003",
             "condicion_pago": "Z002",
@@ -29,7 +29,7 @@
             "clae": "239410"
         },
         "Create_UA": {
-            "denominacion": "Ubicacion FELP PY 004",
+            "denominacion": "Ubicacion Test PY",
             "centro_empl": "6000"
         },
         "Create_INST": {
@@ -100,27 +100,33 @@
         },
         "Create_montaje": {
             "f_alta": "01.01.2023",
-            "dipositivo": "219",
+            "dipositivo": "224",
             "tp_aparato": "700034",
             "motivo": "05"
+        },
+        "Create_CP": {
+            "fecha_ini": "01.01.2023",
+            "periodo": "00",
+            "contratadaP": "50",
+            "contratadaFP": "50",
+            "descripcion": "Test F"
         }
     },
-
     {
         "OBJETOS": {
             "IC": "200001277",
             "OC": "610000000002298",
-            "CC": "",
-            "PS": "",
-            "UA": "",
-            "INS": "",
-            "CONTRATO": "",
-            "CP": ""
+            "CC": "700011238",
+            "PS": "600002154",
+            "UA": "650000000002198",
+            "INS": "400002132",
+            "CONTRATO": "300002061",
+            "CP": "0000041023"
         },
         "Create_CC": {
             "tp_cta_contrato": "PJ",
             "estrRegion": "S6020A22",
-            "nombre": "&AUTOPY LUCAS TEST 001",
+            "nombre": "&Test5 py L CC",
             "cdc": "PL",
             "catcta": "G003",
             "condicion_pago": "Z002",
@@ -136,7 +142,7 @@
             "clae": "239410"
         },
         "Create_UA": {
-            "denominacion": "Ubicacion FELP PY 004",
+            "denominacion": "Ubicacion Test L",
             "centro_empl": "6000"
         },
         "Create_INST": {
@@ -207,9 +213,16 @@
         },
         "Create_montaje": {
             "f_alta": "01.01.2023",
-            "dipositivo": "220",
+            "dipositivo": "225",
             "tp_aparato": "700034",
             "motivo": "05"
+        },
+        "Create_CP": {
+            "fecha_ini": "01.01.2023",
+            "periodo": "00",
+            "contratadaP": "50",
+            "contratadaFP": "50",
+            "descripcion": "Test L"
         }
     }
 ]

@@ -81,4 +81,3 @@ class Instalacion:
         self.sap.session.findById("wnd[0]/tbar[0]/okcd").text = "/nes32"
         self.sap.session.findById("wnd[0]").sendVKey(0)
         self.id = self.sap.session.findById("wnd[0]/usr/ctxtEANLD-ANLAGE").text
-        print("Instalacion: ", self.id)

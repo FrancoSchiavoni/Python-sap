@@ -42,4 +42,3 @@ class Movein:
         self.sap.session.findById("wnd[0]/usr/ctxtEANLD-ANLAGE").text = INS
         self.sap.session.findById("wnd[0]").sendVKey(0)
         self.id = self.sap.session.findById("wnd[0]/usr/txtEANLD-VERTRAG").text
-        print("Contrato SAP: ", self.id)

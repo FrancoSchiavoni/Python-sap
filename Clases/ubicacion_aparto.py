@@ -20,7 +20,6 @@ class UbicacionAparato:
         self.sap.session.findById("wnd[0]/tbar[0]/okcd").text = self.trxUpdateUA
         self.sap.session.findById("wnd[0]").sendVKey(0)
         self.id = self.sap.session.findById("wnd[0]/usr/ctxtEGPLD-DEVLOC").text
-        print("Ubicacion de aparato: " ,self.id)
        
 
     
