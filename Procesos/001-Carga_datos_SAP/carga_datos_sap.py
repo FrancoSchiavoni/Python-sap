@@ -1,3 +1,15 @@
+# Import System
+import os
+import sys
+
+# Import Utils 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Utils', '')))
+import finish_process as f
+import json_magnament as j
+import connector as s
+
+#Imports Clases
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Clases', '')))
 import cuenta_contrato as cc
 import punto_suministro as ps
 import ubicacion_aparto as ua
@@ -5,14 +17,17 @@ import instalacion as ins
 import move_in as mi
 import montaje as mon
 import contrato_potencia as cp
-import connector as s
 
 
-import json_magnament as j
-datos = j.read_json()
-i=0
+#Input
+json_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Inputs', 'carga_datos_sap.json'))
+datos = j.read_json(json_path)
+
+#Conexion con SAP
 sap = s.SapConnector()
 resultados = []
+
+i=0 # Contador
 for row in datos:
     # Objeto Cuenta Contrato
     CuentaContrato = cc.CuentaContrato(sap)
@@ -183,11 +198,15 @@ for row in datos:
 
     
     #Escribir Json
-    j.escribir_jsonObjetos(row['OBJETOS'],i)
+    j.escribir_jsonObjetos(json_path,row['OBJETOS'],i)
 
     i = i + 1
+    #Fin Loop
+
 
 sap.Close_connection()
+
+f.finalizar_proceso(os.path.splitext(os.path.basename(__file__))[0], json_path)
 
 print("Resultado Final")
 print(resultados)
