@@ -21,6 +21,7 @@ sap = s.SapConnector()
 
 #Crea Objeto Lecturas
 Lecturas = l.Lecturas(sap)
+
 CC = "700011253"
 INS = "400002144"
 
@@ -37,5 +38,5 @@ INS = "400002144"
 #Lecturas.GeneraCalculo(INS)
 
 #Generar Facturas
-sap.StartTransaction(Lecturas.trxFactura)
-Lecturas.GenerarFactura(CC)
+#sap.StartTransaction(Lecturas.trxFactura)
+#Lecturas.GenerarFactura(CC)

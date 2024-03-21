@@ -17,6 +17,7 @@ class Lecturas:
         self.trxCalculo = "/nEA00"
         self.fecha_Calculo = "15.02.2023"
         self.trxFactura = "/nEA19"
+        self.clave_rec = "240321-001"
     
     def CreaOrdenLectura(self,INS):
         self.sap.session.findById("wnd[0]/usr/radRELX1-ANLAGE_T").select()
@@ -66,10 +67,13 @@ class Lecturas:
 
     def GenerarFactura(self, CC):
        self.sap.session.findById("wnd[0]/usr/ctxtBUDAT").text = self.fecha_Calculo
+       self.sap.session.findById("wnd[0]/usr/ctxtFIKEY").text = self.clave_rec 
        self.sap.session.findById("wnd[0]/usr/ctxtVKONT").text = CC
        self.sap.session.findById("wnd[0]/usr/ctxtVKONT").setFocus()
        self.sap.session.findById("wnd[0]/usr/ctxtVKONT").caretPosition = 9
        self.sap.session.findById("wnd[0]/tbar[1]/btn[8]").press()
-       self.sap.session.findById("wnd[1]/usr/btnSPOP-OPTION1").press()
+       #self.sap.session.findById("wnd[1]/usr/btnSPOP-OPTION1").press()
+       doc_calculo = self.sap.session.findById("wnd[1]/usr/lbl[24,1]").text
+       print(doc_calculo)
        self.sap.session.findById("wnd[1]/tbar[0]/btn[0]").press()
        self.sap.session.findById("wnd[1]/tbar[0]/btn[0]").press()
