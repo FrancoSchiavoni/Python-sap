@@ -61,6 +61,16 @@ class Instalacion:
         self.sap.session.findById("wnd[1]/usr/tblSAPLE20CFLAG_TC/chkRE20CL-BOOLKZ[2,0]").selected = True
         self.sap.session.findById("wnd[1]/usr/tblSAPLE20CFLAG_TC/ctxtRE20CL-BIS[1,0]").caretPosition = 10
         self.sap.session.findById("wnd[1]/tbar[0]/btn[5]").press()
+    
+    def carga_quant(self, operando, hasta,cantidad):
+        if not self.elemento_presente("wnd[1]/usr/ctxtRE20B-OPERAND"):
+            self.sap.session.findById("wnd[0]/tbar[1]/btn[18]").press()
+        self.sap.session.findById("wnd[1]/usr/ctxtRE20B-OPERAND").text = operando
+        self.sap.session.findById("wnd[1]/usr/ctxtRE20B-OPERAND").caretPosition = 9
+        self.sap.session.findById("wnd[1]/tbar[0]/btn[0]").press()
+        self.sap.session.findById("wnd[1]/usr/tblSAPLE20CQUANT_TC/ctxtRE20CL-BIS[1,0]").text = hasta
+        self.sap.session.findById("wnd[1]/usr/tblSAPLE20CQUANT_TC/txtRE20CL-MENGE[2,0]").text = cantidad
+        self.sap.session.findById("wnd[1]/tbar[0]/btn[5]").press()
 
     
     def CargaOperandos(self, datosOperandos):
@@ -71,6 +81,9 @@ class Instalacion:
                     self.carga_operando_rate(key, value["f_hasta"], value["clase tarifa"], value['grValoresConcretos'])
                 if value["tipo"] == "FLAG":
                     self.carga_flag(key,value['hasta'])
+                if value["tipo"] == "QUANT":
+                    self.carga_quant(key,value['hasta'], value['cantidad'])
+
 
         #Guarda Operandos
         self.sap.session.findById("wnd[0]/tbar[0]/btn[0]").press()

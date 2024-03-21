@@ -185,7 +185,7 @@ for row in datos:
         Aparato.UpdateGN("GC-04315")
 
         ##Aparato de Generacion
-        AparatoGeneracion = ap.Aparato(sap, id=montaje_data.get('dispotivoGen', ''), material=montaje_data.get('tp_aparatoGen', ''))
+        AparatoGeneracion = ap.Aparato(sap, id=montaje_data.get('dispotivoGen', ''), material=montaje_data.get('tp_aparato', ''))
         sap.StartTransaction(AparatoGeneracion.trxModificarGN)
         AparatoGeneracion.UpdateGN("GC-04316")
     elif Instalacion.tp_tarifa == "GD_T4":
@@ -214,7 +214,7 @@ for row in datos:
            MontajeGen.trxCreateMON = montaje_data.get('trxCreateMON', '/nEG31')
            MontajeGen.f_alta = montaje_data.get('f_alta', '')
            MontajeGen.dipositivo = montaje_data.get('dispotivoGen', '')  # Como me pasa el nuevo numero de dispositivo
-           MontajeGen.tp_aparato = montaje_data.get('tp_aparatoGen', '')
+           MontajeGen.tp_aparato = montaje_data.get('tp_aparato', '')
            MontajeGen.motivo = montaje_data.get('motivo', '')
            sap.StartTransaction(Montaje.trxCreateMON)
            MontajeGen.SetDatosGenerales(UbicacionAparatoGen.id, Instalacion.id)

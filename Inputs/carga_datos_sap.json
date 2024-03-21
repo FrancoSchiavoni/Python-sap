@@ -89,6 +89,12 @@
                 "tipo": "FLAG",
                 "carga": true,
                 "hasta": "31.12.9999"
+            },
+            "QU_CUPOGEN": {
+                "tipo": "QUANT",
+                "carga": true,
+                "hasta": "31.12.9999",
+                "cantidad": "22222"
             }
         },
         "Create_movein": {
@@ -103,7 +109,6 @@
             "dipositivo": "224",
             "dispotivoGen": "x",
             "tp_aparato": "700034",
-            "tp_aparatoGen": "700034",
             "motivo": "05"
         },
         "Create_CP": {
