@@ -17,6 +17,7 @@ import instalacion as ins
 import move_in as mi
 import montaje as mon
 import contrato_potencia as cp
+import aparato as ap
 
 
 #Input
@@ -33,7 +34,6 @@ for row in datos:
     CuentaContrato = cc.CuentaContrato(sap)
     cc_data = row.get('Create_CC', {})
         # Asigna los valores correspondientes a las variables de tu objeto CuentaContrato
-    CuentaContrato.id = cc_data.get('id', '')
     CuentaContrato.trxCreateCC = cc_data.get('trxCreateCC', '/nCAA1')
     CuentaContrato.trxUpdateCC = cc_data.get('trxUpdateCC', '/nCAA2')
     CuentaContrato.tp_cta_contrato = cc_data.get('tp_cta_contrato', '')
@@ -53,7 +53,6 @@ for row in datos:
     CuentaContrato.tipo_compensacion = cc_data.get('tipo_compensacion', 'Z001')
     CuentaContrato.ikey = cc_data.get('ikey', '50')
     CuentaContrato.togru = cc_data.get('togru', 'Z001')
-    CuentaContrato.sap = cc_data.get('sap', sap)
     CuentaContrato.reclamacion = cc_data.get('reclamacion', 'Z1')
     CuentaContrato.mail = cc_data.get('mail', 'MAIL')
 
@@ -61,20 +60,16 @@ for row in datos:
     PuntoSuministro = ps.PuntoSuministro(sap)
     ps_data = row.get('Create_PS', {})
         # Asigna los valores correspondientes a las variables de tu objeto PuntoSuministro
-    PuntoSuministro.id = ps_data.get('id', '')
     PuntoSuministro.trxCreatePS = ps_data.get('trxCreatePS', '/nES60')
     PuntoSuministro.trxUpdatePS = ps_data.get('trxUpdatePS', '/nES61')
     PuntoSuministro.clae = ps_data.get('clae', '')
-    PuntoSuministro.sap = ps_data.get('sap', sap)
 
     # Objeto UbicacionAparato
     UbicacionAparato = ua.UbicacionAparato(sap)
     ua_data = row.get('Create_UA', {})
         # Asigna los valores correspondientes a las variables de tu objeto UbicacionAparato
-    UbicacionAparato.id = ua_data.get('id', '')
     UbicacionAparato.trxCreateUA = ua_data.get('trxCreateUA', '/nES65')
     UbicacionAparato.trxUpdateUA = ua_data.get('trxUpdateUA', '/nES66')
-    UbicacionAparato.sap = ua_data.get('sap', sap)
     UbicacionAparato.centro_empl = ua_data.get('centro_empl', '')
     UbicacionAparato.denominacion = ua_data.get('denominacion', '')
 
@@ -82,10 +77,8 @@ for row in datos:
     Instalacion = ins.Instalacion(sap)
     ins_data = row.get('Create_INST', {})
         # Asigna los valores correspondientes a las variables de tu objeto Instalacion
-    Instalacion.id = ins_data.get('id', '')
     Instalacion.trxCreateINS = ins_data.get('trxCreateINS', '/nES30')
     Instalacion.trxUpdateINS = ins_data.get('trxUpdateINS', '/nES31')
-    Instalacion.sap = ins_data.get('sap', sap)
     Instalacion.dia_fijado = ins_data.get('dia_fijado', '')
     Instalacion.sector = ins_data.get('sector', '')
     Instalacion.nivTension = ins_data.get('nivTension', '')
@@ -109,9 +102,7 @@ for row in datos:
     Montaje = mon.Montaje(sap)
     montaje_data = row.get('Create_montaje', {})
         # Asigna los valores correspondientes a las variables de tu objeto Montaje
-    Montaje.id = montaje_data.get('id', '')
     Montaje.trxCreateMON = montaje_data.get('trxCreateMON', '/nEG31')
-    Montaje.sap = montaje_data.get('sap', sap)
     Montaje.f_alta = montaje_data.get('f_alta', '')
     Montaje.dipositivo = montaje_data.get('dipositivo', '')
     Montaje.tp_aparato = montaje_data.get('tp_aparato', '')
@@ -121,9 +112,7 @@ for row in datos:
     ContratoPotencia = cp.ContratoPotencia(sap)
     cp_data = row.get('Create_CP', {})
         # Asigna los valores correspondientes a las variables de tu objeto ContratoPotencia
-    ContratoPotencia.id = cp_data.get('id', '')
     ContratoPotencia.trxCP = cp_data.get('trxCP', '/nZDM_CONTRATOS_GC')
-    ContratoPotencia.sap = cp_data.get('sap', sap)
     ContratoPotencia.fecha_ini = cp_data.get('fecha_ini', '')
     ContratoPotencia.periodo = cp_data.get('periodo', '00')
     ContratoPotencia.contratadaP = cp_data.get('contratadaP', '50')
@@ -150,19 +139,33 @@ for row in datos:
     sap.StartTransaction(PuntoSuministro.trxCreatePS)
     PuntoSuministro.CreatePS(obj_data['OC'])
     PuntoSuministro.UpdatePS()
-  
-
+    
+                         
     # #Ubicacion de Aparato
     sap.StartTransaction(UbicacionAparato.trxCreateUA)
     UbicacionAparato.CreateUA(PuntoSuministro.id, obj_data['OC'])
     UbicacionAparato.UpdateUA()
+  
+    f_flag_prosumidor = False
+    UbicacionAparatoGen = None
+
+    datosOperandos = row.get('Create_OPERAND', {})
+    for key, value in datosOperandos.items():
+            if value["carga"]:
+                    if key == "RT_PROSUM":
+                           f_flag_prosumidor = True
+                           UbicacionAparatoGen = ua.UbicacionAparato(sap)
+                           UbicacionAparatoGen.trxCreateUA = ua_data.get('trxCreateUA', '/nES65')
+                           UbicacionAparatoGen.trxUpdateUA = ua_data.get('trxUpdateUA', '/nES66')
+                           UbicacionAparatoGen.centro_empl = ua_data.get('centro_empl', '')
+                           UbicacionAparatoGen.CreateUA(PuntoSuministro.id, obj_data['OC'])
+                           UbicacionAparatoGen.UpdateUA(UbicacionAparato.denominacion + " - GEN")
   
 
     # #Instalacion
     sap.StartTransaction(Instalacion.trxCreateINS)
     Instalacion.StartInst()
     Instalacion.SetDatosIniciales(PuntoSuministro.id)
-    datosOperandos = row.get('Create_OPERAND', {})
     Instalacion.CargaOperandos(datosOperandos)
     Instalacion.GuardaInstalacion()
   
@@ -174,11 +177,50 @@ for row in datos:
     Movein.SetValoresContrato()
     Movein.GuardaContrato(Instalacion.id)
 
+    # #Aparato
+    if f_flag_prosumidor == True:
+        ##Aparato
+        Aparato = ap.Aparato(sap, id=Montaje.dipositivo, material= Montaje.tp_aparato)
+        sap.StartTransaction(Aparato.trxModificarGN)
+        Aparato.UpdateGN("GC-04315")
+
+        ##Aparato de Generacion
+        AparatoGeneracion = ap.Aparato(sap, id=montaje_data.get('dispotivoGen', ''), material=montaje_data.get('tp_aparatoGen', ''))
+        sap.StartTransaction(AparatoGeneracion.trxModificarGN)
+        AparatoGeneracion.UpdateGN("GC-04316")
+    elif Instalacion.tp_tarifa == "GD_T4":
+        ##Aparato
+        Aparato = ap.Aparato(sap, id=Montaje.dipositivo, material= Montaje.tp_aparato)
+        sap.StartTransaction(Aparato.trxModificarGN)
+        Aparato.UpdateGN("GC-04313")  
+
     # #Montaje
     sap.StartTransaction(Montaje.trxCreateMON)
     Montaje.SetDatosGenerales(UbicacionAparato.id, Instalacion.id)
-    Montaje.SetNumeradores()
+    
+    #Determina que numeradores debe cargar (Normal/Cooperativa/Prosumidor)
+    if f_flag_prosumidor == True:
+        Montaje.SetNumeradoresProsum()
+    elif Instalacion.tp_tarifa == "GD_T4":
+        Montaje.SetNumeradoresCooperativa()
+    else:
+        Montaje.SetNumeradores()
     Montaje.Guardar()
+
+    ### Montaje medidor de Generacion
+    MontajeGen = None
+    if f_flag_prosumidor == True:
+           MontajeGen = mon.Montaje(sap)
+           MontajeGen.trxCreateMON = montaje_data.get('trxCreateMON', '/nEG31')
+           MontajeGen.f_alta = montaje_data.get('f_alta', '')
+           MontajeGen.dipositivo = montaje_data.get('dispotivoGen', '')  # Como me pasa el nuevo numero de dispositivo
+           MontajeGen.tp_aparato = montaje_data.get('tp_aparatoGen', '')
+           MontajeGen.motivo = montaje_data.get('motivo', '')
+           sap.StartTransaction(Montaje.trxCreateMON)
+           MontajeGen.SetDatosGenerales(UbicacionAparatoGen.id, Instalacion.id)
+           MontajeGen.SetNumeradoresGeneracion()
+           MontajeGen.Guardar()
+           
 
     # #ContratoPotencia
     sap.StartTransaction(ContratoPotencia.trxCP)
@@ -189,7 +231,7 @@ for row in datos:
     #Guarda Valores
     row['OBJETOS']['CC'] = CuentaContrato.id
     row['OBJETOS']['PS'] = PuntoSuministro.id
-    row['OBJETOS']['UA'] = UbicacionAparato.id
+    row['OBJETOS']['UA'] = UbicacionAparato.id + UbicacionAparatoGen.id if UbicacionAparatoGen is not None else UbicacionAparato.id
     row['OBJETOS']['INS'] = Instalacion.id
     row['OBJETOS']['CONTRATO'] = Movein.id
     row['OBJETOS']['CP'] = ContratoPotencia.id

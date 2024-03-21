@@ -37,10 +37,10 @@ class Instalacion:
             return False
         
 
-    def carga_operando_rate(self,tipo, hasta, tarifa, tension):
+    def carga_operando_rate(self, operando, hasta, tarifa, tension):
         if not self.elemento_presente("wnd[1]/usr/ctxtRE20B-OPERAND"):
             self.sap.session.findById("wnd[0]/tbar[1]/btn[18]").press()
-        self.sap.session.findById("wnd[1]/usr/ctxtRE20B-OPERAND").text = tipo
+        self.sap.session.findById("wnd[1]/usr/ctxtRE20B-OPERAND").text = operando
         self.sap.session.findById("wnd[1]/usr/ctxtRE20B-OPERAND").caretPosition = 10
         self.sap.session.findById("wnd[1]/tbar[0]/btn[0]").press()
         self.sap.session.findById("wnd[1]/usr/tblSAPLE20CRTYPE_TC/ctxtRE20CL-BIS[1,0]").text = hasta
@@ -50,10 +50,10 @@ class Instalacion:
         self.sap.session.findById("wnd[1]/usr/tblSAPLE20CRTYPE_TC/ctxtRE20CL-KONDIGR[3,0]").caretPosition = 4
         self.sap.session.findById("wnd[1]/tbar[0]/btn[5]").press()
 
-    def carga_flag(self,tipo, hasta):
+    def carga_flag(self, operando, hasta):
         if not self.elemento_presente("wnd[1]/usr/ctxtRE20B-OPERAND"):
             self.sap.session.findById("wnd[0]/tbar[1]/btn[18]").press()
-        self.sap.session.findById("wnd[1]/usr/ctxtRE20B-OPERAND").text = tipo
+        self.sap.session.findById("wnd[1]/usr/ctxtRE20B-OPERAND").text = operando
         self.sap.session.findById("wnd[1]/usr/ctxtRE20B-OPERAND").caretPosition = 9
         self.sap.session.findById("wnd[1]/tbar[0]/btn[0]").press()
         self.sap.session.findById("wnd[1]/usr/tblSAPLE20CFLAG_TC/ctxtRE20CL-BIS[1,0]").text = hasta
@@ -63,7 +63,7 @@ class Instalacion:
         self.sap.session.findById("wnd[1]/tbar[0]/btn[5]").press()
 
     
-    def CargaOperandos(self,datosOperandos):
+    def CargaOperandos(self, datosOperandos):
         self.sap.session.findById("wnd[0]/usr/btnEANLD-FACTSBUT").press() 
         for key, value in datosOperandos.items():
             if value["carga"]:
