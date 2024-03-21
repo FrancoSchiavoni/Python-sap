@@ -2,7 +2,8 @@
     {
         "INS": "",
         "CC": "",
-        "fecha_Ord_Lectura": "",
+        "tipo_Lectura": "",
+        "fecha_Ord_Lectura_Desde": "",
         "lectura_Pot_P": "",
         "lectura_Pot_R": "",
         "lectura_Pot_V": "",
@@ -15,7 +16,7 @@
     {
         "INS": "",
         "CC": "",
-        "fecha_Ord_Lectura": "",
+        "fecha_Ord_Lectura_Desde": "",
         "lectura_Pot_P": "",
         "lectura_Pot_R": "",
         "lectura_Pot_V": "",
