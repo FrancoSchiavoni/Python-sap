@@ -50,7 +50,7 @@
             },
             "RT_PROSUM": {
                 "tipo": "RATE",
-                "carga": false,
+                "carga": true,
                 "f_hasta": "31.12.9999",
                 "clase tarifa": "GD_NORM",
                 "grValoresConcretos": "BAJA"
@@ -106,8 +106,8 @@
         },
         "Create_montaje": {
             "f_alta": "01.01.2023",
-            "dipositivo": "224",
-            "dispotivoGen": "x",
+            "dipositivo": "720",
+            "dispotivoGen": "720",
             "tp_aparato": "700034",
             "motivo": "05"
         },

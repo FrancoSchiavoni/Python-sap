@@ -5,7 +5,7 @@ class Aparato:
         self.sap = sap
         self.material = material
         self.grupo_Numerador = ""
-        self.trxModificarGN = "\nEG41"
+        self.trxModificarGN = "/nEG41"
     
     def UpdateGN(self, grupo_num):
         self.grupo_Numerador = grupo_num 

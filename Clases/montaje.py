@@ -9,6 +9,13 @@ class Montaje:
         self.tp_aparato = ""
         self.motivo = ""
 
+    def elemento_presente(self,id_elemento):
+        try:
+            self.sap.session.findById(id_elemento)
+            return True
+        except:
+            return False
+
     def SetDatosGenerales(self,UA,INS):
         self.sap.session.findById("wnd[0]/usr/ctxtREG30-DEVLOC").text = UA
         self.sap.session.findById("wnd[0]/usr/ctxtREG30-ANLAGE").text = INS
@@ -145,7 +152,8 @@ class Montaje:
         self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,10]").caretPosition = 1
         self.sap.session.findById("wnd[0]/tbar[0]/btn[0]").press()
         self.sap.session.findById("wnd[0]/tbar[0]/btn[3]").press()
-        #self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press() VALIDAR SI EXISTE
+        if self.elemento_presente("wnd[0]/tbar[0]/btn[11]"):
+            self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press() 
 
     def SetNumeradoresProsum(self):
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-TARIFART[9,0]").text = "ENACTRE"
