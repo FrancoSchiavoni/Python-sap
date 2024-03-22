@@ -10,7 +10,6 @@ def post_outputs(content_file, path, event):
     elif event == "COPY":
         # Copiar el archivo JSON desde INPUTS a OUTPUTS y renombrarlo
         input_path = os.path.basename('./../Inputs/carga_datos_sap.json')
-        ruta_output_json = os.path.join(path, ".json")
-        shutil.copy(input_path, ruta_output_json)
-
-        print("Proceso finalizado. Archivo de salida creado en:", path)
+        shutil.copy(input_path, path)
+        
+    print("Archivo de salida creado en:", path)

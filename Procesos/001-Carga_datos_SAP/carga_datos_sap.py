@@ -21,16 +21,29 @@ import montaje as mon
 import contrato_potencia as cp
 import aparato as ap
 
+date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
 # Output dir path
 output_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Outputs'))
+print(output_folder)
+
 # Output dir path / carga_datos_sap_json
+os.makedirs(output_folder + "/carga_datos_sap_json")
 carga_datos_sap_json_output_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Outputs', 'carga_datos_sap_json'))
-# Errors file path
-error_log_path = os.path.join(output_folder, 'error_log.txt')
-# JSON file path
-date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+print(carga_datos_sap_json_output_folder)
+
+# Add date to file names
+error_file_pahtName = f"error_log_{date}"
 carga_datos_path = f"carga_datos_sap_{date}"
-json_log_path = os.path.join(carga_datos_sap_json_output_folder, carga_datos_path)
+
+# Errors file path
+error_log_path = os.path.join(carga_datos_sap_json_output_folder, error_file_pahtName + ".txt")
+
+# JSON file path
+json_log_path = os.path.join(carga_datos_sap_json_output_folder, carga_datos_path + ".json")
+
+print("Archivos: ", error_log_path, "//", json_log_path)
+
 
 #Input
 json_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Inputs', 'carga_datos_sap.json'))
@@ -282,11 +295,11 @@ for row in datos:
 
 sap.Close_connection()
 
-resultados.append({'Total de errores': x})
+resultados.append({'Total de errores registrados': x})
 errores.append(f"Total de errores registrados: {x}\n")
 
 # Registro de errores
-po.post_outputs(errores, error_log_path, 'POST')
+po.post_outputs(content_file=errores, path=error_log_path, event='POST')
 # Registro de json
 po.post_outputs(resultados, json_log_path, 'COPY')
 

@@ -3,12 +3,12 @@
         "OBJETOS": {
             "IC": "200001277",
             "OC": "610000000002298",
-            "CC": "700011266",
-            "PS": "600002183",
-            "UA": "650000000002228",
-            "INS": "400002152",
-            "CONTRATO": "300002080",
-            "CP": "0000041039"
+            "CC": "700011270",
+            "PS": "600002187",
+            "UA": "650000000002234",
+            "INS": "400002156",
+            "CONTRATO": "300002084",
+            "CP": "0000041043"
         },
         "Create_CC": {
             "tp_cta_contrato": "DP",
@@ -100,7 +100,7 @@
         },
         "Create_montaje": {
             "f_alta": "01.01.2022",
-            "dipositivo": "720",
+            "dipositivo": "727",
             "dispotivoGen": "",
             "tp_aparato": "700034",
             "motivo": "05"
@@ -117,12 +117,12 @@
         "OBJETOS": {
             "IC": "200001277",
             "OC": "610000000002298",
-            "CC": "700011267",
-            "PS": "600002184",
-            "UA": "650000000002229650000000002230",
-            "INS": "400002153",
-            "CONTRATO": "300002081",
-            "CP": "0000041040"
+            "CC": "",
+            "PS": "",
+            "UA": "",
+            "INS": "",
+            "CONTRATO": "",
+            "CP": ""
         },
         "Create_CC": {
             "tp_cta_contrato": "GD",
@@ -140,7 +140,7 @@
             "proc_rec_tension": "P2"
         },
         "Create_PS": {
-            "clae": "239410"
+            "clae": "2394133330"
         },
         "Create_UA": {
             "denominacion": "&PRUEBAPROSU",
@@ -214,236 +214,8 @@
         },
         "Create_montaje": {
             "f_alta": "01.01.2022",
-            "dipositivo": "721",
+            "dipositivo": "728",
             "dispotivoGen": "722",
-            "tp_aparato": "700034",
-            "motivo": "05"
-        },
-        "Create_CP": {
-            "fecha_ini": "01.01.2022",
-            "periodo": "00",
-            "contratadaP": "50",
-            "contratadaFP": "50",
-            "descripcion": "Test"
-        }
-    },
-    {
-        "OBJETOS": {
-            "IC": "200001277",
-            "OC": "610000000002298",
-            "CC": "700011268",
-            "PS": "600002185",
-            "UA": "650000000002231",
-            "INS": "400002154",
-            "CONTRATO": "300002082",
-            "CP": "0000041041"
-        },
-        "Create_CC": {
-            "tp_cta_contrato": "PJ",
-            "estrRegion": "S6020A21",
-            "nombre": "%PRUEBAPEAJE",
-            "cdc": "PO",
-            "catcta": "G002",
-            "condicion_pago": "Z002",
-            "gpo_sociedades": "Z001",
-            "soc_std": "1000",
-            "clase_impuesto": "07",
-            "lugar_comercial": "0069",
-            "region": "12",
-            "condado": "258",
-            "proc_rec_tension": "P2"
-        },
-        "Create_PS": {
-            "clae": "239410"
-        },
-        "Create_UA": {
-            "denominacion": "%PRUEBAPEAJE",
-            "centro_empl": "6000"
-        },
-        "Create_INST": {
-            "dia_fijado": "01.01.2022",
-            "sector": "EN",
-            "nivTension": "G1",
-            "clCal": "CEPE",
-            "tp_tarifa": "GD_T6",
-            "unidad_lectura": "GROCC"
-        },
-        "Create_OPERAND": {
-            "RT_CAT_CLI": {
-                "tipo": "RATE",
-                "carga": true,
-                "f_hasta": "31.12.9999",
-                "clase tarifa": "GD_NORM",
-                "grValoresConcretos": "BAJA"
-            },
-            "RT_PROSUM": {
-                "tipo": "RATE",
-                "carga": false,
-                "f_hasta": "31.12.9999",
-                "clase tarifa": "",
-                "grValoresConcretos": ""
-            },
-            "FL_NO_CAP": {
-                "tipo": "FLAG",
-                "carga": false,
-                "hasta": "31.12.9999"
-            },
-            "FL_EMP_REC": {
-                "tipo": "FLAG",
-                "carga": true,
-                "hasta": "31.12.9999"
-            },
-            "FL_PRG_IND": {
-                "tipo": "FLAG",
-                "carga": false,
-                "hasta": "31.12.9999"
-            },
-            "FL_CLUB": {
-                "tipo": "FLAG",
-                "carga": false,
-                "hasta": "31.12.9999"
-            },
-            "FL_COO_UNI": {
-                "tipo": "FLAG",
-                "carga": false,
-                "hasta": "31.12.9999"
-            },
-            "FL_COO_MAS": {
-                "tipo": "FLAG",
-                "carga": false,
-                "hasta": "31.12.9999"
-            },
-            "FL_BEN_INF": {
-                "tipo": "FLAG",
-                "carga": true,
-                "hasta": "31.12.9999"
-            }
-        },
-        "Create_movein": {
-            "f_alta": "01.01.2022",
-            "imputacion": "S6020",
-            "segmento": "106",
-            "cdc": "PO",
-            "fac_conj": "2"
-        },
-        "Create_montaje": {
-            "f_alta": "01.01.2022",
-            "dipositivo": "723",
-            "dispotivoGen": "",
-            "tp_aparato": "700034",
-            "motivo": "05"
-        },
-        "Create_CP": {
-            "fecha_ini": "01.01.2022",
-            "periodo": "00",
-            "contratadaP": "50",
-            "contratadaFP": "50",
-            "descripcion": "Test"
-        }
-    },
-    {
-        "OBJETOS": {
-            "IC": "200001277",
-            "OC": "610000000002298",
-            "CC": "700011269",
-            "PS": "600002186",
-            "UA": "650000000002232650000000002233",
-            "INS": "400002155",
-            "CONTRATO": "300002083",
-            "CP": "0000041042"
-        },
-        "Create_CC": {
-            "tp_cta_contrato": "GD",
-            "estrRegion": "S6020A21",
-            "nombre": "&PRUEBAPROSU",
-            "cdc": "MU",
-            "catcta": "G002",
-            "condicion_pago": "Z002",
-            "gpo_sociedades": "Z001",
-            "soc_std": "1000",
-            "clase_impuesto": "04",
-            "lugar_comercial": "0069",
-            "region": "12",
-            "condado": "258",
-            "proc_rec_tension": "P2"
-        },
-        "Create_PS": {
-            "clae": "239410"
-        },
-        "Create_UA": {
-            "denominacion": "&PRUEBAPROSU",
-            "centro_empl": "6000"
-        },
-        "Create_INST": {
-            "dia_fijado": "01.01.2022",
-            "sector": "EN",
-            "nivTension": "G1",
-            "clCal": "CEPE",
-            "tp_tarifa": "GD_T2",
-            "unidad_lectura": "GROCC"
-        },
-        "Create_OPERAND": {
-            "RT_CAT_CLI": {
-                "tipo": "RATE",
-                "carga": true,
-                "f_hasta": "31.12.9999",
-                "clase tarifa": "GD_NORM",
-                "grValoresConcretos": "BAJA"
-            },
-            "RT_PROSUM": {
-                "tipo": "RATE",
-                "carga": true,
-                "f_hasta": "31.12.9999",
-                "clase tarifa": "GD_PROSU",
-                "grValoresConcretos": "GD_PRG1"
-            },
-            "FL_NO_CAP": {
-                "tipo": "FLAG",
-                "carga": false,
-                "hasta": "31.12.9999"
-            },
-            "FL_EMP_REC": {
-                "tipo": "FLAG",
-                "carga": false,
-                "hasta": "31.12.9999"
-            },
-            "FL_PRG_IND": {
-                "tipo": "FLAG",
-                "carga": true,
-                "hasta": "31.12.9999"
-            },
-            "FL_CLUB": {
-                "tipo": "FLAG",
-                "carga": false,
-                "hasta": "31.12.9999"
-            },
-            "FL_COO_UNI": {
-                "tipo": "FLAG",
-                "carga": false,
-                "hasta": "31.12.9999"
-            },
-            "FL_COO_MAS": {
-                "tipo": "FLAG",
-                "carga": false,
-                "hasta": "31.12.9999"
-            },
-            "FL_BEN_INF": {
-                "tipo": "FLAG",
-                "carga": true,
-                "hasta": "31.12.9999"
-            }
-        },
-        "Create_movein": {
-            "f_alta": "01.01.2022",
-            "imputacion": "S6020",
-            "segmento": "106",
-            "cdc": "MU",
-            "fac_conj": "2"
-        },
-        "Create_montaje": {
-            "f_alta": "01.01.2022",
-            "dipositivo": "724",
-            "dispotivoGen": "725",
             "tp_aparato": "700034",
             "motivo": "05"
         },

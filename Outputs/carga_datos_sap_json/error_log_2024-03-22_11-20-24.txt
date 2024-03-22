@@ -1,0 +1,2 @@
+Error: Property '<unknown>.text' can not be set. | Fila: 1 | Objetos Creados: {'IC': '200001277', 'OC': '610000000002298', 'CC': '700011271', 'PS': '', 'UA': '', 'INS': '', 'CONTRATO': '', 'CP': ''}
+Total de errores registrados: 1
