@@ -28,7 +28,6 @@ output_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..',
 print(output_folder)
 
 # Output dir path / carga_datos_sap_json
-os.makedirs(output_folder + "/carga_datos_sap_json")
 carga_datos_sap_json_output_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Outputs', 'carga_datos_sap_json'))
 print(carga_datos_sap_json_output_folder)
 

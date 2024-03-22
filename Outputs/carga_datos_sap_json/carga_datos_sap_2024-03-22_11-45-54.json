@@ -1,0 +1,230 @@
+[
+    {
+        "OBJETOS": {
+            "IC": "200001277",
+            "OC": "610000000002298",
+            "CC": "700011270",
+            "PS": "600002187",
+            "UA": "650000000002234",
+            "INS": "400002156",
+            "CONTRATO": "300002084",
+            "CP": "0000041043"
+        },
+        "Create_CC": {
+            "tp_cta_contrato": "DP",
+            "estrRegion": "S6020A21",
+            "nombre": "&PRUEBACOOP",
+            "cdc": "CG",
+            "catcta": "G001",
+            "condicion_pago": "Z003",
+            "gpo_sociedades": "Z001",
+            "soc_std": "1000",
+            "clase_impuesto": "01",
+            "lugar_comercial": "0069",
+            "region": "12",
+            "condado": "281",
+            "proc_rec_tension": "P2"
+        },
+        "Create_PS": {
+            "clae": "239900"
+        },
+        "Create_UA": {
+            "denominacion": "&PRUEBACOOP",
+            "centro_empl": "6000"
+        },
+        "Create_INST": {
+            "dia_fijado": "01.01.2022",
+            "sector": "EN",
+            "nivTension": "G2",
+            "clCal": "CEPE",
+            "tp_tarifa": "GD_T4",
+            "unidad_lectura": "GROCC"
+        },
+        "Create_OPERAND": {
+            "RT_CAT_CLI": {
+                "tipo": "RATE",
+                "carga": true,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "GD_NORM",
+                "grValoresConcretos": "T4_BO_MTBT"
+            },
+            "RT_PROSUM": {
+                "tipo": "RATE",
+                "carga": false,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "",
+                "grValoresConcretos": ""
+            },
+            "FL_NO_CAP": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_EMP_REC": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_PRG_IND": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_CLUB": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_UNI": {
+                "tipo": "FLAG",
+                "carga": true,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_MAS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_BEN_INF": {
+                "tipo": "FLAG",
+                "carga": true,
+                "hasta": "31.12.9999"
+            }
+        },
+        "Create_movein": {
+            "f_alta": "01.01.2022",
+            "imputacion": "S6020",
+            "segmento": "106",
+            "cdc": "CG",
+            "fac_conj": "2"
+        },
+        "Create_montaje": {
+            "f_alta": "01.01.2022",
+            "dipositivo": "727",
+            "dispotivoGen": "",
+            "tp_aparato": "700034",
+            "motivo": "05"
+        },
+        "Create_CP": {
+            "fecha_ini": "01.01.2022",
+            "periodo": "00",
+            "contratadaP": "50",
+            "contratadaFP": "50",
+            "descripcion": "Test"
+        }
+    },
+    {
+        "OBJETOS": {
+            "IC": "200001277",
+            "OC": "610000000002298",
+            "CC": "",
+            "PS": "",
+            "UA": "",
+            "INS": "",
+            "CONTRATO": "",
+            "CP": ""
+        },
+        "Create_CC": {
+            "tp_cta_contrato": "GD",
+            "estrRegion": "S6020A21",
+            "nombre": "&PRUEBAPROSU",
+            "cdc": "CU",
+            "catcta": "G002",
+            "condicion_pago": "Z002",
+            "gpo_sociedades": "Z001",
+            "soc_std": "1000",
+            "clase_impuesto": "01",
+            "lugar_comercial": "0069",
+            "region": "12",
+            "condado": "004",
+            "proc_rec_tension": "P2"
+        },
+        "Create_PS": {
+            "clae": "2394133330"
+        },
+        "Create_UA": {
+            "denominacion": "&PRUEBAPROSU",
+            "centro_empl": "6000"
+        },
+        "Create_INST": {
+            "dia_fijado": "01.01.2022",
+            "sector": "EN",
+            "nivTension": "G1",
+            "clCal": "CEPE",
+            "tp_tarifa": "GD_T2",
+            "unidad_lectura": "GROCC"
+        },
+        "Create_OPERAND": {
+            "RT_CAT_CLI": {
+                "tipo": "RATE",
+                "carga": true,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "GD_NORM",
+                "grValoresConcretos": "BAJA"
+            },
+            "RT_PROSUM": {
+                "tipo": "RATE",
+                "carga": true,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "GD_GENER",
+                "grValoresConcretos": "GENERADOR"
+            },
+            "FL_NO_CAP": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_EMP_REC": {
+                "tipo": "FLAG",
+                "carga": true,
+                "hasta": "31.12.9999"
+            },
+            "FL_PRG_IND": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_CLUB": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_UNI": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_MAS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_BEN_INF": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            }
+        },
+        "Create_movein": {
+            "f_alta": "01.01.2022",
+            "imputacion": "S6020",
+            "segmento": "106",
+            "cdc": "CU",
+            "fac_conj": "2"
+        },
+        "Create_montaje": {
+            "f_alta": "01.01.2022",
+            "dipositivo": "728",
+            "dispotivoGen": "722",
+            "tp_aparato": "700034",
+            "motivo": "05"
+        },
+        "Create_CP": {
+            "fecha_ini": "01.01.2022",
+            "periodo": "00",
+            "contratadaP": "50",
+            "contratadaFP": "50",
+            "descripcion": "Test"
+        }
+    }
+]
