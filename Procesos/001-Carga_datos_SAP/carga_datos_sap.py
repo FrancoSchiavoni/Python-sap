@@ -148,7 +148,7 @@ for row in datos:
 
         # #Ubicacion de Aparato
         sap.StartTransaction(UbicacionAparato.trxCreateUA)
-        UbicacionAparato.CreateUA(PuntoSuministro.id, obj_data['OC'])
+        UbicacionAparato.CreateUA(PuntoSuministro.id, obj_data['OC'],"")
         UbicacionAparato.UpdateUA()
     
         f_flag_prosumidor = False
@@ -159,12 +159,15 @@ for row in datos:
                 if value["carga"]:
                         if key == "RT_PROSUM":
                                f_flag_prosumidor = True
-                               UbicacionAparatoGen = ua.UbicacionAparato(sap)
-                               UbicacionAparatoGen.trxCreateUA = ua_data.get('trxCreateUA', '/nES65')
-                               UbicacionAparatoGen.trxUpdateUA = ua_data.get('trxUpdateUA', '/nES66')
-                               UbicacionAparatoGen.centro_empl = ua_data.get('centro_empl', '')
-                               UbicacionAparatoGen.CreateUA(PuntoSuministro.id, obj_data['OC'])
-                               UbicacionAparatoGen.UpdateUA(UbicacionAparato.denominacion + " - GEN")
+
+        if f_flag_prosumidor:
+            UbicacionAparatoGen = ua.UbicacionAparato(sap)
+            UbicacionAparatoGen.trxCreateUA = ua_data.get('trxCreateUA', '/nES65')
+            UbicacionAparatoGen.trxUpdateUA = ua_data.get('trxUpdateUA', '/nES66')
+            UbicacionAparatoGen.centro_empl = ua_data.get('centro_empl', '')
+            sap.StartTransaction(UbicacionAparatoGen.trxCreateUA)
+            UbicacionAparatoGen.CreateUA(PuntoSuministro.id, obj_data['OC'],UbicacionAparato.denominacion + " - GEN")
+            UbicacionAparatoGen.UpdateUA() 
 
         #Guarda PS    
         row['OBJETOS']['UA'] = UbicacionAparato.id + UbicacionAparatoGen.id if UbicacionAparatoGen is not None else UbicacionAparato.id
