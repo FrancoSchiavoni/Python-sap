@@ -1,0 +1,22 @@
+{
+    "tables": [
+        {
+            "name": "EQUI",
+            "filters": {
+                "MATNR": [
+                    "700034",
+                    "700034"
+                ]
+            }
+        },
+        {
+            "name": "EGERH",
+            "filters": {
+                "GERWECHS": [
+                    "05",
+                    "05"
+                ]
+            }
+        }
+    ]
+}
