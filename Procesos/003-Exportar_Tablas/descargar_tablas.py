@@ -45,13 +45,15 @@ sap.StartTransaction("/nSE16N")
 # Ingresa Tabla
 
 for table_data in datos["tables"]:
-    input_data = FilterInput(table_data["name"], table_data["filters"])
+    input_data = FilterInput(table_data["name"], table_data["filters"], table_data["maxrows"])
     sap.session.findById("wnd[0]/usr/ctxtGD-TAB").text = input_data.table_name
-    sap.session.findById("wnd[0]/usr/txtGD-MAX_LINES").text = input_data.rows
+    sap.session.findById("wnd[0]/usr/txtGD-MAX_LINES").text = input_data.maxrows
     sap.session.findById("wnd[0]/usr/txtGD-MAX_LINES").setFocus()
     sap.session.findById("wnd[0]/usr/txtGD-MAX_LINES").caretPosition = 4
     sap.session.findById("wnd[0]").sendVKey(0)
     for column, filter_range in input_data.filters.items():
+        print(column)
+        print(filter_range[0])
         AplicarFiltro(column, filter_range[0])
     sap.session.findById("wnd[0]/tbar[1]/btn[8]").press()
     sap.session.findById("wnd[0]/usr/cntlRESULT_LIST/shellcont/shell").pressToolbarContextButton("&MB_EXPORT")
