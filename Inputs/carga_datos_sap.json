@@ -13,7 +13,7 @@
         "Create_CC": {
             "tp_cta_contrato": "DP",
             "estrRegion": "S6020A21",
-            "nombre": "&PRUEBACOOP",
+            "nombre": "&PRUEBAFACT",
             "cdc": "CG",
             "catcta": "G001",
             "condicion_pago": "Z003",

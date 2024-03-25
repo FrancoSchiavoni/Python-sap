@@ -5,14 +5,14 @@
             "filters": {
                 "MATNR": ["700034","700034"]
             },
-            "maxrows": "500"
+            "maxrows": "5000"
         },
         {
             "name": "EGERH",
             "filters": {
                 "GERWECHS": ["05","05"]
             },
-            "maxrows": "500"
+            "maxrows": "5000"
         }
     ]
 }
