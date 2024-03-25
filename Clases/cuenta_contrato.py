@@ -25,6 +25,7 @@ class CuentaContrato:
         self.reclamacion = "Z1"
         self.mail = "MAIL"
         self.nro_referencia = ""
+        self.bloqueo_interes = ""
 
     def StartCuentaContrato(self, IC):
         self.sap.session.findById("wnd[0]/usr/subA01P01:SAPLFKKC:0100/ctxtFKKVKP-GPART").text = IC
@@ -45,6 +46,7 @@ class CuentaContrato:
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR01/ssubGENSUB:SAPLBUSS:7005/subA03P06:SAPLES35:0275/ctxtSI_FKKVKPR-KTOKL").text = self.catcta
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR01/ssubGENSUB:SAPLBUSS:7005/subA03P06:SAPLES35:0275/ctxtSI_FKKVKPSICA-KOFIZ_SD").text = self.cdc
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR01/ssubGENSUB:SAPLBUSS:7005/subA04P02:SAPLES35:0280/ctxtISU_FKKVKD-FORMKEY_CA").text = self.tipo_documento
+        self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR01/ssubGENSUB:SAPLBUSS:7005/subA03P02:SAPLFKKC:0265/ctxtFKKVKD-POST_LOCK").text = self.bloqueo_interes
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR02").select()
 
     def SetPagosImpuestos(self):
@@ -64,6 +66,7 @@ class CuentaContrato:
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR03/ssubGENSUB:SAPLBUSS:7006/subA02P01:SAPLFKKC:0220/cmbFKKVKP-MGRUP").key = "Z1"
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR03/ssubGENSUB:SAPLBUSS:7006/subA02P01:SAPLFKKC:0220/cmbFKKVKP-MAHNV").key = self.proc_rec_tension
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR03/ssubGENSUB:SAPLBUSS:7006/subA03P02:SAPLES35:0240/ctxtSI_FKKVKPR-SENDCONTROL_GP").text = self.mail
+        self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP1/tabpBUSCR03/ssubGENSUB:SAPLBUSS:7006/subA02P01:SAPLFKKC:0220/ctxtFKKVKD-DUN_REASON").text = self.bloqueo_interes
         self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
 
     def BuscaNroCC(self):

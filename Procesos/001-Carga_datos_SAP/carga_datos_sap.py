@@ -54,7 +54,8 @@ for row in datos:
         # Objeto Cuenta Contrato
         CuentaContrato = cc.CuentaContrato(sap)
         cc_data = row.get('Create_CC', {})
-            # Asigna los valores correspondientes a las variables de tu objeto CuentaContrato
+
+        # Asigna los valores correspondientes a las variables de tu objeto CuentaContrato
         CuentaContrato.trxCreateCC = cc_data.get('trxCreateCC', '/nCAA1')
         CuentaContrato.trxUpdateCC = cc_data.get('trxUpdateCC', '/nCAA2')
         CuentaContrato.tp_cta_contrato = cc_data.get('tp_cta_contrato', '')
@@ -72,7 +73,7 @@ for row in datos:
         CuentaContrato.proc_rec_tension = cc_data.get('proc_rec_tension', '')
 
         if CuentaContrato.cdc == "CG":
-            CuentaContrato.tipo_documento = cc_data.get('tipo_documento', 'ZFACTURA_COOP')
+            CuentaContrato.tipo_documento = cc_data.get('tipo_documento', 'ZBI_FACTURA_COOP')
         else:
             CuentaContrato.tipo_documento = cc_data.get('tipo_documento', 'ZFACTURA_GD')
         
@@ -81,11 +82,13 @@ for row in datos:
         CuentaContrato.togru = cc_data.get('togru', 'Z001')
         CuentaContrato.reclamacion = cc_data.get('reclamacion', 'Z1')
         CuentaContrato.mail = cc_data.get('mail', 'MAIL')
+        CuentaContrato.bloqueo = cc_data.get('bloqueo_interes', '')
 
         # Objeto Punto Suministro
         PuntoSuministro = ps.PuntoSuministro(sap)
         ps_data = row.get('Create_PS', {})
-            # Asigna los valores correspondientes a las variables de tu objeto PuntoSuministro
+        
+        # Asigna los valores correspondientes a las variables de tu objeto PuntoSuministro
         PuntoSuministro.trxCreatePS = ps_data.get('trxCreatePS', '/nES60')
         PuntoSuministro.trxUpdatePS = ps_data.get('trxUpdatePS', '/nES61')
         PuntoSuministro.clae = ps_data.get('clae', '')
@@ -93,7 +96,7 @@ for row in datos:
         # Objeto UbicacionAparato
         UbicacionAparato = ua.UbicacionAparato(sap)
         ua_data = row.get('Create_UA', {})
-            # Asigna los valores correspondientes a las variables de tu objeto UbicacionAparato
+        # Asigna los valores correspondientes a las variables de tu objeto UbicacionAparato
         UbicacionAparato.trxCreateUA = ua_data.get('trxCreateUA', '/nES65')
         UbicacionAparato.trxUpdateUA = ua_data.get('trxUpdateUA', '/nES66')
         UbicacionAparato.centro_empl = ua_data.get('centro_empl', '')
@@ -102,7 +105,7 @@ for row in datos:
         # Objeto Instalacion
         Instalacion = ins.Instalacion(sap)
         ins_data = row.get('Create_INST', {})
-            # Asigna los valores correspondientes a las variables de tu objeto Instalacion
+        # Asigna los valores correspondientes a las variables de tu objeto Instalacion
         Instalacion.trxCreateINS = ins_data.get('trxCreateINS', '/nES30')
         Instalacion.trxUpdateINS = ins_data.get('trxUpdateINS', '/nES31')
         Instalacion.dia_fijado = ins_data.get('dia_fijado', '')
@@ -115,7 +118,7 @@ for row in datos:
         # Objeto Movein
         Movein = mi.Movein(sap)
         movein_data = row.get('Create_movein', {})
-            # Asigna los valores correspondientes a las variables de tu objeto Movein
+        # Asigna los valores correspondientes a las variables de tu objeto Movein
         Movein.id = movein_data.get('id', '')
         Movein.trxCreateMovein = movein_data.get('trxCreateMovein', '/nEC50E')
         Movein.f_alta = movein_data.get('f_alta', '')
@@ -127,7 +130,7 @@ for row in datos:
         # Objeto Montaje
         Montaje = mon.Montaje(sap)
         montaje_data = row.get('Create_montaje', {})
-            # Asigna los valores correspondientes a las variables de tu objeto Montaje
+        # Asigna los valores correspondientes a las variables de tu objeto Montaje
         Montaje.trxCreateMON = montaje_data.get('trxCreateMON', '/nEG31')
         Montaje.f_alta = montaje_data.get('f_alta', '')
         Montaje.dipositivo = montaje_data.get('dipositivo', '')
@@ -137,7 +140,7 @@ for row in datos:
         # Objeto ContratoPotencia
         ContratoPotencia = cp.ContratoPotencia(sap)
         cp_data = row.get('Create_CP', {})
-            # Asigna los valores correspondientes a las variables de tu objeto ContratoPotencia
+        # Asigna los valores correspondientes a las variables de tu objeto ContratoPotencia
         ContratoPotencia.trxCP = cp_data.get('trxCP', '/nZDM_CONTRATOS_GC')
         ContratoPotencia.fecha_ini = cp_data.get('fecha_ini', '')
         ContratoPotencia.periodo = cp_data.get('periodo', '00')
