@@ -3,14 +3,20 @@
         {
             "name": "EQUI",
             "filters": {
-                "MATNR": ["700034","700034"]
+                "MATNR": [
+                    "700034",
+                    "700034"
+                ]
             },
             "maxrows": "5000"
         },
         {
-            "name": "EGERH",
+            "name": "EQUI",
             "filters": {
-                "GERWECHS": ["05","05"]
+                "MATNR": [
+                    "700034",
+                    "700034"
+                ]
             },
             "maxrows": "5000"
         }
