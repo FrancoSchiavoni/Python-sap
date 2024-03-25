@@ -25,11 +25,9 @@ date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
 # Output dir path
 output_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Outputs'))
-print(output_folder)
 
 # Output dir path / carga_datos_sap_json
 carga_datos_sap_json_output_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Outputs', 'carga_datos_sap_json'))
-print(carga_datos_sap_json_output_folder)
 
 # Add date to file names
 error_file_pahtName = f"error_log_{date}"
@@ -40,9 +38,6 @@ error_log_path = os.path.join(carga_datos_sap_json_output_folder, error_file_pah
 
 # JSON file path
 json_log_path = os.path.join(carga_datos_sap_json_output_folder, carga_datos_path + ".json")
-
-print("Archivos: ", error_log_path, "//", json_log_path)
-
 
 #Input
 json_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Inputs', 'carga_datos_sap.json'))
@@ -75,7 +70,12 @@ for row in datos:
         CuentaContrato.region = cc_data.get('region', '')
         CuentaContrato.condado = cc_data.get('condado', '')
         CuentaContrato.proc_rec_tension = cc_data.get('proc_rec_tension', '')
-        CuentaContrato.tipo_documento = cc_data.get('tipo_documento', 'ZFACTURA_GD')
+
+        if CuentaContrato.cdc == "CG":
+            CuentaContrato.tipo_documento = cc_data.get('tipo_documento', 'ZFACTURA_COOP')
+        else:
+            CuentaContrato.tipo_documento = cc_data.get('tipo_documento', 'ZFACTURA_GD')
+        
         CuentaContrato.tipo_compensacion = cc_data.get('tipo_compensacion', 'Z001')
         CuentaContrato.ikey = cc_data.get('ikey', '50')
         CuentaContrato.togru = cc_data.get('togru', 'Z001')
@@ -291,7 +291,7 @@ for row in datos:
     i = i + 1
     #Fin Loop
 
-
+sap.StartTransaction("/n")
 sap.Close_connection()
 
 resultados.append({'Total de errores registrados': x})

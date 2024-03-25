@@ -17,13 +17,35 @@
         "INS": "1",
         "CC": "1",
         "fecha_Ord_Lectura_Desde": "",
+        
         "lectura_Pot_P": "",
         "lectura_Pot_R": "",
         "lectura_Pot_V": "",
+
+        "lectura_Pot_P1": "",
+        "lectura_Pot_R1": "",
+        "lectura_Pot_V1": "",
+
+
         "lectura_E_act_P": "",
         "lectura_E_act_R": "",
         "lectura_E_act_V": "",
+        
         "lectura_E_react": "",
+
+        "lectura_E_actP1": "",
+        "lectura_E_actR1": "",
+        "lectura_E_actV1": "",
+
+        "lectura_E_actP2": "",
+        "lectura_E_actR2": "",
+        "lectura_E_actV2": "",
+        
+        "lectura_E_actP3": "",
+        "lectura_E_actR3": "",
+        "lectura_E_actV3": "",
+
+
         "fecha_Calculo": ""
     }   
 ]
