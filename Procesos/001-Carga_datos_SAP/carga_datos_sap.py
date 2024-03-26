@@ -301,9 +301,9 @@ resultados.append({'Total de errores registrados': x})
 errores.append(f"Total de errores registrados: {x}\n")
 
 # Registro de errores
-po.post_outputs(content_file=errores, path=error_log_path, event='POST')
+po.post_outputs(content_file=errores, path=error_log_path, event='POST', proceso="carga_datos_sap")
 # Registro de json
-po.post_outputs(resultados, json_log_path, 'COPY')
+po.post_outputs(content_file=resultados, path=json_log_path, event='COPY', proceso="carga_datos_sap")
 
 print("Resultado Final")
 print(resultados)

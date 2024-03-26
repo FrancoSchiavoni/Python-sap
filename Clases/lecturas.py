@@ -78,7 +78,20 @@ class Lecturas:
     self.sap.session.findById("wnd[0]/usr/ctxtEBISID-ABRDATS").caretPosition = 10
     self.sap.session.findById("wnd[0]/tbar[1]/btn[8]").press()
 
-  def GenerarFactura(self, CC):
+
+  def DescargarFactura(self):
+    self.sap.session.findById("wnd[1]/tbar[0]/btn[18]").press()
+    self.sap.session.findById("wnd[0]/tbar[1]/btn[24]").press()
+    self.sap.session.findById("wnd[1]/usr/ctxtSSFPP-TDDEST").text = "locl"
+    self.sap.session.findById("wnd[1]/usr/ctxtSSFPP-TDDEST").caretPosition = 4
+    self.sap.session.findById("wnd[1]/tbar[0]/btn[8]").press()
+    self.sap.session.findById("wnd[0]/tbar[0]/btn[86]").press()
+    self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press()
+    self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press()
+    self.sap.session.findById("wnd[1]/tbar[0]/btn[0]").press()
+
+
+  def GenerarFactura(self, CC, descargar):
     self.sap.session.findById("wnd[0]/usr/ctxtBUDAT").text = self.fecha_Calculo
     self.sap.session.findById("wnd[0]/usr/ctxtFIKEY").text = self.clave_rec 
     self.sap.session.findById("wnd[0]/usr/ctxtVKONT").text = CC
@@ -88,4 +101,7 @@ class Lecturas:
     #self.sap.session.findById("wnd[1]/usr/btnSPOP-OPTION1").press()
     self.doc_calculo = self.sap.session.findById("wnd[1]/usr/lbl[24,1]").text
     self.sap.session.findById("wnd[1]/tbar[0]/btn[0]").press()
-    self.sap.session.findById("wnd[1]/tbar[0]/btn[0]").press()
+    if descargar:
+      self.DescargarFactura()
+    else:
+      self.sap.session.findById("wnd[1]/tbar[0]/btn[0]").press()
