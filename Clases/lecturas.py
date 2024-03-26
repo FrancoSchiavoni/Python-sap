@@ -85,10 +85,13 @@ class Lecturas:
     self.sap.session.findById("wnd[1]/usr/ctxtSSFPP-TDDEST").text = "locl"
     self.sap.session.findById("wnd[1]/usr/ctxtSSFPP-TDDEST").caretPosition = 4
     self.sap.session.findById("wnd[1]/tbar[0]/btn[8]").press()
-    self.sap.session.findById("wnd[0]/tbar[0]/btn[86]").press()
+    self.sap.session.findById("wnd[0]/tbar[0]/okcd").text = "PDF!"
+    self.sap.session.findById("wnd[0]").sendVKey(0)
+    self.sap.session.findById("wnd[1]").close()
     self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press()
     self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press()
-    self.sap.session.findById("wnd[1]/tbar[0]/btn[0]").press()
+    self.sap.session.findById("wnd[1]").close()
+
 
 
   def GenerarFactura(self, CC, descargar):

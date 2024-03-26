@@ -104,7 +104,7 @@ for row in datos:
 
         #Generar Facturas
         sap.StartTransaction(Lecturas.trxFactura)
-        Lecturas.GenerarFactura(CC, descargar=False)
+        Lecturas.GenerarFactura(CC, descargar=True)
 
         row['doc_calculo'] = Lecturas.doc_calculo
         j.escribir_jsonFacturacion(json_path,Lecturas.doc_calculo,i)
