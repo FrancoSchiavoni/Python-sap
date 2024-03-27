@@ -106,9 +106,10 @@ for row in datos:
         Lecturas.GenerarFactura(descargar=True, path_destino = facturacion_output_folder)
 
         row['doc_calculo'] = Lecturas.doc_calculo
-        j.escribir_jsonFacturacion(json_path,Lecturas.doc_calculo,i)
-        resultados.append("Factura: " + Lecturas.doc_calculo)
-
+        j.escribir_jsonFacturacion(json_path=json_path, column='doc_calculo', value= Lecturas.doc_calculo, i = i)
+        j.escribir_jsonFacturacion(json_path=json_path, column='doc_impresion', value= Lecturas.doc_impresion, i = i)
+        
+        resultados.append("Factura: " + Lecturas.doc_impresion)
         outputs.append(resultados)
 
     except Exception as e:
@@ -132,6 +133,5 @@ errores.append(f"Total de errores registrados: {x}\n")
 
 # Registro de errores
 po.post_outputs(content_file=errores, path=error_log_path, event='POST', proceso="facturacion")
-
 # Registro de json
 po.post_outputs(content_file=resultados, path=json_log_path, event='COPY', proceso="facturacion")
