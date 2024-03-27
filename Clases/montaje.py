@@ -1,24 +1,24 @@
 class Montaje:
         
-    def __init__(self,sap):
+    def __init__(self, sap):
         self.id = ""
-        self.trxCreateMON = "/nEG31"
+        self.trx_create_mon = "/nEG31"
         self.sap = sap
         self.f_alta = ""
         self.dipositivo = ""
         self.tp_aparato = ""
         self.motivo = ""
 
-    def elemento_presente(self,id_elemento):
+    def elemento_presente(self, id_elemento):
         try:
             self.sap.session.findById(id_elemento)
             return True
         except:
             return False
 
-    def SetDatosGenerales(self,UA,INS):
-        self.sap.session.findById("wnd[0]/usr/ctxtREG30-DEVLOC").text = UA
-        self.sap.session.findById("wnd[0]/usr/ctxtREG30-ANLAGE").text = INS
+    def cargar_datos_generales(self, ua, ins):
+        self.sap.session.findById("wnd[0]/usr/ctxtREG30-DEVLOC").text = ua
+        self.sap.session.findById("wnd[0]/usr/ctxtREG30-ANLAGE").text = ins
         self.sap.session.findById("wnd[0]/usr/ctxtREG30-EADAT").text = self.f_alta
         self.sap.session.findById("wnd[0]/usr/ctxtREG30-GERAETNEU").text = self.dipositivo
         self.sap.session.findById("wnd[0]/usr/ctxtREG30-MATNR").text = self.tp_aparato
@@ -28,7 +28,7 @@ class Montaje:
         self.sap.session.findById("wnd[0]/usr/ctxtREG30-GERWECHS").text = self.motivo
         self.sap.session.findById("wnd[0]/usr/ctxtREG30-GERWECHS").caretPosition = 2
 
-    def SetNumeradores(self):
+    def cargar_numeradores(self):
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-TARIFART[9,0]").text = "ENACTRE"
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,0]").text = "GENERALES"
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,0]").setFocus()
@@ -69,7 +69,7 @@ class Montaje:
         self.sap.session.findById("wnd[0]/tbar[0]/btn[0]").press()
         self.sap.session.findById("wnd[0]/tbar[0]/btn[3]").press()
 
-    def SetNumeradoresCooperativa(self):
+    def cargar_numeradores_cooperativa(self):
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-TARIFART[9,0]").text = "CAPPI"
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-TARIFART[9,1]").text = "CAPFP"
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-TARIFART[9,2]").text = "ENREACT"
@@ -155,7 +155,7 @@ class Montaje:
         if self.elemento_presente("wnd[0]/tbar[0]/btn[11]"):
             self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press() 
 
-    def SetNumeradoresProsum(self):
+    def cargar_numeradores_prosum(self):
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-TARIFART[9,0]").text = "ENACTRE"
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-TARIFART[9,2]").text = "ENACTP"
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-TARIFART[9,3]").text = "CAPPI"
@@ -230,7 +230,7 @@ class Montaje:
         self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT").verticalScrollbar.position = 8
         self.sap.session.findById("wnd[0]/tbar[0]/btn[3]").press()
 
-    def SetNumeradoresGeneracion(self):
+    def cargar_numeradores_generacion(self):
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,1]").text = "0"
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,2]").text = "0"
@@ -250,7 +250,5 @@ class Montaje:
         self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,2]").caretPosition = 1
         self.sap.session.findById("wnd[0]/tbar[0]/btn[3]").press()
 
-    def Guardar(self):
+    def guardar(self):
         self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
-
-    

@@ -8,12 +8,12 @@ class SapConnector:
         self.connection = self.application.Children(0)
         self.session = self.connection.Children(0)
 
-    def Close_connection(self):
+    def cerrar_conexion(self):
         self.connection = None
         self.application = None  
         self.SapGuiAuto = None
 
-    def StartTransaction(self,trx):
+    def crear_transaccion(self, trx):
         self.session.findById("wnd[0]").maximize()
         self.session.findById("wnd[0]/tbar[0]/okcd").text = trx
         self.session.findById("wnd[0]").sendVKey(0)

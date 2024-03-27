@@ -2,27 +2,23 @@
 import os
 import sys
 from datetime import datetime
-
 # Import Utils 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Utils', '')))
-import finish_process as f
-import json_magnament as j
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), params.BACK_TWO_FOLDERS, params.UTILS_STR, '')))
+import finish_process as f # SE PUEDE ELIMINAR
+import json_management as j
 import connector as s
 import post_outputs as po
-
 #Imports Clases
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Clases', '')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), params.BACK_TWO_FOLDERS , params.CLASES_STR, '')))
 import lecturas as l
+import params
 
 date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-
-#Input
-json_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Inputs', 'facturacion.json'))
+json_path = os.path.abspath(os.path.join(os.path.dirname(__file__), params.BACK_TWO_FOLDERS, params.INPUTS_STR, params.FACTURACION_STR_LC , params.JSON_EXT))
 datos = j.read_json(json_path)
 
 # Output dir path / facturacion
-facturacion_output_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Outputs', 'facturacion' , 'facturacion_' + date))
-print(facturacion_output_folder)
+facturacion_output_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), params.BACK_TWO_FOLDERS, params.OUTPUTS_STR, params.FACTURACION_STR_LC , params.FACTURACION_STR_LC + '_' + date))
 os.makedirs(facturacion_output_folder, exist_ok=True)
 
 # Add date to file names
@@ -30,86 +26,75 @@ error_file_pahtName = f"error_log_{date}"
 facturacion_path = f"facturacion_{date}"
 
 # Errors file path
-error_log_path = os.path.join(facturacion_output_folder, error_file_pahtName + ".txt")
+error_log_path = os.path.join(facturacion_output_folder, error_file_pahtName + params.TXT_EXT)
 
 # JSON file path
-json_log_path = os.path.join(facturacion_output_folder, facturacion_path + ".json")
+json_log_path = os.path.join(facturacion_output_folder, facturacion_path + params.JSON_EXT)
 
 #Conexion con SAP
 sap = s.SapConnector()
-
 outputs = []
 errores = [] # Variable para almacenar los errores
-i=0 # Contador
-x=0 # Contador de errores
-
+i = 0 # Contador
+x = 0 # Contador de errores
 
 for row in datos:
     try:
         resultados = []
-        #Crea Objeto Lecturas
-        Lecturas = l.Lecturas(sap)
-
-        Lecturas.trxCreateOrd = row.get('trxCreateOrd', '/nEL01')
-        Lecturas.motivo_Lectura = row.get('motivo_Lectura', '01')
-        Lecturas.fecha_Ord_Lectura_Desde = row.get('fecha_Ord_Lectura_Desde', '31.01.2023')
-        Lecturas.fecha_Ord_Lectura_Hasta = row.get('fecha_Ord_Lectura_Hasta', '')
-        Lecturas.trxCargaLecturas = row.get('trxCargaLecturas', '/nEL28')
-        Lecturas.ins = row.get('INS', '')
-        Lecturas.cc = row.get('CC', '')
-
-        
-        Lecturas.lectura_Pot_P = row.get('lectura_Pot_P', '1000')
-        Lecturas.lectura_Pot_R = row.get('lectura_Pot_R', '150')
-        Lecturas.lectura_Pot_V = row.get('lectura_Pot_V', '350')
-        Lecturas.lectura_E_act_P = row.get('lectura_E_act_P', '2500')
-        Lecturas.lectura_E_act_R = row.get('lectura_E_act_R', '2000')
-        Lecturas.lectura_E_act_V = row.get('lectura_E_act_V', '3000')
-        Lecturas.lectura_Pot_P2 = row.get('lectura_Pot_P2', '')
-        Lecturas.lectura_Pot_R2 = row.get('lectura_Pot_R2', '')
-        Lecturas.lectura_Pot_V2 = row.get('lectura_Pot_V2', '')
-        Lecturas.lectura_E_act_P2 = row.get('lectura_E_act_P2', '')
-        Lecturas.lectura_E_act_R2 = row.get('lectura_E_act_R2', '')
-        Lecturas.lectura_E_act_V2 = row.get('lectura_E_act_V2', '')
-        Lecturas.lectura_E_act_P3 = row.get('lectura_E_act_P3', '')
-        Lecturas.lectura_E_act_R3 = row.get('lectura_E_act_R3', '')
-        Lecturas.lectura_E_act_V3 = row.get('lectura_E_act_V3', '')
-        Lecturas.lectura_E_act_P4 = row.get('lectura_E_act_P4', '')
-        Lecturas.lectura_E_act_R4 = row.get('lectura_E_act_R4', '')
-        Lecturas.lectura_E_act_V4 = row.get('lectura_E_act_V4', '')
-        Lecturas.lectura_E_react = row.get('lectura_E_react', '7500')
-        
-        Lecturas.trxCalculo = row.get('trxCalculo', '/nEA00')
-        Lecturas.fecha_Calculo = row.get('fecha_Calculo', '10.02.2023')
-        Lecturas.trxFactura = row.get('trxFactura', '/nEA19')
-        Lecturas.clave_rec = row.get('clave_rec', '240321-001')
-
-
-        #Crear Orden de Lectura
-        sap.StartTransaction(Lecturas.trxCreateOrd)
-        Lecturas.CreaOrdenLectura()
-        resultados.append("Orden de lectura : "+ Lecturas.fecha_Ord_Lectura_Desde)
-
-        #Carga Lecturas
-        sap.StartTransaction(Lecturas.trxCargaLecturas)
-        Lecturas.CargaLecturas()
+        # OBJETO DE LECTURAS
+        lecturas = l.Lecturas(sap)
+        lecturas.trx_create_ord = row.get('trxCreateOrd', '/nEL01')
+        lecturas.motivo_lectura = row.get('motivo_Lectura', '01')
+        lecturas.fecha_ord_lectura_desde = row.get('fecha_Ord_Lectura_Desde', '31.01.2023')
+        lecturas.fecha_ord_lectura_hasta = row.get('fecha_Ord_Lectura_Hasta', '')
+        lecturas.trx_carga_lecturas = row.get('trxCargaLecturas', '/nEL28')
+        lecturas.ins = row.get('INS', '')
+        lecturas.cc = row.get('CC', '')
+        lecturas.lectura_pot_p = row.get('lectura_Pot_P', '1000')
+        lecturas.lectura_pot_r = row.get('lectura_Pot_R', '150')
+        lecturas.lectura_pot_v = row.get('lectura_Pot_V', '350')
+        lecturas.lectura_e_act_p = row.get('lectura_E_act_P', '2500')
+        lecturas.lectura_e_act_r = row.get('lectura_E_act_R', '2000')
+        lecturas.lectura_e_act_v = row.get('lectura_E_act_V', '3000')
+        lecturas.lectura_pot_p2 = row.get('lectura_Pot_P2', '')
+        lecturas.lectura_pot_r2 = row.get('lectura_Pot_R2', '')
+        lecturas.lectura_pot_v2 = row.get('lectura_Pot_V2', '')
+        lecturas.lectura_e_act_p2 = row.get('lectura_E_act_P2', '')
+        lecturas.lectura_e_act_r2 = row.get('lectura_E_act_R2', '')
+        lecturas.lectura_e_act_v2 = row.get('lectura_E_act_V2', '')
+        lecturas.lectura_e_act_p3 = row.get('lectura_E_act_P3', '')
+        lecturas.lectura_e_act_r3 = row.get('lectura_E_act_R3', '')
+        lecturas.lectura_e_act_v3 = row.get('lectura_E_act_V3', '')
+        lecturas.lectura_e_act_p4 = row.get('lectura_E_act_P4', '')
+        lecturas.lectura_e_act_r4 = row.get('lectura_E_act_R4', '')
+        lecturas.lectura_e_act_v4 = row.get('lectura_E_act_V4', '')
+        lecturas.lectura_e_react = row.get('lectura_E_react', '7500')
+        lecturas.trx_calculo = row.get('trxCalculo', '/nEA00')
+        lecturas.fecha_calculo = row.get('fecha_Calculo', '10.02.2023')
+        lecturas.trx_factura = row.get('trxFactura', '/nEA19')
+        lecturas.clave_rec = row.get('clave_rec', '240321-001')
+        ### CREAR ORDEN DE LECTURA
+        sap.crear_transaccion(lecturas.trx_create_ord)
+        lecturas.crear_orden_lectura()
+        resultados.append("Orden de lectura : "+ lecturas.fecha_ord_lectura_desde)
+        ### CARGA DE LECTURAS
+        sap.StartTransaction(lecturas.trx_carga_lecturas)
+        lecturas.carga_lecturas()
         resultados.append("Lecturas cargadas")
-
-
-        #Generar Calculo
-        sap.StartTransaction(Lecturas.trxCalculo)
-        Lecturas.GeneraCalculo()
-        resultados.append("Calculo generado: " + Lecturas.fecha_Calculo)
+        ### GENERAR CALCULO
+        sap.crear_transaccion(lecturas.trx_calculo)
+        lecturas.genera_calculo()
+        resultados.append("Calculo generado: " + lecturas.fecha_calculo)
 
         #Generar Facturas
-        sap.StartTransaction(Lecturas.trxFactura)
-        Lecturas.GenerarFactura(descargar=True, path_destino = facturacion_output_folder)
+        sap.crear_transaccion(lecturas.trx_factura)
+        lecturas.generar_factura(descargar=True, path_destino = facturacion_output_folder)
 
-        row['doc_calculo'] = Lecturas.doc_calculo
-        j.escribir_jsonFacturacion(json_path=json_path, column='doc_calculo', value= Lecturas.doc_calculo, i = i)
-        j.escribir_jsonFacturacion(json_path=json_path, column='doc_impresion', value= Lecturas.doc_impresion, i = i)
+        row['doc_calculo'] = lecturas.doc_calculo
+        j.escribir_json_facturacion(json_path=json_path, column='doc_calculo', value= lecturas.doc_calculo, i = i)
+        j.escribir_json_facturacion(json_path=json_path, column='doc_impresion', value= lecturas.doc_impresion, i = i)
         
-        resultados.append("Factura: " + Lecturas.doc_impresion)
+        resultados.append("Factura: " + lecturas.doc_impresion)
         outputs.append(resultados)
 
     except Exception as e:
@@ -122,16 +107,14 @@ for row in datos:
         continue
 
     i = i + 1
-    #Fin Loop
+    # FIN LOOP FOR
+sap.crear_transaccion("/n")
+sap.cerrar_conexion()
 
+resultados.append({params.TOTAL_ERROR_MESSAGE: x})
+errores.append({params.TOTAL_ERROR_MESSAGE: x})
 
-sap.StartTransaction("/n")
-sap.Close_connection()
-
-resultados.append({'Total de errores registrados': x})
-errores.append(f"Total de errores registrados: {x}\n")
-
-# Registro de errores
-po.post_outputs(content_file=errores, path=error_log_path, event='POST', proceso="facturacion")
-# Registro de json
-po.post_outputs(content_file=resultados, path=json_log_path, event='COPY', proceso="facturacion")
+# CARGO REGISTRO DE ERRORES
+po.post_outputs(content_file=errores, path=error_log_path, event=params.EVENT_POST, proceso=params.PROCESS_FACTURACION)
+# CARGO REGISTRO DE JSON
+po.post_outputs(content_file=resultados, path=json_log_path, event=params.EVENT_COPY, proceso=params.PROCESS_FACTURACION)

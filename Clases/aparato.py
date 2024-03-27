@@ -4,21 +4,21 @@ class Aparato:
         self.id = id
         self.sap = sap
         self.material = material
-        self.grupo_Numerador = ""
-        self.trxModificarGN = "/nEG41"
+        self.grupo_numerador = ""
+        self.trx_modificar_gn = "/nEG41"
     
-    def UpdateGN(self, grupo_num):
-        self.grupo_Numerador = grupo_num 
+    def update_gn(self, grupo_num):
+        self.grupo_numerador = grupo_num 
         self.sap.session.findById("wnd[0]/usr/ctxtREG42_INTERFACE-DEVICE").text = self.id
         self.sap.session.findById("wnd[0]/usr/ctxtREG42_INTERFACE-MATNR").text = self.material
         self.sap.session.findById("wnd[0]/usr/ctxtREG42_INTERFACE-MATNR").setFocus
         self.sap.session.findById("wnd[0]/usr/ctxtREG42_INTERFACE-MATNR").caretPosition = 6
         self.sap.session.findById("wnd[0]/tbar[0]/btn[0]").press()
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIB_DEVMOD/tabpDEV_LEV/ssubTABSTRIP_SUB:SAPLEG42:0300/ctxtREG42_DEV-ZWGRUPPE").setFocus()
-        self.sap.session.findById("wnd[0]/usr/tabsTABSTRIB_DEVMOD/tabpDEV_LEV/ssubTABSTRIP_SUB:SAPLEG42:0300/ctxtREG42_DEV-ZWGRUPPE").text = self.grupo_Numerador
+        self.sap.session.findById("wnd[0]/usr/tabsTABSTRIB_DEVMOD/tabpDEV_LEV/ssubTABSTRIP_SUB:SAPLEG42:0300/ctxtREG42_DEV-ZWGRUPPE").text = self.grupo_numerador
         self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
     
-    def UpdateNumeradorGen(self):
+    def update_numerador_gen(self):
         self.sap.session.findById("wnd[0]/usr/ctxtREG42_INTERFACE-DEVICE").text = self.id
         self.sap.session.findById("wnd[0]/usr/ctxtREG42_INTERFACE-MATNR").text = self.material
         self.sap.session.findById("wnd[0]/usr/ctxtREG42_INTERFACE-MATNR").setFocus
@@ -33,6 +33,3 @@ class Aparato:
         self.sap.session.findById("wnd[1]/tbar[0]/btn[0]").press()
         self.sap.session.findById("wnd[1]/tbar[0]/btn[11]").press()
         self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
-
-
-

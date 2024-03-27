@@ -6,7 +6,7 @@ def read_json(json_path):
         return datos_json
 
 
-def escribir_json(json_path,columna,i,valor):
+def escribir_json(json_path,columna, i, valor):
     with open(json_path, 'r+') as f:
         datos_json = json.load(f)
         datos_json[i]['OBJETOS'][columna] = valor
@@ -14,7 +14,7 @@ def escribir_json(json_path,columna,i,valor):
         json.dump(datos_json, f, indent=4)
         f.truncate()
 
-def escribir_jsonObjetos(json_path,rowObj,i):
+def escribir_json_obj(json_path, rowObj,i):
     with open(json_path, 'r+') as f:
         datos_json = json.load(f)
         for clave,valor in rowObj.items():
@@ -23,7 +23,7 @@ def escribir_jsonObjetos(json_path,rowObj,i):
         json.dump(datos_json, f, indent=4)
         f.truncate()
 
-def escribir_jsonFacturacion(json_path,column,value,i):
+def escribir_json_facturacion(json_path, column, value, i):
     with open(json_path, 'r+') as f:
         datos_json = json.load(f)
         datos_json[i][column] = value
