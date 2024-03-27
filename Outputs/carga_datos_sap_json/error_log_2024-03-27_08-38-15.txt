@@ -1,0 +1,2 @@
+Error: (-2147352567, 'Ocurrió una excepción.', (619, 'SAP Frontend Server', 'The control could not be found by id.', 'C:\\Program Files (x86)\\SAP\\FrontEnd\\SAPgui\\sapfront.HLP', 393215, 0), None) | Fila: 0 | Objetos Creados: {'IC': '200001277', 'OC': '610000000002298', 'CC': '700011297', 'PS': '600002212', 'UA': '650000000002264', 'INS': '400002181', 'CONTRATO': '300002109', 'CP': ''}
+Total de errores registrados: 1

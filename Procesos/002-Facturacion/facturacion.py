@@ -20,11 +20,10 @@ date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 json_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Inputs', 'facturacion.json'))
 datos = j.read_json(json_path)
 
-# Output dir path
-output_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Outputs'))
-
 # Output dir path / facturacion
-facturacion_output_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Outputs', 'facturacion'))
+facturacion_output_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Outputs', 'facturacion' , 'facturacion_' + date))
+print(facturacion_output_folder)
+os.makedirs(facturacion_output_folder, exist_ok=True)
 
 # Add date to file names
 error_file_pahtName = f"error_log_{date}"
@@ -56,6 +55,9 @@ for row in datos:
         Lecturas.fecha_Ord_Lectura_Desde = row.get('fecha_Ord_Lectura_Desde', '31.01.2023')
         Lecturas.fecha_Ord_Lectura_Hasta = row.get('fecha_Ord_Lectura_Hasta', '')
         Lecturas.trxCargaLecturas = row.get('trxCargaLecturas', '/nEL28')
+        Lecturas.ins = row.get('INS', '')
+        Lecturas.cc = row.get('CC', '')
+
         
         Lecturas.lectura_Pot_P = row.get('lectura_Pot_P', '1000')
         Lecturas.lectura_Pot_R = row.get('lectura_Pot_R', '150')
@@ -82,29 +84,26 @@ for row in datos:
         Lecturas.trxFactura = row.get('trxFactura', '/nEA19')
         Lecturas.clave_rec = row.get('clave_rec', '240321-001')
 
-        
-        INS = row['INS']
-        CC = row['CC']
 
         #Crear Orden de Lectura
         sap.StartTransaction(Lecturas.trxCreateOrd)
-        Lecturas.CreaOrdenLectura(INS)
+        Lecturas.CreaOrdenLectura()
         resultados.append("Orden de lectura : "+ Lecturas.fecha_Ord_Lectura_Desde)
 
         #Carga Lecturas
         sap.StartTransaction(Lecturas.trxCargaLecturas)
-        Lecturas.CargaLecturas(INS)
+        Lecturas.CargaLecturas()
         resultados.append("Lecturas cargadas")
 
 
         #Generar Calculo
         sap.StartTransaction(Lecturas.trxCalculo)
-        Lecturas.GeneraCalculo(INS)
+        Lecturas.GeneraCalculo()
         resultados.append("Calculo generado: " + Lecturas.fecha_Calculo)
 
         #Generar Facturas
         sap.StartTransaction(Lecturas.trxFactura)
-        Lecturas.GenerarFactura(CC, descargar=True)
+        Lecturas.GenerarFactura(descargar=True, path_destino = facturacion_output_folder)
 
         row['doc_calculo'] = Lecturas.doc_calculo
         j.escribir_jsonFacturacion(json_path,Lecturas.doc_calculo,i)
@@ -133,5 +132,6 @@ errores.append(f"Total de errores registrados: {x}\n")
 
 # Registro de errores
 po.post_outputs(content_file=errores, path=error_log_path, event='POST', proceso="facturacion")
+
 # Registro de json
 po.post_outputs(content_file=resultados, path=json_log_path, event='COPY', proceso="facturacion")

@@ -3,17 +3,17 @@
         "OBJETOS": {
             "IC": "200001277",
             "OC": "610000000002298",
-            "CC": "700011299",
-            "PS": "600002214",
-            "UA": "650000000002266",
-            "INS": "400002183",
-            "CONTRATO": "300002111",
-            "CP": "0000041055"
+            "CC": "",
+            "PS": "",
+            "UA": "",
+            "INS": "",
+            "CONTRATO": "",
+            "CP": ""
         },
         "Create_CC": {
             "tp_cta_contrato": "GD",
             "estrRegion": "S6020A22",
-            "nombre": "&PRUEBAFACT F-006",
+            "nombre": "&PRUEBAFACT F-005",
             "cdc": "CU",
             "catcta": "G002",
             "condicion_pago": "Z002",
@@ -30,7 +30,7 @@
             "clae": "239410"
         },
         "Create_UA": {
-            "denominacion": "&PRUEBAFACT F-006",
+            "denominacion": "&PRUEBAFACT F-005",
             "centro_empl": "6000"
         },
         "Create_INST": {
@@ -101,7 +101,7 @@
         },
         "Create_montaje": {
             "f_alta": "01.01.2023",
-            "dipositivo": "750",
+            "dipositivo": "820",
             "tp_aparato": "700034",
             "motivo": "05"
         },
@@ -110,7 +110,7 @@
             "periodo": "00",
             "contratadaP": "50",
             "contratadaFP": "50",
-            "descripcion": "&PRUEBAFACT F-006"
+            "descripcion": "&PRUEBAFACT F-005"
         }
     }
 ]

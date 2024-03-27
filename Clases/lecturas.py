@@ -1,8 +1,14 @@
+import os
+import shutil
+import glob
+
 class Lecturas:
   
   def __init__(self,sap):
     self.id = ""
     self.sap = sap
+    self.ins = ""
+    self.cc = ""
     self.trxCreateOrd = "/nEL01"
     self.motivo_Lectura = "01"
     self.fecha_Ord_Lectura_Desde = "31.01.2023"
@@ -32,10 +38,11 @@ class Lecturas:
     self.trxFactura = "/nEA19"
     self.clave_rec = "240321-001"
     self.doc_calculo = ""
+    self.doc_impresion = ""
   
-  def CreaOrdenLectura(self,INS):
+  def CreaOrdenLectura(self):
     self.sap.session.findById("wnd[0]/usr/radRELX1-ANLAGE_T").select()
-    self.sap.session.findById("wnd[0]/usr/ctxtREL01-ANLAGE").text = INS
+    self.sap.session.findById("wnd[0]/usr/ctxtREL01-ANLAGE").text = self.ins
     self.sap.session.findById("wnd[0]/usr/ctxtREL01-ABLESGR").text = self.motivo_Lectura
     self.sap.session.findById("wnd[0]/tbar[1]/btn[8]").press()
     self.sap.session.findById("wnd[0]/usr/cntlD0100_CONTAINER/shellcont/shell").firstVisibleRow = 12
@@ -52,9 +59,9 @@ class Lecturas:
     self.sap.session.findById("wnd[0]/usr/cntlD0100_CONTAINER/shellcont/shell").clickCurrentCell()
     self.sap.session.findById("wnd[0]/tbar[1]/btn[19]").press()
     
-  def CargaLecturas(self,INS):
+  def CargaLecturas(self):
     self.sap.session.findById("wnd[0]/usr/radRELX1-ANLAGE_T").select()
-    self.sap.session.findById("wnd[0]/usr/ctxtREL28D-ANLAGE").text = INS
+    self.sap.session.findById("wnd[0]/usr/ctxtREL28D-ANLAGE").text = self.ins
     self.sap.session.findById("wnd[0]/tbar[0]/btn[0]").press()
     self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,0]").text = self.lectura_E_act_R
     self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,1]").text = self.lectura_Pot_R
@@ -69,9 +76,9 @@ class Lecturas:
     self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,0]").caretPosition = 1
     self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
   
-  def GeneraCalculo(self,INS):
+  def GeneraCalculo(self):
     self.sap.session.findById("wnd[0]/usr/radEBISID-ANLAGERAD").select()
-    self.sap.session.findById("wnd[0]/usr/ctxtEBISID-ANLAGE").text = INS
+    self.sap.session.findById("wnd[0]/usr/ctxtEBISID-ANLAGE").text = self.ins
     self.sap.session.findById("wnd[0]/usr/radEBISID-BITRIGRAD").select()
     self.sap.session.findById("wnd[0]/usr/ctxtEBISID-ABRDATS").text = self.fecha_Calculo
     self.sap.session.findById("wnd[0]/usr/ctxtEBISID-ABRDATS").setFocus()
@@ -79,14 +86,32 @@ class Lecturas:
     self.sap.session.findById("wnd[0]/tbar[1]/btn[8]").press()
 
 
-  def DescargarFactura(self):
+  def DescargarFactura(self, path_destino):
     self.sap.session.findById("wnd[1]/tbar[0]/btn[18]").press()
+    self.doc_impresion = self.sap.session.findById("wnd[0]/usr/tabsTAB_PRINTDOC/tabpCMD_HEAD/ssubSUB_PRINTDOC:SAPLE22A:0501/ctxtERDK-OPBEL").text
     self.sap.session.findById("wnd[0]/tbar[1]/btn[24]").press()
     self.sap.session.findById("wnd[1]/usr/ctxtSSFPP-TDDEST").text = "locl"
     self.sap.session.findById("wnd[1]/usr/ctxtSSFPP-TDDEST").caretPosition = 4
     self.sap.session.findById("wnd[1]/tbar[0]/btn[8]").press()
     self.sap.session.findById("wnd[0]/tbar[0]/okcd").text = "PDF!"
     self.sap.session.findById("wnd[0]").sendVKey(0)
+
+    carpeta_temporal = os.path.join(os.getenv('LOCALAPPDATA'), 'Temp')
+    print(carpeta_temporal)
+    
+    patron_pdf = os.path.join(carpeta_temporal, '*smart*.pdf')
+    archivos_pdf = glob.glob(patron_pdf)
+
+    if archivos_pdf:
+      ruta_pdf = archivos_pdf[0]
+      carpeta_destino = path_destino
+      nuevo_nombre = self.ins + "_" + self.doc_impresion + ".pdf"
+      ruta_destino = os.path.join(carpeta_destino, nuevo_nombre)
+      shutil.move(ruta_pdf, ruta_destino)
+      print("PDF movido exitosamente a la carpeta de destino.")
+    else:
+      print("No se encontraron archivos PDF en la carpeta temporal.")
+
     self.sap.session.findById("wnd[1]").close()
     self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press()
     self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press()
@@ -94,10 +119,10 @@ class Lecturas:
 
 
 
-  def GenerarFactura(self, CC, descargar):
+  def GenerarFactura(self, descargar, path_destino):
     self.sap.session.findById("wnd[0]/usr/ctxtBUDAT").text = self.fecha_Calculo
     self.sap.session.findById("wnd[0]/usr/ctxtFIKEY").text = self.clave_rec 
-    self.sap.session.findById("wnd[0]/usr/ctxtVKONT").text = CC
+    self.sap.session.findById("wnd[0]/usr/ctxtVKONT").text = self.cc
     self.sap.session.findById("wnd[0]/usr/ctxtVKONT").setFocus()
     self.sap.session.findById("wnd[0]/usr/ctxtVKONT").caretPosition = 9
     self.sap.session.findById("wnd[0]/tbar[1]/btn[8]").press()
@@ -105,6 +130,9 @@ class Lecturas:
     self.doc_calculo = self.sap.session.findById("wnd[1]/usr/lbl[24,1]").text
     self.sap.session.findById("wnd[1]/tbar[0]/btn[0]").press()
     if descargar:
-      self.DescargarFactura()
+      self.DescargarFactura(path_destino)
     else:
+      self.sap.session.findById("wnd[1]/tbar[0]/btn[18]").press()
+      self.doc_impresion = self.sap.session.findById("wnd[0]/usr/tabsTAB_PRINTDOC/tabpCMD_HEAD/ssubSUB_PRINTDOC:SAPLE22A:0501/ctxtERDK-OPBEL").text
+      self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press()
       self.sap.session.findById("wnd[1]/tbar[0]/btn[0]").press()
