@@ -197,9 +197,11 @@ for row in datos:
             UbicacionAparatoGen.CreateUA(PuntoSuministro.id, obj_data['OC'],UbicacionAparato.denominacion + " - GEN")
             UbicacionAparatoGen.UpdateUA() 
 
-        #Guarda PS    
-        row['OBJETOS']['UA'] = UbicacionAparato.id + UbicacionAparatoGen.id if UbicacionAparatoGen is not None else UbicacionAparato.id
-
+        #Guarda PS
+        row['OBJETOS']['UA'] = UbicacionAparato.id
+        if f_flag_prosumidor:
+            row['OBJETOS']['UA_GEN'] = UbicacionAparatoGen.id     
+            
 
         # #Instalacion
         sap.StartTransaction(Instalacion.trxCreateINS)
