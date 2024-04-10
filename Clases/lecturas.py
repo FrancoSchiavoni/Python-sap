@@ -107,7 +107,7 @@ class Lecturas:
       carpeta_destino = path_destino
       nuevo_nombre = self.ins + "_" + self.doc_impresion + ".pdf"
       ruta_destino = os.path.join(carpeta_destino, nuevo_nombre)
-      shutil.move(ruta_pdf, ruta_destino)
+      shutil.copy(ruta_pdf, ruta_destino)
       print("PDF movido exitosamente a la carpeta de destino.")
     else:
       print("No se encontraron archivos PDF en la carpeta temporal.")

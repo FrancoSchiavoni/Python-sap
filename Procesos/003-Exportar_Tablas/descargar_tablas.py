@@ -29,14 +29,18 @@ class FilterInput:
 
 sap = s.SapConnector()
 
-def AplicarFiltro(column, value):
+def AplicarFiltro(column, p_desde, p_hasta ):
     sap.session.findById("wnd[0]/usr/ctxtGD_ADD_COLUMN").text = column
     sap.session.findById("wnd[0]/usr/ctxtGD_ADD_COLUMN").setFocus()
     sap.session.findById("wnd[0]/usr/ctxtGD_ADD_COLUMN").caretPosition = 8
     sap.session.findById("wnd[0]").sendVKey(0)
-    sap.session.findById("wnd[0]/usr/tblSAPLSE16NSELFIELDS_TC/ctxtGS_SELFIELDS-LOW[2,1]").text = value
+    sap.session.findById("wnd[0]/usr/tblSAPLSE16NSELFIELDS_TC/ctxtGS_SELFIELDS-LOW[2,1]").text = p_desde
     sap.session.findById("wnd[0]/usr/tblSAPLSE16NSELFIELDS_TC/ctxtGS_SELFIELDS-LOW[2,1]").setFocus()
     sap.session.findById("wnd[0]/usr/tblSAPLSE16NSELFIELDS_TC/ctxtGS_SELFIELDS-LOW[2,1]").caretPosition = 2
+    sap.session.findById("wnd[0]/usr/tblSAPLSE16NSELFIELDS_TC/ctxtGS_SELFIELDS-LOW[2,2]").text = p_hasta
+    sap.session.findById("wnd[0]/usr/tblSAPLSE16NSELFIELDS_TC/ctxtGS_SELFIELDS-LOW[2,2]").setFocus()
+    sap.session.findById("wnd[0]/usr/tblSAPLSE16NSELFIELDS_TC/ctxtGS_SELFIELDS-LOW[2,2]").caretPosition = 2
+
     sap.session.findById("wnd[0]").sendVKey(0)
 
 sap.StartTransaction("/nSE16N")
@@ -54,7 +58,7 @@ for table_data in datos["tables"]:
     sap.session.findById("wnd[0]").sendVKey(0)
 
     for column, filter_range in InputData.filters.items():
-        AplicarFiltro(column, filter_range[0])
+        AplicarFiltro(column, filter_range[0], filter_range[1])
     
     sap.session.findById("wnd[0]/tbar[1]/btn[8]").press()
     sap.session.findById("wnd[0]/usr/cntlRESULT_LIST/shellcont/shell").pressToolbarContextButton("&MB_EXPORT")
@@ -68,6 +72,4 @@ for table_data in datos["tables"]:
 
 
 sap.StartTransaction("/n")
-connection = None
-application = None
-SapGuiAuto = None
+sap.Close_connection()
