@@ -289,6 +289,7 @@ for row in datos:
         error_message = f"Error: {e} | Fila: {i} | Objetos Creados: {row['OBJETOS']}\n"
         # Agregar el mensaje de error a la lista de errores
         errores.append(error_message)
+        sap.StartTransaction("/n")
         x += 1
         i += 1
         continue
