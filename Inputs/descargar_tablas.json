@@ -13,9 +13,9 @@
         {
             "name": "EQUI",
             "filters": {
-                "MATNR": [
-                    "700034",
-                    "700034"
+                "GERWECHS": [
+                    "",
+                    ""
                 ]
             },
             "maxrows": "5000"
