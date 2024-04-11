@@ -2,6 +2,7 @@
     {
         "INS": "400002183",
         "CC": "700011299",
+        "tipo_cliente": "GD-COOP-PROSU",
         "fecha_Ord_Lectura_Desde": "28.02.2023",
         "fecha_Calculo": "15.03.2023",
         "lectura_Pot_P": "1000",

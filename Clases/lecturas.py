@@ -9,6 +9,7 @@ class Lecturas:
     self.sap = sap
     self.ins = ""
     self.cc = ""
+    self.tipo_cliente = ""
     self.trxCreateOrd = "/nEL01"
     self.motivo_Lectura = "01"
     self.fecha_Ord_Lectura_Desde = "31.01.2023"
@@ -59,7 +60,7 @@ class Lecturas:
     self.sap.session.findById("wnd[0]/usr/cntlD0100_CONTAINER/shellcont/shell").clickCurrentCell()
     self.sap.session.findById("wnd[0]/tbar[1]/btn[19]").press()
     
-  def CargaLecturas(self):
+  def CargaLecturasGD(self, mdt):
     self.sap.session.findById("wnd[0]/usr/radRELX1-ANLAGE_T").select()
     self.sap.session.findById("wnd[0]/usr/ctxtREL28D-ANLAGE").text = self.ins
     self.sap.session.findById("wnd[0]/tbar[0]/btn[0]").press()
@@ -71,10 +72,64 @@ class Lecturas:
     self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,5]").text = self.lectura_Pot_V
     self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,6]").text = self.lectura_E_act_R
     self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
+    if mdt == "398":
+      self.sap.session.findById("wnd[0]/tbar[0]/btn[0]").press()
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,0]").text = "0"
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,0]").caretPosition = 1
+      self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
+
+  def CargaLecturasCOOP(self):
+    self.sap.session.findById("wnd[0]/usr/radRELX1-ANLAGE_T").select()
+    self.sap.session.findById("wnd[0]/usr/ctxtREL28D-ANLAGE").text = self.ins
     self.sap.session.findById("wnd[0]/tbar[0]/btn[0]").press()
-    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,0]").text = "0"
-    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,0]").caretPosition = 1
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,0]").text  = self.lectura_Pot_P
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,1]").text  = self.lectura_Pot_R
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,2]").text  = self.lectura_E_react
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,3]").text  = self.lectura_E_act_P
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,4]").text  = self.lectura_E_act_R
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,5]").text  = self.lectura_E_act_V
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,6]").text  = self.lectura_E_act_P2
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,7]").text  = self.lectura_E_act_R2
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,8]").text  = self.lectura_E_act_V2
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,9]").text  = self.lectura_E_act_P3
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,10]").text = self.lectura_E_act_R3
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,11]").text = self.lectura_E_act_V3
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,12]").text = self.lectura_E_act_P4
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,13]").text = self.lectura_E_act_R4
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,14]").text = self.lectura_E_act_V4
     self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
+  
+  def CargaLecturasPROSU(self,mdt):
+    self.sap.session.findById("wnd[0]/usr/radRELX1-ANLAGE_T").select()
+    self.sap.session.findById("wnd[0]/usr/ctxtREL28D-ANLAGE").text = self.ins
+    self.sap.session.findById("wnd[0]/tbar[0]/btn[0]").press()
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,0]").text = self.lectura_E_act_R
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,1]").text = self.lectura_Pot_R
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,2]").text = self.lectura_E_act_P
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,3]").text = self.lectura_Pot_P
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,4]").text = self.lectura_E_act_V
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,5]").text = self.lectura_Pot_V
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,6]").text = self.lectura_E_react
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,7]").text = self.lectura_E_act_R2
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,8]").text = self.lectura_Pot_R2
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,9]").text = self.lectura_E_act_P2
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,10]").text = self.lectura_Pot_P2
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,11]").text = self.lectura_E_act_V2
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,12]").text = self.lectura_Pot_V2
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,15]").text = self.lectura_E_act_P3
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,16]").text = self.lectura_E_act_R3
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,14]").text = self.lectura_E_act_V3
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,14]").setFocus()
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,14]").caretPosition = 3
+    self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
+    if mdt == "398":
+      self.sap.session.findById("wnd[0]").sendVKey(0)
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,0]").text = "0"
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,1]").text = "0"
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,1]").setFocus()
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,1]").caretPosition = 1
+      self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
+
   
   def GeneraCalculo(self):
     self.sap.session.findById("wnd[0]/usr/radEBISID-ANLAGERAD").select()

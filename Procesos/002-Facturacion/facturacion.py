@@ -35,6 +35,9 @@ error_log_path = os.path.join(facturacion_output_folder, error_file_pahtName + "
 # JSON file path
 json_log_path = os.path.join(facturacion_output_folder, facturacion_path + ".json")
 
+#Input Parameter MDT
+mdt = sys.argv[1]
+
 #Conexion con SAP
 sap = s.SapConnector()
 
@@ -57,8 +60,9 @@ for row in datos:
         Lecturas.trxCargaLecturas = row.get('trxCargaLecturas', '/nEL28')
         Lecturas.ins = row.get('INS', '')
         Lecturas.cc = row.get('CC', '')
+        Lecturas.tipo_cliente = row.get('tipo_cliente', '')
 
-        
+        Lecturas.lectura_E_react = row.get('lectura_E_react', '7500')
         Lecturas.lectura_Pot_P = row.get('lectura_Pot_P', '1000')
         Lecturas.lectura_Pot_R = row.get('lectura_Pot_R', '150')
         Lecturas.lectura_Pot_V = row.get('lectura_Pot_V', '350')
@@ -92,9 +96,15 @@ for row in datos:
 
         #Carga Lecturas
         sap.StartTransaction(Lecturas.trxCargaLecturas)
-        Lecturas.CargaLecturas()
+        
+        if Lecturas.tipo_cliente == "GD":
+            Lecturas.CargaLecturasGD(mdt)
+        elif Lecturas.tipo_cliente == "COOP":  
+            Lecturas.CargaLecturasCOOP()
+        elif Lecturas.tipo_cliente == "PROSU":  
+            Lecturas.CargaLecturasPROSU(mdt)        
+        
         resultados.append("Lecturas cargadas")
-
 
         #Generar Calculo
         sap.StartTransaction(Lecturas.trxCalculo)

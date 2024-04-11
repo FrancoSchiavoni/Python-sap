@@ -43,6 +43,10 @@ json_log_path = os.path.join(carga_datos_sap_json_output_folder, carga_datos_pat
 json_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Inputs', 'carga_datos_sap.json'))
 datos = j.read_json(json_path)
 
+#Input Parameter MDT
+mdt = sys.argv[1]
+
+
 #Conexion con SAP
 sap = s.SapConnector()
 resultados = []
@@ -243,13 +247,23 @@ for row in datos:
         sap.StartTransaction(Montaje.trxCreateMON)
         Montaje.SetDatosGenerales(UbicacionAparato.id, Instalacion.id)
 
-        #Determina que numeradores debe cargar (Normal/Cooperativa/Prosumidor)
-        if f_flag_prosumidor == True:
-            Montaje.SetNumeradoresProsum()
-        elif Instalacion.tp_tarifa == "GD_T4":
-            Montaje.SetNumeradoresCooperativa()
-        else:
-            Montaje.SetNumeradores()
+        #Determina que numeradores debe cargar segunt mdt y tipo (Normal/Cooperativa/Prosumidor)
+
+        if mdt == "398":
+            if f_flag_prosumidor == True:
+                Montaje.SetNumeradoresProsum()    
+            elif Instalacion.tp_tarifa == "GD_T4":
+                Montaje.SetNumeradoresCooperativa()
+            else:
+                Montaje.SetNumeradores()
+        elif mdt == "390":
+            if f_flag_prosumidor == True:
+                Montaje.SetNumeradoresProsum390()    
+            elif Instalacion.tp_tarifa == "GD_T4":
+                Montaje.SetNumeradoresCooperativa()
+            else:
+                Montaje.SetNumeradores390()
+                     
         Montaje.Guardar()
 
         ### Montaje medidor de Generacion
