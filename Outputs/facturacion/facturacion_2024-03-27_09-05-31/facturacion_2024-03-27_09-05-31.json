@@ -2,7 +2,6 @@
     {
         "INS": "400002183",
         "CC": "700011299",
-        "tipo_cliente": "GD-COOP-PROSU",
         "fecha_Ord_Lectura_Desde": "28.02.2023",
         "fecha_Calculo": "15.03.2023",
         "lectura_Pot_P": "1000",
@@ -105,7 +104,7 @@
         "lectura_E_actR4": "",
         "lectura_E_actV4": "",
         "lectura_E_react": "7500",
-        "doc_calculo": "",
+        "doc_calculo": "020000001092",
         "doc_impresion": ""
     },
     {
@@ -132,7 +131,7 @@
         "lectura_E_actR4": "",
         "lectura_E_actV4": "",
         "lectura_E_react": "7500",
-        "doc_calculo": "",
+        "doc_calculo": "020000001093",
         "doc_impresion": ""
     }
 ]

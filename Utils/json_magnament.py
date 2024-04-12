@@ -23,4 +23,11 @@ def escribir_jsonObjetos(json_path,rowObj,i):
         json.dump(datos_json, f, indent=4)
         f.truncate()
 
+def escribir_jsonFacturacion(json_path,column,value,i):
+    with open(json_path, 'r+') as f:
+        datos_json = json.load(f)
+        datos_json[i][column] = value
+        f.seek(0)
+        json.dump(datos_json, f, indent=4)
+        f.truncate()
 
