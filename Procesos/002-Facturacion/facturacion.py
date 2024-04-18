@@ -36,8 +36,8 @@ error_log_path = os.path.join(facturacion_output_folder, error_file_pahtName + "
 json_log_path = os.path.join(facturacion_output_folder, facturacion_path + ".json")
 
 #Input Parameter MDT
-mdt = sys.argv[1]
-
+#mdt = sys.argv[1]
+mdt = "390"
 #Conexion con SAP
 sap = s.SapConnector()
 
@@ -86,7 +86,7 @@ for row in datos:
         Lecturas.trxCalculo = row.get('trxCalculo', '/nEA00')
         Lecturas.fecha_Calculo = row.get('fecha_Calculo', '10.02.2023')
         Lecturas.trxFactura = row.get('trxFactura', '/nEA19')
-        Lecturas.clave_rec = row.get('clave_rec', '240415-001')
+        Lecturas.clave_rec = row.get('clave_rec', '240418-001')
 
 
         #Crear Orden de Lectura

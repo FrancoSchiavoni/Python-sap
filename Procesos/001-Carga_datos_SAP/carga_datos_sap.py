@@ -44,8 +44,8 @@ json_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'In
 datos = j.read_json(json_path)
 
 #Input Parameter MDT
-mdt = sys.argv[1]
-
+#mdt = sys.argv[1]
+mdt = "390"
 
 #Conexion con SAP
 sap = s.SapConnector()
