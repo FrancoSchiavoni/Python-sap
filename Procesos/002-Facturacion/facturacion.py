@@ -86,7 +86,7 @@ for row in datos:
         Lecturas.trxCalculo = row.get('trxCalculo', '/nEA00')
         Lecturas.fecha_Calculo = row.get('fecha_Calculo', '10.02.2023')
         Lecturas.trxFactura = row.get('trxFactura', '/nEA19')
-        Lecturas.clave_rec = row.get('clave_rec', '240321-001')
+        Lecturas.clave_rec = row.get('clave_rec', '240415-001')
 
 
         #Crear Orden de Lectura
@@ -101,8 +101,11 @@ for row in datos:
             Lecturas.CargaLecturasGD(mdt)
         elif Lecturas.tipo_cliente == "COOP":  
             Lecturas.CargaLecturasCOOP()
-        elif Lecturas.tipo_cliente == "PROSU":  
-            Lecturas.CargaLecturasPROSU(mdt)        
+        elif Lecturas.tipo_cliente == "PROSU": 
+                if mdt =="398": 
+                    Lecturas.CargaLecturasPROSU(mdt)        
+                elif mdt =="390":
+                    Lecturas.CargaLecturasPROSU390(mdt)
         
         resultados.append("Lecturas cargadas")
 

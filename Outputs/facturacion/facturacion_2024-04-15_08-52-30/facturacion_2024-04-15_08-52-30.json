@@ -1,7 +1,7 @@
 [
     {
-        "INS": "400000168",
-        "CC": "700010608",
+        "INS": "400002220",
+        "CC": "700011435",
         "tipo_cliente": "GD",
         "fecha_Ord_Lectura_Desde": "31.01.2022",
         "fecha_Calculo": "10.02.2022",
@@ -24,12 +24,12 @@
         "lectura_E_act_R4": "",
         "lectura_E_act_V4": "",
         "lectura_E_react": "5000",
-        "doc_calculo": "020000000703",
-        "doc_impresion": "10000000383"
+        "doc_calculo": "020000001115",
+        "doc_impresion": "10000000501"
     },
     {
-        "INS": "400000169",
-        "CC": "700010609",
+        "INS": "400002221",
+        "CC": "700011436",
         "tipo_cliente": "PROSU",
         "fecha_Ord_Lectura_Desde": "31.01.2022",
         "fecha_Calculo": "10.02.2022",
@@ -52,12 +52,12 @@
         "lectura_E_act_R4": "",
         "lectura_E_act_V4": "",
         "lectura_E_react": "3000",
-        "doc_calculo": "",
-        "doc_impresion": ""
+        "doc_calculo": "020000001116",
+        "doc_impresion": "10000000502"
     },
     {
-        "INS": "400000170",
-        "CC": "700010610",
+        "INS": "400002222",
+        "CC": "700011437",
         "tipo_cliente": "COOP",
         "fecha_Ord_Lectura_Desde": "31.01.2022",
         "fecha_Calculo": "15.02.2022",
@@ -80,7 +80,7 @@
         "lectura_E_act_R4": "160",
         "lectura_E_act_V4": "161",
         "lectura_E_react": "2500",
-        "doc_calculo": "020000000704",
-        "doc_impresion": "10000000384"
+        "doc_calculo": "020000001117",
+        "doc_impresion": "10000000503"
     }
 ]

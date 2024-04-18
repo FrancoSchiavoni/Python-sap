@@ -1,0 +1,2 @@
+Error: (-2147352567, 'Ocurrió una excepción.', (619, 'SAP Frontend Server', 'The control could not be found by id.', 'C:\\Program Files (x86)\\SAP\\FrontEnd\\SAPgui\\sapfront.HLP', 393215, 0), None) | Fila: 2 | Acciones Realizadas: ['Orden de lectura : 31.01.2022']
+Total de errores registrados: 1

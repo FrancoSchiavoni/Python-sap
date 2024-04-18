@@ -1,0 +1,2 @@
+Error: 'Montaje' object has no attribute 'sapsession' | Fila: 1 | Objetos Creados: {'IC': '241', 'OC': '610000000000164', 'CC': '700010603', 'PS': '600000183', 'UA': '650000000000195', 'UA_GEN': '650000000000196', 'INS': '400000163', 'CONTRATO': '300000108', 'CP': ''}
+Total de errores registrados: 1

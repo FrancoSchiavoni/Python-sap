@@ -1,10 +1,10 @@
 [
     {
-        "INS": "400000168",
-        "CC": "700010608",
+        "INS": "400002220",
+        "CC": "700011435",
         "tipo_cliente": "GD",
-        "fecha_Ord_Lectura_Desde": "31.01.2022",
-        "fecha_Calculo": "10.02.2022",
+        "fecha_Ord_Lectura_Desde": "30.04.2022",
+        "fecha_Calculo": "10.05.2022",
         "lectura_Pot_P": "1000",
         "lectura_Pot_R": "900",
         "lectura_Pot_V": "800",
@@ -24,15 +24,15 @@
         "lectura_E_act_R4": "",
         "lectura_E_act_V4": "",
         "lectura_E_react": "5000",
-        "doc_calculo": "020000000703",
-        "doc_impresion": "10000000383"
+        "doc_calculo": "020000001122",
+        "doc_impresion": "10000000508"
     },
     {
-        "INS": "400000169",
-        "CC": "700010609",
+        "INS": "400002221",
+        "CC": "700011436",
         "tipo_cliente": "PROSU",
-        "fecha_Ord_Lectura_Desde": "31.01.2022",
-        "fecha_Calculo": "10.02.2022",
+        "fecha_Ord_Lectura_Desde": "31.03.2022",
+        "fecha_Calculo": "10.04.2022",
         "lectura_Pot_P": "100",
         "lectura_Pot_R": "100",
         "lectura_Pot_V": "100",
@@ -52,15 +52,15 @@
         "lectura_E_act_R4": "",
         "lectura_E_act_V4": "",
         "lectura_E_react": "3000",
-        "doc_calculo": "",
-        "doc_impresion": ""
+        "doc_calculo": "020000001123",
+        "doc_impresion": "10000000509"
     },
     {
-        "INS": "400000170",
-        "CC": "700010610",
+        "INS": "400002222",
+        "CC": "700011437",
         "tipo_cliente": "COOP",
-        "fecha_Ord_Lectura_Desde": "31.01.2022",
-        "fecha_Calculo": "15.02.2022",
+        "fecha_Ord_Lectura_Desde": "31.03.2022",
+        "fecha_Calculo": "15.04.2022",
         "lectura_Pot_P": "100",
         "lectura_Pot_R": "150",
         "lectura_Pot_V": "",
@@ -80,7 +80,7 @@
         "lectura_E_act_R4": "160",
         "lectura_E_act_V4": "161",
         "lectura_E_react": "2500",
-        "doc_calculo": "020000000704",
-        "doc_impresion": "10000000384"
+        "doc_calculo": "020000001124",
+        "doc_impresion": "10000000510"
     }
 ]
