@@ -333,8 +333,7 @@
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"109",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -376,8 +375,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"110",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -419,8 +417,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"111",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -882,8 +879,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"122",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -1219,8 +1215,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"130",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -1262,8 +1257,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"131",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -1305,8 +1299,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"132",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -1600,8 +1593,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"139",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -1685,8 +1677,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"141",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -1728,8 +1719,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"142",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -1771,8 +1761,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"143",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -1856,8 +1845,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"145",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -1983,8 +1971,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"148",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -2110,8 +2097,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"151",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -2195,8 +2181,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"153",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -2280,8 +2265,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"155",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -2617,8 +2601,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"163",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -2786,8 +2769,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"167",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -2829,8 +2811,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"168",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -2872,8 +2853,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"169",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -2915,8 +2895,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"170",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -3042,8 +3021,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"173",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -3127,8 +3105,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"175",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -3170,8 +3147,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"176",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -3213,8 +3189,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"177",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -3340,8 +3315,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"180",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -3719,8 +3693,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"189",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -3762,8 +3735,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"190",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -3889,8 +3861,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"193",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -3932,8 +3903,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"194",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -4017,8 +3987,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"196",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -4102,8 +4071,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"198",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -4145,8 +4113,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"199",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -4188,8 +4155,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"200",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -4231,8 +4197,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"201",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -4316,8 +4281,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"203",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -4359,8 +4323,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"204",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -4444,8 +4407,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"206",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -4529,8 +4491,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"208",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -4572,8 +4533,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"209",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -4783,8 +4743,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"214",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -5162,8 +5121,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"223",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -5205,8 +5163,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"224",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -5248,8 +5205,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"225",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -5795,8 +5751,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"238",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Reg y Cont <1000 sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -5838,8 +5793,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"239",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"50",			"contratadaFP":"1000",			"descripcion":"CASO: =1000 Cont sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
@@ -5881,8 +5835,7 @@ sólo 13,2 kV"		}
 		"Create_montaje": {
 			"f_alta":"01.01.2022",			"dipositivo":"240",			"dispotivoGen":"",			"tp_aparato":"700034",			"motivo":"05"		},
 		"Create_CP": {
-			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg
-sólo 13,2 kV"		}
+			"fecha_ini":"01.01.2022",			"periodo":"00",			"contratadaP":"1200",			"contratadaFP":"50",			"descripcion":"CASO: >1000 Cont y Reg sólo 13,2 kV"		}
 	},
 	{
 		"OBJETOS": {
