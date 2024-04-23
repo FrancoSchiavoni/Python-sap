@@ -9,6 +9,7 @@ import finish_process as f
 import json_magnament as j
 import connector as s
 import post_outputs as po
+import show_console_logs
 
 #Imports Clases
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Clases', '')))
@@ -22,7 +23,6 @@ datos = j.read_json(json_path)
 
 # Output dir path / facturacion
 facturacion_output_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Outputs', 'facturacion' , 'facturacion_' + date))
-print(facturacion_output_folder)
 os.makedirs(facturacion_output_folder, exist_ok=True)
 
 # Add date to file names
@@ -45,14 +45,13 @@ outputs = []
 errores = [] # Variable para almacenar los errores
 i=0 # Contador
 x=0 # Contador de errores
+total_iterations = len(datos) 
 
-
-for row in datos:
+for iteration, row in enumerate(datos):
     try:
         resultados = []
         #Crea Objeto Lecturas
         Lecturas = l.Lecturas(sap)
-
         Lecturas.trxCreateOrd = row.get('trxCreateOrd', '/nEL01')
         Lecturas.motivo_Lectura = row.get('motivo_Lectura', '01')
         Lecturas.fecha_Ord_Lectura_Desde = row.get('fecha_Ord_Lectura_Desde', '31.01.2023')
@@ -61,7 +60,6 @@ for row in datos:
         Lecturas.ins = row.get('INS', '')
         Lecturas.cc = row.get('CC', '')
         Lecturas.tipo_cliente = row.get('tipo_cliente', '')
-
         Lecturas.lectura_E_react = row.get('lectura_E_react', '7500')
         Lecturas.lectura_Pot_P = row.get('lectura_Pot_P', '1000')
         Lecturas.lectura_Pot_R = row.get('lectura_Pot_R', '150')
@@ -82,12 +80,10 @@ for row in datos:
         Lecturas.lectura_E_act_R4 = row.get('lectura_E_act_R4', '')
         Lecturas.lectura_E_act_V4 = row.get('lectura_E_act_V4', '')
         Lecturas.lectura_E_react = row.get('lectura_E_react', '7500')
-        
         Lecturas.trxCalculo = row.get('trxCalculo', '/nEA00')
         Lecturas.fecha_Calculo = row.get('fecha_Calculo', '10.02.2023')
         Lecturas.trxFactura = row.get('trxFactura', '/nEA19')
         Lecturas.clave_rec = row.get('clave_rec', '240418-001')
-
 
         #Crear Orden de Lectura
         sap.StartTransaction(Lecturas.trxCreateOrd)
@@ -124,12 +120,15 @@ for row in datos:
         
         resultados.append("Factura: " + Lecturas.doc_impresion)
         outputs.append(resultados)
+        # Llamamos a mostrar_progreso después de cada iteración
+        show_console_logs.show_iteration_bar(iteration, total_iterations)
 
     except Exception as e:
         # Manejo de excepción
-        error_message = f"Error: {e} | Fila: {i} | Acciones Realizadas: {resultados}\n"
+        description = f"{row.get('INS', '')} -- Error: {e} | Fila: {iteration} | Acciones Realizadas: {resultados}\n"
         # Agregar el mensaje de error a la lista de errores
-        errores.append(error_message)
+        show_console_logs.show_error(e)
+        po.post_outputs(description=description, path=error_log_path, event='POST', proceso="facturacion")
         sap.StartTransaction("/n")
         x += 1
         i += 1
@@ -138,14 +137,13 @@ for row in datos:
     i = i + 1
     #Fin Loop
 
-
 sap.StartTransaction("/n")
 sap.Close_connection()
 
 resultados.append({'Total de errores registrados': x})
-errores.append(f"Total de errores registrados: {x}\n")
+# errores.append(f"Total de errores registrados: {x}\n")
 
-# Registro de errores
-po.post_outputs(content_file=errores, path=error_log_path, event='POST', proceso="facturacion")
+# Registro total de errores
+po.post_outputs(description=(f"Total de errores registrados: {x}\n"), path=error_log_path, event='POST', proceso="facturacion")
 # Registro de json
 po.post_outputs(content_file=resultados, path=json_log_path, event='COPY', proceso="facturacion")
