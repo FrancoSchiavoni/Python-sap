@@ -1,19 +1,9 @@
 {
     "tables": [
         {
-            "name": "EQUI",
+            "name": "ERDK",
             "filters": {
-                "MATNR": [
-                    "700034",
-                    "700034"
-                ]
-            },
-            "maxrows": "5000"
-        },
-        {
-            "name": "EQUI",
-            "filters": {
-                "GERWECHS": [
+                "OPBEL": [
                     "",
                     ""
                 ]

@@ -86,7 +86,7 @@ for row in datos:
         CuentaContrato.togru = cc_data.get('togru', 'Z001')
         CuentaContrato.reclamacion = cc_data.get('reclamacion', 'Z1')
         CuentaContrato.mail = cc_data.get('mail', 'MAIL')
-        CuentaContrato.bloqueo = cc_data.get('bloqueo_interes', '')
+        CuentaContrato.bloqueo_interes = cc_data.get('bloqueo_interes', '')
 
         # Objeto Punto Suministro
         PuntoSuministro = ps.PuntoSuministro(sap)
