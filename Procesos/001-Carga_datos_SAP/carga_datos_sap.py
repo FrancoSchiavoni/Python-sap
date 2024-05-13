@@ -9,6 +9,8 @@ import finish_process as f
 import post_outputs as po
 import json_magnament as j
 import connector as s
+import show_console_logs
+
 
 #Imports Clases
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Clases', '')))
@@ -49,12 +51,16 @@ mdt = "390"
 
 #Conexion con SAP
 sap = s.SapConnector()
-resultados = []
+outputs = []
 errores = [] # Variable para almacenar los errores
 i=0 # Contador
 x=0 # Contador de errores
-for row in datos:
+
+total_iterations = len(datos) 
+
+for iteration, row in enumerate(datos):
     try:
+        resultados = []
         # Objeto Cuenta Contrato
         CuentaContrato = cc.CuentaContrato(sap)
         cc_data = row.get('Create_CC', {})
@@ -292,17 +298,21 @@ for row in datos:
         row['OBJETOS']['CP'] = ContratoPotencia.id #Guarda CP
 
         
-        
         #Guarda Valores
         resultados.append(row['OBJETOS'])
         #Escribir Json
         j.escribir_jsonObjetos(json_path,row['OBJETOS'],i)
+        outputs.append(resultados)
+
+        # Llamamos a mostrar_progreso después de cada iteración
+        show_console_logs.show_iteration_bar(iteration, total_iterations)
     
     except Exception as e:
         # Manejo de excepción
-        error_message = f"Error: {e} | Fila: {i} | Objetos Creados: {row['OBJETOS']}\n"
+        description = f"Error: {e} | Fila: {i} | Objetos Creados: {row['OBJETOS']}\n"
         # Agregar el mensaje de error a la lista de errores
-        errores.append(error_message)
+        show_console_logs.show_error(e)
+        po.post_outputs(description=description, path=error_log_path, event='POST', proceso="carga_datos_sap")
         sap.StartTransaction("/n")
         x += 1
         i += 1
@@ -315,12 +325,12 @@ sap.StartTransaction("/n")
 sap.Close_connection()
 
 resultados.append({'Total de errores registrados': x})
-errores.append(f"Total de errores registrados: {x}\n")
 
 # Registro de errores
-po.post_outputs(content_file=errores, path=error_log_path, event='POST', proceso="carga_datos_sap")
+po.post_outputs(description=(f"Total de errores registrados: {x}\n"), path=error_log_path, event='POST', proceso="facturacion")
+
 # Registro de json
-po.post_outputs(content_file=resultados, path=json_log_path, event='COPY', proceso="carga_datos_sap")
+po.post_outputs(description=resultados, path=json_log_path, event='COPY', proceso="carga_datos_sap")
 
 print("Resultado Final")
 print(resultados)
