@@ -45,9 +45,12 @@ json_log_path = os.path.join(carga_datos_sap_json_output_folder, carga_datos_pat
 json_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Inputs', 'carga_datos_sap.json'))
 datos = j.read_json(json_path)
 
-#Input Parameter MDT
+#Input Parameter 
 #mdt = sys.argv[1]
+#flag_creaContrato = sys.argv[2]
+
 mdt = "390"
+flag_creaContrato = False
 
 #Conexion con SAP
 sap = s.SapConnector()
@@ -147,16 +150,17 @@ for iteration, row in enumerate(datos):
         Montaje.tp_aparato = montaje_data.get('tp_aparato', '')
         Montaje.motivo = montaje_data.get('motivo', '')
 
-        # Objeto ContratoPotencia
-        ContratoPotencia = cp.ContratoPotencia(sap)
-        cp_data = row.get('Create_CP', {})
-        # Asigna los valores correspondientes a las variables de tu objeto ContratoPotencia
-        ContratoPotencia.trxCP = cp_data.get('trxCP', '/nZDM_CONTRATOS_GC')
-        ContratoPotencia.fecha_ini = cp_data.get('fecha_ini', '')
-        ContratoPotencia.periodo = cp_data.get('periodo', '00')
-        ContratoPotencia.contratadaP = cp_data.get('contratadaP', '50')
-        ContratoPotencia.contratadaFP = cp_data.get('contratadaFP', '50')
-        ContratoPotencia.descripcion = cp_data.get('descripcion', '')
+        if flag_creaContrato:
+            # Objeto ContratoPotencia
+            ContratoPotencia = cp.ContratoPotencia(sap)
+            cp_data = row.get('Create_CP', {})
+            # Asigna los valores correspondientes a las variables de tu objeto ContratoPotencia
+            ContratoPotencia.trxCP = cp_data.get('trxCP', '/nZDM_CONTRATOS_GC')
+            ContratoPotencia.fecha_ini = cp_data.get('fecha_ini', '')
+            ContratoPotencia.periodo = cp_data.get('periodo', '00')
+            ContratoPotencia.contratadaP = cp_data.get('contratadaP', '50')
+            ContratoPotencia.contratadaFP = cp_data.get('contratadaFP', '50')
+            ContratoPotencia.descripcion = cp_data.get('descripcion', '')
 
         ####################################################################################
 
@@ -290,14 +294,15 @@ for iteration, row in enumerate(datos):
 
 
         # #ContratoPotencia
-        sap.StartTransaction(ContratoPotencia.trxCP)
-        ContratoPotencia.InitContratoPotencia(obj_data['IC'], CuentaContrato.id, Instalacion.id)
-        ContratoPotencia.SetValoresCP()
-        ContratoPotencia.GuardarCP()
+        if flag_creaContrato:
+            sap.StartTransaction(ContratoPotencia.trxCP)
+            ContratoPotencia.InitContratoPotencia(obj_data['IC'], CuentaContrato.id, Instalacion.id)
+            ContratoPotencia.SetValoresCP()
+            ContratoPotencia.GuardarCP()
 
-        row['OBJETOS']['CP'] = ContratoPotencia.id #Guarda CP
+            row['OBJETOS']['CP'] = ContratoPotencia.id #Guarda CP
 
-        
+
         #Guarda Valores
         resultados.append(row['OBJETOS'])
         #Escribir Json
