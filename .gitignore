@@ -1,2 +1,5 @@
 __pycache__/
 *.pdf
+Outputs/
+Scripts_PY/
+Scripts_SAP/
