@@ -1,8 +1,15 @@
+import os
+import shutil
+import glob
+
+
 class ContratoPotencia:
         
     def __init__(self,sap):
         self.id = ""
         self.trxCP = "/nZDM_CONTRATOS_GC"
+        self.trxValidaCP = "/nZDM_VALIDA_GC"
+        self.trxNotificaCP = "/nZDM_VALIDA_GC"
         self.sap = sap
         self.fecha_ini = ""
         self.periodo = "00"
@@ -41,4 +48,55 @@ class ContratoPotencia:
         self.sap.session.findById("wnd[0]/usr/ctxtZZCONT_GC_CAB-ZZCONTRATOGC").caretPosition = 10
         self.id = self.sap.session.findById("wnd[0]/usr/ctxtZZCONT_GC_CAB-ZZCONTRATOGC").text 
 
-    
+    def ValidarCP(self):
+        self.sap.session.findById("wnd[0]/usr/ctxtS_CONTR-LOW").text = self.id
+        self.sap.session.findById("wnd[0]/tbar[1]/btn[8]").press()
+        self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press()
+
+    def NotificarCP(self, path_destino, periodo):
+        self.sap.session.findById("wnd[0]/usr/txtP_IMPRE").text = "locl"
+        self.sap.session.findById("wnd[0]/usr/txtP_IN").text = "x"
+        self.sap.session.findById("wnd[0]/usr/ctxtS_CONTR-LOW").text = self.id
+        self.sap.session.findById("wnd[0]/usr/ctxtS_CONTR-LOW").setFocus
+        self.sap.session.findById("wnd[0]/usr/ctxtS_CONTR-LOW").caretPosition = 10
+        self.sap.session.findById("wnd[0]/tbar[1]/btn[8]").press()
+
+        try:
+            # Intentamos obtener el elemento
+            element = self.sap.session.findById("wnd[1]/usr/txtIK1")
+            exists = True
+        except:
+            exists = False
+        
+        if exists:
+            self.sap.session.findById("wnd[1]").close()
+            self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press() #Finalizar
+        else:
+            self.sap.session.findById("wnd[1]/usr/ctxtSSFPP-TDDEST").text = "locl"
+            self.sap.session.findById("wnd[1]/tbar[0]/btn[8]").press()
+            self.sap.session.findById("wnd[0]/tbar[0]/okcd").text = "pdf!"
+            self.sap.session.findById("wnd[0]").sendVKey(0)
+
+            carpeta_temporal = os.path.join(os.getenv('LOCALAPPDATA'), 'Temp')
+            print(carpeta_temporal)
+
+            patron_pdf = os.path.join(carpeta_temporal, '*smart*.pdf')
+            archivos_pdf = glob.glob(patron_pdf)
+
+            if archivos_pdf:
+              ruta_pdf = archivos_pdf[0]
+              carpeta_destino = path_destino
+              nuevo_nombre = self.id + "_" + periodo + ".pdf"
+              ruta_destino = os.path.join(carpeta_destino, nuevo_nombre)
+              shutil.copy(ruta_pdf, ruta_destino)
+              print("PDF movido exitosamente a la carpeta de destino.")
+            else:
+              print("No se encontraron archivos PDF en la carpeta temporal.")
+
+            self.sap.session.findById("wnd[1]").close()
+            self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press()
+            self.sap.session.findById("wnd[1]").close()
+            self.sap.session.findById("wnd[1]").close()
+            self.sap.session.findById("wnd[1]/tbar[0]/btn[12]").press()
+            self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press()
+            self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press()

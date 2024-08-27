@@ -59,6 +59,19 @@ class Lecturas:
     self.sap.session.findById("wnd[0]/usr/cntlD0100_CONTAINER/shellcont/shell").selectedRows = "0"
     self.sap.session.findById("wnd[0]/usr/cntlD0100_CONTAINER/shellcont/shell").clickCurrentCell()
     self.sap.session.findById("wnd[0]/tbar[1]/btn[19]").press()
+
+  def GenerarOrdenLecturaMasiva(self, fechas_Ordlecturas):
+    self.sap.session.findById("wnd[0]/usr/radRELX1-ANLAGE_T").select()
+    self.sap.session.findById("wnd[0]/usr/ctxtREL01-ANLAGE").text = self.ins
+    self.sap.session.findById("wnd[0]/usr/ctxtREL01-ABLESGR").text = self.motivo_Lectura
+
+    for fecha in fechas_Ordlecturas:
+      self.sap.session.findById("wnd[0]/usr/ctxtREL01-ADATSOLL").text = fecha
+      self.sap.session.findById("wnd[0]/usr/ctxtREL01-ZUORDDAT").text = fecha
+      self.sap.session.findById("wnd[0]/usr/ctxtREL01-ZUORDDAT").setFocus()
+      self.sap.session.findById("wnd[0]/usr/ctxtREL01-ZUORDDAT").caretPosition = 10
+      self.sap.session.findById("wnd[0]/tbar[1]/btn[8]").press() #Ejecutar
+    self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press()    
     
   def CargaLecturasGD(self, mdt):
     self.sap.session.findById("wnd[0]/usr/radRELX1-ANLAGE_T").select()
@@ -154,11 +167,14 @@ class Lecturas:
     self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
 
   
-  def GeneraCalculo(self):
+  def GeneraCalculo(self, fecha_C):
     self.sap.session.findById("wnd[0]/usr/radEBISID-ANLAGERAD").select()
     self.sap.session.findById("wnd[0]/usr/ctxtEBISID-ANLAGE").text = self.ins
     self.sap.session.findById("wnd[0]/usr/radEBISID-BITRIGRAD").select()
-    self.sap.session.findById("wnd[0]/usr/ctxtEBISID-ABRDATS").text = self.fecha_Calculo
+    if (len(fecha_C) == 0):
+      self.sap.session.findById("wnd[0]/usr/ctxtEBISID-ABRDATS").text = self.fecha_Calculo
+    else: 
+      self.sap.session.findById("wnd[0]/usr/ctxtEBISID-ABRDATS").text = fecha_C
     self.sap.session.findById("wnd[0]/usr/ctxtEBISID-ABRDATS").setFocus()
     self.sap.session.findById("wnd[0]/usr/ctxtEBISID-ABRDATS").caretPosition = 10
     self.sap.session.findById("wnd[0]/tbar[1]/btn[8]").press()
@@ -197,14 +213,16 @@ class Lecturas:
 
 
 
-  def GenerarFactura(self, descargar, path_destino):
-    self.sap.session.findById("wnd[0]/usr/ctxtBUDAT").text = self.fecha_Calculo
+  def GenerarFactura(self, descargar, path_destino, fecha_C):
+    if (len(fecha_C) == 0):
+      self.sap.session.findById("wnd[0]/usr/ctxtBUDAT").text = self.fecha_Calculo
+    else:
+      self.sap.session.findById("wnd[0]/usr/ctxtBUDAT").text = fecha_C
     self.sap.session.findById("wnd[0]/usr/ctxtFIKEY").text = self.clave_rec 
     self.sap.session.findById("wnd[0]/usr/ctxtVKONT").text = self.cc
     self.sap.session.findById("wnd[0]/usr/ctxtVKONT").setFocus()
     self.sap.session.findById("wnd[0]/usr/ctxtVKONT").caretPosition = 9
     self.sap.session.findById("wnd[0]/tbar[1]/btn[8]").press()
-    #self.sap.session.findById("wnd[1]/usr/btnSPOP-OPTION1").press()
     self.doc_calculo = self.sap.session.findById("wnd[1]/usr/lbl[24,1]").text
     self.sap.session.findById("wnd[1]/tbar[0]/btn[0]").press()
     if descargar:
