@@ -9,7 +9,7 @@ class ContratoPotencia:
         self.id = ""
         self.trxCP = "/nZDM_CONTRATOS_GC"
         self.trxValidaCP = "/nZDM_VALIDA_GC"
-        self.trxNotificaCP = "/nZDM_VALIDA_GC"
+        self.trxNotificaCP = "/nZDM_NOTIFICA_GC"
         self.sap = sap
         self.fecha_ini = ""
         self.periodo = "00"

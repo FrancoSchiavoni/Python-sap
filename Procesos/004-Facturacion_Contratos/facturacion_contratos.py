@@ -123,7 +123,7 @@ for iteration, row in enumerate(datos):
 
             # Notificar
             sap.StartTransaction(Contrato_Potencia.trxNotificaCP)
-            Contrato_Potencia.NotificarCP(path_destino=notas_output_folder ,periodo=periodo)
+            Contrato_Potencia.NotificarCP(path_destino=notas_output_folder ,periodo= str(periodo))
 
     except Exception as e:
         # Manejo de excepción
