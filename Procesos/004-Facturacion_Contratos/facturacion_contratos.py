@@ -16,6 +16,7 @@ import get_fechas_lecturas as fl
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Clases', '')))
 import lecturas as l
 import contrato_potencia as cp
+import lecturasMasivas as lm
 
 date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
@@ -51,7 +52,12 @@ outputs = []
 errores = [] # Variable para almacenar los errores
 i=0 # Contador
 x=0 # Contador de errores
-total_iterations = len(datos) 
+total_iterations = len(datos)
+
+
+# Import Json Lecturas
+json_path_lecturas = r"Procesos\004-Facturacion_Contratos\Lecturas\lecturas.json"
+datos_lecturas = j.read_json(json_path_lecturas)
 
 for iteration, row in enumerate(datos):
     try:
@@ -69,7 +75,7 @@ for iteration, row in enumerate(datos):
         Lecturas.fecha_Calculo = row.get('fecha_Calculo', '10.02.2023')
         Lecturas.trxFactura = row.get('trxFactura', '/nEA19')
         
-        Lecturas.clave_rec = row.get('clave_rec', '240418-001')
+        Lecturas.clave_rec = row.get('clave_rec', '240830-001')
 
 
         #Crea Objeto Contrato_Potencia
@@ -86,30 +92,38 @@ for iteration, row in enumerate(datos):
         Lecturas.GenerarOrdenLecturaMasiva(fechas_lecturas)
 
         # Carga de Lecturas
-        
+        Lecturas_Masivas = lm.LecturasMasivas(sap=sap)
+        datos_lecturas_ins = datos_lecturas[Lecturas.ins]
+        Lecturas_Masivas.ins = Lecturas.ins
+        Lecturas_Masivas.lectura_Pot_P = datos_lecturas_ins.get('lectura_Pot_P', Lecturas_Masivas.lectura_Pot_P)
+        Lecturas_Masivas.lectura_Pot_R = datos_lecturas_ins.get('lectura_Pot_R', Lecturas_Masivas.lectura_Pot_R)
+        Lecturas_Masivas.lectura_Pot_V = datos_lecturas_ins.get('lectura_Pot_V', Lecturas_Masivas.lectura_Pot_V)
+        Lecturas_Masivas.lectura_E_act_P = datos_lecturas_ins.get('lectura_E_act_P', Lecturas_Masivas.lectura_E_act_P)
+        Lecturas_Masivas.lectura_E_act_R = datos_lecturas_ins.get('lectura_E_act_R', Lecturas_Masivas.lectura_E_act_R)
+        Lecturas_Masivas.lectura_E_act_V = datos_lecturas_ins.get('lectura_E_act_V', Lecturas_Masivas.lectura_E_act_V)
+        Lecturas_Masivas.lectura_E_react = datos_lecturas_ins.get('lectura_E_react', Lecturas_Masivas.lectura_E_react)
 
+        sap.StartTransaction(Lecturas_Masivas.trxCargaLecturas)
+        Lecturas_Masivas.CargaLecturasGD(mdt=mdt)
 
-        #for index,f in fechas_calculo:
-
+        periodo = 0
+        for f in fechas_calculo:
+            periodo = periodo + 1
             # Calculo
-            #sap.StartTransaction(Lecturas.trxCalculo)
-            #Lecturas.GeneraCalculo(fecha_C=f)
+            sap.StartTransaction(Lecturas.trxCalculo)
+            Lecturas.GeneraCalculo(fecha_C=f)
             
             # Facturacion
-            #sap.StartTransaction(Lecturas.trxFactura)
-            #Lecturas.GenerarFactura(descargar=True, path_destino = facturacion_output_folder, fecha_C=f)
+            sap.StartTransaction(Lecturas.trxFactura)
+            Lecturas.GenerarFactura(descargar=True, path_destino = facturacion_output_folder, fecha_C=f)
             
             # Validar
-            #sap.StartTransaction(Contrato_Potencia.trxValidaCP)
-            #Contrato_Potencia.ValidarCP()
+            sap.StartTransaction(Contrato_Potencia.trxValidaCP)
+            Contrato_Potencia.ValidarCP()
 
             # Notificar
-            #sap.StartTransaction(Contrato_Potencia.trxNotificaCP)
-            #Contrato_Potencia.NotificarCP(path_destino=notas_output_folder ,periodo=index)
-
-
-        # Llamamos a mostrar_progreso después de cada iteración
-        #show_console_logs.show_iteration_bar(iteration, total_iterations)
+            sap.StartTransaction(Contrato_Potencia.trxNotificaCP)
+            Contrato_Potencia.NotificarCP(path_destino=notas_output_folder ,periodo=periodo)
 
     except Exception as e:
         # Manejo de excepción
