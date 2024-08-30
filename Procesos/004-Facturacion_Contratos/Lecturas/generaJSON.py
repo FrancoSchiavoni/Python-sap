@@ -5,7 +5,6 @@ import os
 file_path = (r'Procesos\004-Facturacion_Contratos\Lecturas\TT_Estacionales_SAP_TEST.csv')
 
 if os.path.exists(file_path):
-    # df = pd.read_csv(file_path, encoding='ISO-8859-1', header=0)
     df = pd.read_csv(file_path, header=1, decimal=',')
     print("Archivo leído correctamente.")
 else:

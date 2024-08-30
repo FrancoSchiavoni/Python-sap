@@ -1,11 +1,9 @@
 [
     {   
-        "id": "329",
-        "INS": "400000408",
-        "CC": "700011226",
+        "id": "331",
+        "INS": "400000409",
+        "CC": "700011227",
         "tipo_cliente": "GD",
-        "fecha_Ord_Lectura_Desde": "31.01.2022",
-        "doc_calculo": "",
-        "doc_impresion": ""
+        "fecha_Ord_Lectura_Desde": "31.01.2022"
     }
 ]
