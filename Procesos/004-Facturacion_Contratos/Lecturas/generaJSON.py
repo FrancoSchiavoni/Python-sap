@@ -16,45 +16,32 @@ df.columns = df.columns.str.strip()
 
 import json
 
-# Agrupa por instalación y número de contrato
-grouped = df.groupby(['Instalacion', 'NroContrato'])
+grouped = df.groupby('Instalacion')
 
 result = {}
 
-for (instalacion, nro_contrato), group in grouped:
-    # Crea dos arrays de 12 espacios para cada agrupación
-    dem_reg_pico = [0] * 12
-    dem_reg_fpico = [0] * 12
-    dem_reg_fpico2 = [0] * 12
-    dem_reg_energ_consu1 = [0] * 12
-    dem_reg_energ_consu2 = [0] * 12
-    dem_reg_energ_consu3 = [0] * 12
-    dem_reg_energ_consu4 = [0] * 12
+# Iterar sobre cada instalación y crear los arrays correspondientes
+for instalacion, group in grouped:
+    # Inicializar arrays para las columnas relevantes
+    dem_reg_pico = group['Dem.Reg.Pico'].tolist()
+    dem_reg_fpico = group['Dem.Reg.F.Pico'].tolist()
+    dem_reg_fpico2 = group['Dem.Reg.F.Pico'].tolist()  # Reutilizando el mismo valor
+    dem_reg_energ_consu1 = [1000] * len(group)  # Valores fijos
+    dem_reg_energ_consu2 = [2000] * len(group)  # Valores fijos
+    dem_reg_energ_consu3 = [3000] * len(group)  # Valores fijos
+    dem_reg_energ_consu4 = [4000] * len(group)  # Valores fijos
 
-    # Rellena los arrays con las lecturas del index correspondiente
-    for index, row in group.iterrows():      
-        dem_reg_pico[index] = int(row['Dem.Reg. Pico'])
-        dem_reg_fpico[index] = int(row['Dem.Reg. F.Pico'])
-        dem_reg_fpico2[index] = int(row['Dem.Reg. F.Pico'])
-        dem_reg_energ_consu1[index] = 1000
-        dem_reg_energ_consu2[index] = 2000
-        dem_reg_energ_consu3[index] = 3000
-        dem_reg_energ_consu4[index] = 4000
-
-    # Estructura de la clave para el diccionario
-    key = f"{str(int(instalacion))}"
-
-    # Guarda los arrays en el resultado
+    # Estructurar el diccionario
+    key = str(int(instalacion))
     result[key] = {
-        'lectura_Pot_P': dem_reg_pico,
-        'lectura_Pot_R': dem_reg_fpico,
-        'lectura_Pot_V': dem_reg_fpico2,
+        'lectura_Pot_P': list(map(int, dem_reg_pico)),
+        'lectura_Pot_R':  list(map(int, dem_reg_fpico)),
+        'lectura_Pot_V': list(map(int, dem_reg_fpico2)),
         'lectura_E_act_P': dem_reg_energ_consu1,
         'lectura_E_act_R': dem_reg_energ_consu2,
         'lectura_E_act_V': dem_reg_energ_consu3,
         'lectura_E_react': dem_reg_energ_consu4,
     }
-
 # Convierte el resultado a JSON
 json_result = json.dumps(result, indent=4)
 

@@ -1,5 +1,5 @@
 ,,,,,,,,,,,
-N° Cliente,Instalacion,NroContrato,Tipo de Contrato,Cap.Sum.Contratada Pico,Cap.Sum.Contratada F.Pico,Dem.Reg. Pico,Dem.Reg. F.Pico,Nro Exceso,Evol. Dem. Pico,Evol. Dem. F.Pico,Contador excesos
+N° Cliente,Instalacion,NroContrato,Tipo de Contrato,Cap.Sum.Contratada Pico,Cap.Sum.ContratadaF.Pico,Dem.Reg.Pico,Dem.Reg.F.Pico,NroExceso,Evol.Dem.Pico,Evol.Dem.F.Pico,Contadorexcesos
 700001431,400000408,1,O,3886,3731,2999,2693,,3886,3731,0
 700001431,400000408,1,O,3886,3731,2965,2686,,3886,3731,0
 700001431,400000408,1,O,3886,3731,3367,2933,,3886,3731,0
