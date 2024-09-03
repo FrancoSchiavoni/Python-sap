@@ -3,18 +3,18 @@
         "OBJETOS": {
             "IC": "252",
             "OC": "610000000000166",
-            "CC": "700011227",
-            "PS": "600000436",
-            "UA": "650000000000456",
+            "CC": "700011233",
+            "PS": "600000442",
+            "UA": "650000000000461",
             "UA_GEN": "",
-            "INS": "400000409",
-            "CONTRATO": "300000353",
+            "INS": "400000415",
+            "CONTRATO": "300000359",
             "CP": ""
         },
         "Create_CC": {
             "tp_cta_contrato": "GD",
             "estrRegion": "S6020A21",
-            "nombre": "ID2-GD-CONTRATO-TESTPY",
+            "nombre": "ID4-GD-CONTRATO-UGD01",
             "cdc": "CU",
             "catcta": "G003",
             "condicion_pago": "Z002",
@@ -31,7 +31,7 @@
             "clae": "239900"
         },
         "Create_UA": {
-            "denominacion": "ID2-GD-CONTRATO-TESTPY",
+            "denominacion": "ID4-GD-CONTRATO-UGD01",
             "centro_empl": "4000"
         },
         "Create_INST": {
@@ -113,7 +113,7 @@
         },
         "Create_montaje": {
             "f_alta": "01.01.2022",
-            "dipositivo": "1037",
+            "dipositivo": "1042",
             "dispotivoGen": "",
             "tp_aparato": "700034",
             "motivo": "05"

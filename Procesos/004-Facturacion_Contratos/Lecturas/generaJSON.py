@@ -2,10 +2,10 @@ import pandas as pd
 import json
 import os
 
-file_path = (r'Procesos\004-Facturacion_Contratos\Lecturas\TT_Estacionales_SAP_TEST.csv')
+file_path = (r'Procesos\004-Facturacion_Contratos\Lecturas\TT_Estacionales_SAP_MASIVO.csv')
 
 if os.path.exists(file_path):
-    df = pd.read_csv(file_path, header=1, decimal=',')
+    df = pd.read_csv(file_path, decimal=',')
     print("Archivo leído correctamente.")
 else:
     print(f"El archivo no existe en la ruta: {file_path}")

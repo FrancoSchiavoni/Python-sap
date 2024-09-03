@@ -75,7 +75,7 @@ for iteration, row in enumerate(datos):
         Lecturas.fecha_Calculo = row.get('fecha_Calculo', '10.02.2023')
         Lecturas.trxFactura = row.get('trxFactura', '/nEA19')
         
-        Lecturas.clave_rec = row.get('clave_rec', '240830-001')
+        Lecturas.clave_rec = row.get('clave_rec', '240903-001')
 
 
         #Crea Objeto Contrato_Potencia
@@ -108,22 +108,31 @@ for iteration, row in enumerate(datos):
 
         periodo = 0
         for f in fechas_calculo:
-            periodo = periodo + 1
-            # Calculo
-            sap.StartTransaction(Lecturas.trxCalculo)
-            Lecturas.GeneraCalculo(fecha_C=f)
-            
-            # Facturacion
-            sap.StartTransaction(Lecturas.trxFactura)
-            Lecturas.GenerarFactura(descargar=True, path_destino = facturacion_output_folder, fecha_C=f)
-            
-            # Validar
-            sap.StartTransaction(Contrato_Potencia.trxValidaCP)
-            Contrato_Potencia.ValidarCP()
+            try:
+                periodo = periodo + 1
+                # Calculo
+                sap.StartTransaction(Lecturas.trxCalculo)
+                Lecturas.GeneraCalculo(fecha_C=f)
 
-            # Notificar
-            sap.StartTransaction(Contrato_Potencia.trxNotificaCP)
-            Contrato_Potencia.NotificarCP(path_destino=notas_output_folder ,periodo= str(periodo))
+                # Facturacion
+                sap.StartTransaction(Lecturas.trxFactura)
+                Lecturas.GenerarFactura(descargar=True, path_destino = facturacion_output_folder, fecha_C=f)
+
+                # Validar
+                sap.StartTransaction(Contrato_Potencia.trxValidaCP)
+                Contrato_Potencia.ValidarCP()
+
+                # Notificar
+                sap.StartTransaction(Contrato_Potencia.trxNotificaCP)
+                Contrato_Potencia.NotificarExceso(path_destino=notas_output_folder ,periodo= str(periodo))
+
+                if periodo == 12:
+                    sap.StartTransaction(Contrato_Potencia.trxNotificaCP)
+                    Contrato_Potencia.NotificarFin(path_destino=notas_output_folder ,periodo= str(periodo))
+            
+            except Exception as eFact:
+                print(eFact)
+                continue
 
     except Exception as e:
         # Manejo de excepción
