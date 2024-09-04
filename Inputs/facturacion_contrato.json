@@ -1,16 +1,16 @@
 [
     {   
-        "id": "337",
-        "INS": "400000413",
-        "CC": "700011231",
-        "tipo_cliente": "GD",
+        "id": "346",
+        "INS": "400000426",
+        "CC": "700011244",
+        "tipo_cliente": "DP",
         "fecha_Ord_Lectura_Desde": "31.01.2022"
     },
     {   
-        "id": "338",
-        "INS": "400000414",
-        "CC": "700011232",
-        "tipo_cliente": "GD",
+        "id": "347",
+        "INS": "400000427",
+        "CC": "700011245",
+        "tipo_cliente": "DP",
         "fecha_Ord_Lectura_Desde": "31.01.2022"
     }
 ]
