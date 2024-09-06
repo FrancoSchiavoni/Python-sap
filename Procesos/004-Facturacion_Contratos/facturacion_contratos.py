@@ -26,7 +26,9 @@ datos = j.read_json(json_path)
 
 # Output dir path / facturacion
 facturacion_output_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Outputs', 'facturacion_contrato' , 'facturacion_contrato_' + date))
-notas_output_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Outputs', 'facturacion_contrato' , 'notas_contrato_' + date))
+notas_output_folder =   facturacion_output_folder + '/notas_contrato'
+print(facturacion_output_folder)
+print(notas_output_folder)
 os.makedirs(facturacion_output_folder, exist_ok=True)
 os.makedirs(notas_output_folder, exist_ok=True)
 
@@ -141,15 +143,17 @@ for iteration, row in enumerate(datos):
             Contrato_Potencia.SetValoresCP()
 
         if tipo_contrato == "E":
+            Contrato_Potencia.periodos = datos_lecturas_ins['periodos']
             primer_EA_index = datos_lecturas_ins['periodos'].index('EA')
             primer_EB_index = datos_lecturas_ins['periodos'].index('EB')
 
-            Contrato_Potencia.contratadaP = datos_lecturas_ins['lectura_Pot_P'][primer_EA_index]
-            Contrato_Potencia.contratadaFP = datos_lecturas_ins['lectura_Pot_V'][primer_EA_index]
+            Contrato_Potencia.contratadaP = datos_lecturas_ins['contratada_P'][primer_EA_index]
+            Contrato_Potencia.contratadaFP = datos_lecturas_ins['contratada_FP'][primer_EA_index]
 
-            Contrato_Potencia.contratadaP_B = datos_lecturas_ins['lectura_Pot_P'][primer_EB_index]
-            Contrato_Potencia.contratadaFP_B = datos_lecturas_ins['lectura_Pot_R'][primer_EB_index]
+            Contrato_Potencia.contratadaP_B = datos_lecturas_ins['contratada_P'][primer_EB_index]
+            Contrato_Potencia.contratadaFP_B = datos_lecturas_ins['contratada_FP'][primer_EB_index]
             Contrato_Potencia.SetValoresCP()
+            Contrato_Potencia.MostarGrilla(tipo_cliente=tipo_cliente)
             Contrato_Potencia.CargaEstacionalidad()
 
         Contrato_Potencia.GuardarCP()
@@ -186,7 +190,7 @@ for iteration, row in enumerate(datos):
 
     except Exception as e:
         # Manejo de excepción
-        description = f"{row.get('INS', '')} -- Error: {e} | Fila: {iteration} | Acciones Realizadas: {resultados}\n"
+        description = f"{row.get('INS', '')} -- Error: {e} " "| Fila: {iteration} | Acciones Realizadas: {resultados}\n"
         # Agregar el mensaje de error a la lista de errores
         show_console_logs.show_error(e)
         po.post_outputs(description=description, path=error_log_path, event='POST', proceso="facturacion")
