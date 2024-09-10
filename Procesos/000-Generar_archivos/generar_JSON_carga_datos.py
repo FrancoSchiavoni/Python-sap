@@ -329,7 +329,7 @@ def procesar_csv(input_csv):
                 log.write(f"{error}\n")
 
 
-file_path = (r'Procesos\004-Facturacion_Contratos\Lecturas\TT_Estacionales_SAP_PY.csv')
+file_path = (r'Inputs\TT_Estacionales_SAP_PY.csv')
 
 if os.path.exists(file_path):
     print("Archivo leído correctamente.")
@@ -337,3 +337,5 @@ if os.path.exists(file_path):
 else:
     print(f"El archivo no existe en la ruta: {file_path}")
 # Ejecutar la función
+
+ 

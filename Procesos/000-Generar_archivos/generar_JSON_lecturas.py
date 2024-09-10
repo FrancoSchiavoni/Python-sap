@@ -2,7 +2,7 @@ import pandas as pd
 import json
 import os
 
-file_path = (r'Procesos\004-Facturacion_Contratos\Lecturas\TT_Estacionales_SAP_PY.csv')
+file_path = (r'Inputs\TT_Estacionales_SAP_PY.csv')
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path, decimal=',', delimiter = ";")
@@ -83,6 +83,6 @@ for instalacion, group in grouped:
 json_result = json.dumps(result, indent=4)
 
 # Guarda el JSON en un archivo
-with open(r'Procesos\004-Facturacion_Contratos\Lecturas\lecturas.json', 'w') as f:
+with open(r'Inputs\lecturas.json', 'w') as f:
     f.write(json_result)
 
