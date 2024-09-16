@@ -81,8 +81,8 @@ for iteration, row in enumerate(datos):
         fechas_lecturas, fechas_calculo = fl.generar_fechas(Lecturas.fecha_Ord_Lectura_Desde)
 
         #Crear Orden de Lectura
-        sap.StartTransaction(Lecturas.trxCreateOrd)
-        Lecturas.GenerarOrdenLecturaMasiva(fechas_lecturas)
+        #sap.StartTransaction(Lecturas.trxCreateOrd)
+        #Lecturas.GenerarOrdenLecturaMasiva(fechas_lecturas)
 
         # Carga de Lecturas
         Lecturas_Masivas = lm.LecturasMasivas(sap=sap)
@@ -105,13 +105,14 @@ for iteration, row in enumerate(datos):
         Lecturas_Masivas.lectura_E_act_R4 = datos_lecturas_ins.get('lectura_E_act_R4', '')
         Lecturas_Masivas.lectura_E_act_V4 = datos_lecturas_ins.get('lectura_E_act_V4', '')
 
-        sap.StartTransaction(Lecturas_Masivas.trxCargaLecturas)
+        #sap.StartTransaction(Lecturas_Masivas.trxCargaLecturas)
     
         tipo_cliente = row.get('tipo_cliente', '')
         if tipo_cliente != 'DP':
             Lecturas_Masivas.CargaLecturasGD(mdt=mdt)
         else:
-            Lecturas_Masivas.CargaLecturasCOOP(mdt=mdt)
+            #Lecturas_Masivas.CargaLecturasCOOP(mdt=mdt)
+            print('')
 
         # Crear Contrato
         IC = row.get('IC', '')
@@ -137,10 +138,16 @@ for iteration, row in enumerate(datos):
         Contrato_Potencia.InitContratoPotencia(IC=IC, INS=INS, CC=CC)
         
         if tipo_contrato == "U":
-            primer_index = datos_lecturas_ins['periodos'].index('U')
+            contrato_prueba = False
+            if 'P' in datos_lecturas_ins['periodos']:
+                contrato_prueba = True
+            primer_index = 0
             Contrato_Potencia.contratadaP = datos_lecturas_ins['contratada_P'][primer_index]
             Contrato_Potencia.contratadaFP = datos_lecturas_ins['contratada_FP'][primer_index]
             Contrato_Potencia.SetValoresCP()
+            if contrato_prueba:
+                Contrato_Potencia.periodos = datos_lecturas_ins['periodos']
+                Contrato_Potencia.CargaPeriodoPrueba()
 
         if tipo_contrato == "E":
             Contrato_Potencia.periodos = datos_lecturas_ins['periodos']

@@ -62,6 +62,12 @@ class ContratoPotencia:
                 self.sap.session.findById("wnd[0]/usr/tblZDM_CONTRATOS_GCZZPERIODOS/txtZZCONT_GC_PERIOD-ZZPOT_CONTRATADA_PIC[4," + str(index) + "]").text = self.contratadaP_B
                 self.sap.session.findById("wnd[0]/usr/tblZDM_CONTRATOS_GCZZPERIODOS/txtZZCONT_GC_PERIOD-ZZPOT_CONTRATADA_FPIC[6," + str(index) + "]").text = self.contratadaFP_B
         self.sap.session.findById("wnd[0]").sendVKey(0)
+    
+    def CargaPeriodoPrueba(self):
+        for index,mes in enumerate(self.periodos):
+            if mes == "P":
+                self.sap.session.findById("wnd[0]/usr/tblZDM_CONTRATOS_GCZZPERIODOS/ctxtZZCONT_GC_PERIOD-ZZPERIODO_CLASE[3," + str(index) + "]").text = "P  "
+        self.sap.session.findById("wnd[0]").sendVKey(0)
 
     def GuardarCP(self):
         self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
