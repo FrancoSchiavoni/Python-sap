@@ -40,10 +40,9 @@ def procesar_csv(input_csv):
                 errores.append(f"ID {id_actual} tiene {len(registros)} registros en lugar de 12")
                 continue  # Salta el procesamiento de este ID y sigue con el siguiente
             else:
-                print(f"ID {id_actual} - tiene 12 registros")
+                print(f"Contrato {id_actual} - tiene 12 periodos")
             # Verificar si el grupo tiene "COOP" en algún registro
             es_coop = any('COOP' in registro['Tipo'] for registro in registros)
-            print(es_coop)
             # Crear el objeto base
             if es_coop:
                 objeto = {
@@ -322,14 +321,9 @@ def procesar_csv(input_csv):
     with open(ruta_json, 'w') as jsonfile:
         json.dump(objetos_json, jsonfile, indent=4)
 
-    # Si hay errores, guardarlos en un archivo de log
-    if errores:
-        with open(ruta_log, 'w') as log:
-            for error in errores:
-                log.write(f"{error}\n")
 
 
-file_path = (r'Inputs\TT_Estacionales_SAP_PY.csv')
+file_path = (r'Inputs\Prueba_Contratos_CSV.csv')
 
 if os.path.exists(file_path):
     print("Archivo leído correctamente.")

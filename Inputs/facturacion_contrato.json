@@ -1,9 +1,9 @@
 [
     {
         "id": "",
-        "IC": "",
-        "INS": "400000430",
-        "CC": "700011248",
+        "IC": "268",
+        "INS": "400000457",
+        "CC": "700011279",
         "tipo_cliente": "DP",
         "tipo_contrato": "U",
         "fecha_Ord_Lectura_Desde": "31.01.2022",
@@ -11,9 +11,109 @@
     },
     {
         "id": "",
-        "IC": "",
-        "INS": "400000431",
-        "CC": "700011249",
+        "IC": "268",
+        "INS": "400000458",
+        "CC": "700011280",
+        "tipo_cliente": "DP",
+        "tipo_contrato": "U",
+        "fecha_Ord_Lectura_Desde": "31.01.2022",
+        "fecha_Inicio_Contrato": "01.01.2022"
+    },
+    {
+        "id": "",
+        "IC": "268",
+        "INS": "400000459",
+        "CC": "700011281",
+        "tipo_cliente": "DP",
+        "tipo_contrato": "U",
+        "fecha_Ord_Lectura_Desde": "31.01.2022",
+        "fecha_Inicio_Contrato": "01.01.2022"
+    },
+    {
+        "id": "",
+        "IC": "268",
+        "INS": "400000460",
+        "CC": "700011282",
+        "tipo_cliente": "DP",
+        "tipo_contrato": "U",
+        "fecha_Ord_Lectura_Desde": "31.01.2022",
+        "fecha_Inicio_Contrato": "01.01.2022"
+    },
+    {
+        "id": "",
+        "IC": "268",
+        "INS": "400000461",
+        "CC": "700011283",
+        "tipo_cliente": "DP",
+        "tipo_contrato": "E",
+        "fecha_Ord_Lectura_Desde": "31.01.2022",
+        "fecha_Inicio_Contrato": "01.01.2022"
+    },
+    {
+        "id": "",
+        "IC": "268",
+        "INS": "400000462",
+        "CC": "700011284",
+        "tipo_cliente": "DP",
+        "tipo_contrato": "E",
+        "fecha_Ord_Lectura_Desde": "31.01.2022",
+        "fecha_Inicio_Contrato": "01.01.2022"
+    },
+    {
+        "id": "",
+        "IC": "268",
+        "INS": "400000463",
+        "CC": "700011285",
+        "tipo_cliente": "DP",
+        "tipo_contrato": "E",
+        "fecha_Ord_Lectura_Desde": "31.01.2022",
+        "fecha_Inicio_Contrato": "01.01.2022"
+    },
+    {
+        "id": "",
+        "IC": "268",
+        "INS": "400000464",
+        "CC": "700011286",
+        "tipo_cliente": "DP",
+        "tipo_contrato": "E",
+        "fecha_Ord_Lectura_Desde": "31.01.2022",
+        "fecha_Inicio_Contrato": "01.01.2022"
+    },
+    {
+        "id": "",
+        "IC": "268",
+        "INS": "400000465",
+        "CC": "700011287",
+        "tipo_cliente": "DP",
+        "tipo_contrato": "E",
+        "fecha_Ord_Lectura_Desde": "31.01.2022",
+        "fecha_Inicio_Contrato": "01.01.2022"
+    },
+    {
+        "id": "",
+        "IC": "268",
+        "INS": "400000466",
+        "CC": "700011288",
+        "tipo_cliente": "DP",
+        "tipo_contrato": "E",
+        "fecha_Ord_Lectura_Desde": "31.01.2022",
+        "fecha_Inicio_Contrato": "01.01.2022"
+    },
+    {
+        "id": "",
+        "IC": "268",
+        "INS": "400000467",
+        "CC": "700011289",
+        "tipo_cliente": "DP",
+        "tipo_contrato": "E",
+        "fecha_Ord_Lectura_Desde": "31.01.2022",
+        "fecha_Inicio_Contrato": "01.01.2022"
+    },
+    {
+        "id": "",
+        "IC": "268",
+        "INS": "400000468",
+        "CC": "700011290",
         "tipo_cliente": "DP",
         "tipo_contrato": "E",
         "fecha_Ord_Lectura_Desde": "31.01.2022",

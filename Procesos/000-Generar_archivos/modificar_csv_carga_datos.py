@@ -50,10 +50,12 @@ def agregar_datos_al_csv(json_file, csv_file):
         escritor = csv.DictWriter(csvfile, fieldnames=campos, delimiter=';')
         escritor.writeheader()
         escritor.writerows(filas_actualizadas)
+    
+    print("CSV Modificado Correctamente")
 
 # Rutas de los archivos
 json_file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../Inputs/carga_datos_sap.json'))
-csv_file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../Inputs/TT_Estacionales_SAP_PY.csv'))
+csv_file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../Inputs/Prueba_Contratos_CSV.csv'))
 
 # Llamar a la función con las rutas de los archivos
 agregar_datos_al_csv(json_file_path, csv_file_path)

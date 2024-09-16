@@ -3,19 +3,19 @@
         "OBJETOS": {
             "IC": "268",
             "OC": "610000000000182",
-            "CC": "1",
-            "PS": "",
-            "UA": "",
+            "CC": "700011279",
+            "PS": "600000485",
+            "UA": "650000000000505",
             "UA_GEN": "",
-            "INS": "12",
-            "CONTRATO": "",
+            "INS": "400000457",
+            "CONTRATO": "300000401",
             "CP": "",
-            "ID": "1"
+            "ID": "5"
         },
         "Create_CC": {
             "tp_cta_contrato": "DP",
             "estrRegion": "S1010A13",
-            "nombre": "DP-CONTRATO-1063",
+            "nombre": "DP-CONTRATO-1073",
             "cdc": "CG",
             "catcta": "G001",
             "condicion_pago": "Z003",
@@ -32,7 +32,7 @@
             "clae": "239900"
         },
         "Create_UA": {
-            "denominacion": "DP-CONTRATO-1063",
+            "denominacion": "DP-CONTRATO-1073",
             "centro_empl": "2000"
         },
         "Create_INST": {
@@ -114,7 +114,7 @@
         },
         "Create_montaje": {
             "f_alta": "01.01.2022",
-            "dipositivo": "1063",
+            "dipositivo": "1073",
             "dispotivoGen": "",
             "tp_aparato": "700034",
             "motivo": "05"
@@ -131,19 +131,19 @@
         "OBJETOS": {
             "IC": "268",
             "OC": "610000000000182",
-            "CC": "2",
-            "PS": "",
-            "UA": "",
+            "CC": "700011280",
+            "PS": "600000486",
+            "UA": "650000000000506",
             "UA_GEN": "",
-            "INS": "23",
-            "CONTRATO": "",
+            "INS": "400000458",
+            "CONTRATO": "300000402",
             "CP": "",
-            "ID": "2"
+            "ID": "6"
         },
         "Create_CC": {
             "tp_cta_contrato": "DP",
             "estrRegion": "S1010A13",
-            "nombre": "DP-CONTRATO-1064",
+            "nombre": "DP-CONTRATO-1074",
             "cdc": "CG",
             "catcta": "G001",
             "condicion_pago": "Z003",
@@ -160,7 +160,7 @@
             "clae": "239900"
         },
         "Create_UA": {
-            "denominacion": "DP-CONTRATO-1064",
+            "denominacion": "DP-CONTRATO-1074",
             "centro_empl": "2000"
         },
         "Create_INST": {
@@ -242,7 +242,1287 @@
         },
         "Create_montaje": {
             "f_alta": "01.01.2022",
-            "dipositivo": "1064",
+            "dipositivo": "1074",
+            "dispotivoGen": "",
+            "tp_aparato": "700034",
+            "motivo": "05"
+        },
+        "Create_CP": {
+            "fecha_ini": "01.01.2022",
+            "periodo": "40",
+            "contratadaP": "50",
+            "contratadaFP": "50",
+            "descripcion": "CASO: CASO COOP"
+        }
+    },
+    {
+        "OBJETOS": {
+            "IC": "268",
+            "OC": "610000000000182",
+            "CC": "700011281",
+            "PS": "600000487",
+            "UA": "650000000000507",
+            "UA_GEN": "",
+            "INS": "400000459",
+            "CONTRATO": "300000403",
+            "CP": "",
+            "ID": "7"
+        },
+        "Create_CC": {
+            "tp_cta_contrato": "DP",
+            "estrRegion": "S1010A13",
+            "nombre": "DP-CONTRATO-1075",
+            "cdc": "CG",
+            "catcta": "G001",
+            "condicion_pago": "Z003",
+            "gpo_sociedades": "Z001",
+            "soc_std": "1000",
+            "clase_impuesto": "01",
+            "lugar_comercial": "0069",
+            "region": "12",
+            "condado": "011",
+            "proc_rec_tension": "P2",
+            "bloqueo_interes": ""
+        },
+        "Create_PS": {
+            "clae": "239900"
+        },
+        "Create_UA": {
+            "denominacion": "DP-CONTRATO-1075",
+            "centro_empl": "2000"
+        },
+        "Create_INST": {
+            "dia_fijado": "01.01.2022",
+            "sector": "EN",
+            "nivTension": "G1",
+            "clCal": "CEPE",
+            "tp_tarifa": "GD_T4",
+            "unidad_lectura": "GSFCO"
+        },
+        "Create_OPERAND": {
+            "RT_CAT_CLI": {
+                "tipo": "RATE",
+                "carga": true,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "GD_NORM",
+                "grValoresConcretos": "T4_BT"
+            },
+            "RT_PROSUM": {
+                "tipo": "RATE",
+                "carga": false,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "",
+                "grValoresConcretos": ""
+            },
+            "QU_CUPOGEN": {
+                "tipo": "QUANT",
+                "carga": false,
+                "hasta": "31.12.9999",
+                "cantidad": "0"
+            },
+            "FL_GUDIS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_NO_CAP": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_EMP_REC": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_PRG_IND": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_CLUB": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_UNI": {
+                "tipo": "FLAG",
+                "carga": true,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_MAS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_BEN_INF": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            }
+        },
+        "Create_movein": {
+            "f_alta": "01.01.2022",
+            "imputacion": "S2010",
+            "segmento": "103",
+            "cdc": "CG",
+            "fac_conj": "2"
+        },
+        "Create_montaje": {
+            "f_alta": "01.01.2022",
+            "dipositivo": "1075",
+            "dispotivoGen": "",
+            "tp_aparato": "700034",
+            "motivo": "05"
+        },
+        "Create_CP": {
+            "fecha_ini": "01.01.2022",
+            "periodo": "40",
+            "contratadaP": "50",
+            "contratadaFP": "50",
+            "descripcion": "CASO: CASO COOP"
+        }
+    },
+    {
+        "OBJETOS": {
+            "IC": "268",
+            "OC": "610000000000182",
+            "CC": "700011282",
+            "PS": "600000488",
+            "UA": "650000000000508",
+            "UA_GEN": "",
+            "INS": "400000460",
+            "CONTRATO": "300000404",
+            "CP": "",
+            "ID": "8"
+        },
+        "Create_CC": {
+            "tp_cta_contrato": "DP",
+            "estrRegion": "S1010A13",
+            "nombre": "DP-CONTRATO-1076",
+            "cdc": "CG",
+            "catcta": "G001",
+            "condicion_pago": "Z003",
+            "gpo_sociedades": "Z001",
+            "soc_std": "1000",
+            "clase_impuesto": "01",
+            "lugar_comercial": "0069",
+            "region": "12",
+            "condado": "011",
+            "proc_rec_tension": "P2",
+            "bloqueo_interes": ""
+        },
+        "Create_PS": {
+            "clae": "239900"
+        },
+        "Create_UA": {
+            "denominacion": "DP-CONTRATO-1076",
+            "centro_empl": "2000"
+        },
+        "Create_INST": {
+            "dia_fijado": "01.01.2022",
+            "sector": "EN",
+            "nivTension": "G1",
+            "clCal": "CEPE",
+            "tp_tarifa": "GD_T4",
+            "unidad_lectura": "GSFCO"
+        },
+        "Create_OPERAND": {
+            "RT_CAT_CLI": {
+                "tipo": "RATE",
+                "carga": true,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "GD_NORM",
+                "grValoresConcretos": "T4_BT"
+            },
+            "RT_PROSUM": {
+                "tipo": "RATE",
+                "carga": false,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "",
+                "grValoresConcretos": ""
+            },
+            "QU_CUPOGEN": {
+                "tipo": "QUANT",
+                "carga": false,
+                "hasta": "31.12.9999",
+                "cantidad": "0"
+            },
+            "FL_GUDIS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_NO_CAP": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_EMP_REC": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_PRG_IND": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_CLUB": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_UNI": {
+                "tipo": "FLAG",
+                "carga": true,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_MAS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_BEN_INF": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            }
+        },
+        "Create_movein": {
+            "f_alta": "01.01.2022",
+            "imputacion": "S2010",
+            "segmento": "103",
+            "cdc": "CG",
+            "fac_conj": "2"
+        },
+        "Create_montaje": {
+            "f_alta": "01.01.2022",
+            "dipositivo": "1076",
+            "dispotivoGen": "",
+            "tp_aparato": "700034",
+            "motivo": "05"
+        },
+        "Create_CP": {
+            "fecha_ini": "01.01.2022",
+            "periodo": "40",
+            "contratadaP": "50",
+            "contratadaFP": "50",
+            "descripcion": "CASO: CASO COOP"
+        }
+    },
+    {
+        "OBJETOS": {
+            "IC": "268",
+            "OC": "610000000000182",
+            "CC": "700011283",
+            "PS": "600000489",
+            "UA": "650000000000509",
+            "UA_GEN": "",
+            "INS": "400000461",
+            "CONTRATO": "300000405",
+            "CP": "",
+            "ID": "9"
+        },
+        "Create_CC": {
+            "tp_cta_contrato": "DP",
+            "estrRegion": "S1010A13",
+            "nombre": "DP-CONTRATO-1077",
+            "cdc": "CG",
+            "catcta": "G001",
+            "condicion_pago": "Z003",
+            "gpo_sociedades": "Z001",
+            "soc_std": "1000",
+            "clase_impuesto": "01",
+            "lugar_comercial": "0069",
+            "region": "12",
+            "condado": "011",
+            "proc_rec_tension": "P2",
+            "bloqueo_interes": ""
+        },
+        "Create_PS": {
+            "clae": "239900"
+        },
+        "Create_UA": {
+            "denominacion": "DP-CONTRATO-1077",
+            "centro_empl": "2000"
+        },
+        "Create_INST": {
+            "dia_fijado": "01.01.2022",
+            "sector": "EN",
+            "nivTension": "G1",
+            "clCal": "CEPE",
+            "tp_tarifa": "GD_T4",
+            "unidad_lectura": "GSFCO"
+        },
+        "Create_OPERAND": {
+            "RT_CAT_CLI": {
+                "tipo": "RATE",
+                "carga": true,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "GD_NORM",
+                "grValoresConcretos": "T4_BT"
+            },
+            "RT_PROSUM": {
+                "tipo": "RATE",
+                "carga": false,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "",
+                "grValoresConcretos": ""
+            },
+            "QU_CUPOGEN": {
+                "tipo": "QUANT",
+                "carga": false,
+                "hasta": "31.12.9999",
+                "cantidad": "0"
+            },
+            "FL_GUDIS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_NO_CAP": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_EMP_REC": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_PRG_IND": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_CLUB": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_UNI": {
+                "tipo": "FLAG",
+                "carga": true,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_MAS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_BEN_INF": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            }
+        },
+        "Create_movein": {
+            "f_alta": "01.01.2022",
+            "imputacion": "S2010",
+            "segmento": "103",
+            "cdc": "CG",
+            "fac_conj": "2"
+        },
+        "Create_montaje": {
+            "f_alta": "01.01.2022",
+            "dipositivo": "1077",
+            "dispotivoGen": "",
+            "tp_aparato": "700034",
+            "motivo": "05"
+        },
+        "Create_CP": {
+            "fecha_ini": "01.01.2022",
+            "periodo": "40",
+            "contratadaP": "50",
+            "contratadaFP": "50",
+            "descripcion": "CASO: CASO COOP"
+        }
+    },
+    {
+        "OBJETOS": {
+            "IC": "268",
+            "OC": "610000000000182",
+            "CC": "700011284",
+            "PS": "600000490",
+            "UA": "650000000000510",
+            "UA_GEN": "",
+            "INS": "400000462",
+            "CONTRATO": "300000406",
+            "CP": "",
+            "ID": "10"
+        },
+        "Create_CC": {
+            "tp_cta_contrato": "DP",
+            "estrRegion": "S1010A13",
+            "nombre": "DP-CONTRATO-1078",
+            "cdc": "CG",
+            "catcta": "G001",
+            "condicion_pago": "Z003",
+            "gpo_sociedades": "Z001",
+            "soc_std": "1000",
+            "clase_impuesto": "01",
+            "lugar_comercial": "0069",
+            "region": "12",
+            "condado": "011",
+            "proc_rec_tension": "P2",
+            "bloqueo_interes": ""
+        },
+        "Create_PS": {
+            "clae": "239900"
+        },
+        "Create_UA": {
+            "denominacion": "DP-CONTRATO-1078",
+            "centro_empl": "2000"
+        },
+        "Create_INST": {
+            "dia_fijado": "01.01.2022",
+            "sector": "EN",
+            "nivTension": "G1",
+            "clCal": "CEPE",
+            "tp_tarifa": "GD_T4",
+            "unidad_lectura": "GSFCO"
+        },
+        "Create_OPERAND": {
+            "RT_CAT_CLI": {
+                "tipo": "RATE",
+                "carga": true,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "GD_NORM",
+                "grValoresConcretos": "T4_BT"
+            },
+            "RT_PROSUM": {
+                "tipo": "RATE",
+                "carga": false,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "",
+                "grValoresConcretos": ""
+            },
+            "QU_CUPOGEN": {
+                "tipo": "QUANT",
+                "carga": false,
+                "hasta": "31.12.9999",
+                "cantidad": "0"
+            },
+            "FL_GUDIS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_NO_CAP": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_EMP_REC": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_PRG_IND": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_CLUB": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_UNI": {
+                "tipo": "FLAG",
+                "carga": true,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_MAS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_BEN_INF": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            }
+        },
+        "Create_movein": {
+            "f_alta": "01.01.2022",
+            "imputacion": "S2010",
+            "segmento": "103",
+            "cdc": "CG",
+            "fac_conj": "2"
+        },
+        "Create_montaje": {
+            "f_alta": "01.01.2022",
+            "dipositivo": "1078",
+            "dispotivoGen": "",
+            "tp_aparato": "700034",
+            "motivo": "05"
+        },
+        "Create_CP": {
+            "fecha_ini": "01.01.2022",
+            "periodo": "40",
+            "contratadaP": "50",
+            "contratadaFP": "50",
+            "descripcion": "CASO: CASO COOP"
+        }
+    },
+    {
+        "OBJETOS": {
+            "IC": "268",
+            "OC": "610000000000182",
+            "CC": "700011285",
+            "PS": "600000491",
+            "UA": "650000000000511",
+            "UA_GEN": "",
+            "INS": "400000463",
+            "CONTRATO": "300000407",
+            "CP": "",
+            "ID": "11"
+        },
+        "Create_CC": {
+            "tp_cta_contrato": "DP",
+            "estrRegion": "S1010A13",
+            "nombre": "DP-CONTRATO-1079",
+            "cdc": "CG",
+            "catcta": "G001",
+            "condicion_pago": "Z003",
+            "gpo_sociedades": "Z001",
+            "soc_std": "1000",
+            "clase_impuesto": "01",
+            "lugar_comercial": "0069",
+            "region": "12",
+            "condado": "011",
+            "proc_rec_tension": "P2",
+            "bloqueo_interes": ""
+        },
+        "Create_PS": {
+            "clae": "239900"
+        },
+        "Create_UA": {
+            "denominacion": "DP-CONTRATO-1079",
+            "centro_empl": "2000"
+        },
+        "Create_INST": {
+            "dia_fijado": "01.01.2022",
+            "sector": "EN",
+            "nivTension": "G1",
+            "clCal": "CEPE",
+            "tp_tarifa": "GD_T4",
+            "unidad_lectura": "GSFCO"
+        },
+        "Create_OPERAND": {
+            "RT_CAT_CLI": {
+                "tipo": "RATE",
+                "carga": true,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "GD_NORM",
+                "grValoresConcretos": "T4_BT"
+            },
+            "RT_PROSUM": {
+                "tipo": "RATE",
+                "carga": false,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "",
+                "grValoresConcretos": ""
+            },
+            "QU_CUPOGEN": {
+                "tipo": "QUANT",
+                "carga": false,
+                "hasta": "31.12.9999",
+                "cantidad": "0"
+            },
+            "FL_GUDIS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_NO_CAP": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_EMP_REC": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_PRG_IND": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_CLUB": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_UNI": {
+                "tipo": "FLAG",
+                "carga": true,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_MAS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_BEN_INF": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            }
+        },
+        "Create_movein": {
+            "f_alta": "01.01.2022",
+            "imputacion": "S2010",
+            "segmento": "103",
+            "cdc": "CG",
+            "fac_conj": "2"
+        },
+        "Create_montaje": {
+            "f_alta": "01.01.2022",
+            "dipositivo": "1079",
+            "dispotivoGen": "",
+            "tp_aparato": "700034",
+            "motivo": "05"
+        },
+        "Create_CP": {
+            "fecha_ini": "01.01.2022",
+            "periodo": "40",
+            "contratadaP": "50",
+            "contratadaFP": "50",
+            "descripcion": "CASO: CASO COOP"
+        }
+    },
+    {
+        "OBJETOS": {
+            "IC": "268",
+            "OC": "610000000000182",
+            "CC": "700011286",
+            "PS": "600000492",
+            "UA": "650000000000512",
+            "UA_GEN": "",
+            "INS": "400000464",
+            "CONTRATO": "300000408",
+            "CP": "",
+            "ID": "12"
+        },
+        "Create_CC": {
+            "tp_cta_contrato": "DP",
+            "estrRegion": "S1010A13",
+            "nombre": "DP-CONTRATO-1080",
+            "cdc": "CG",
+            "catcta": "G001",
+            "condicion_pago": "Z003",
+            "gpo_sociedades": "Z001",
+            "soc_std": "1000",
+            "clase_impuesto": "01",
+            "lugar_comercial": "0069",
+            "region": "12",
+            "condado": "011",
+            "proc_rec_tension": "P2",
+            "bloqueo_interes": ""
+        },
+        "Create_PS": {
+            "clae": "239900"
+        },
+        "Create_UA": {
+            "denominacion": "DP-CONTRATO-1080",
+            "centro_empl": "2000"
+        },
+        "Create_INST": {
+            "dia_fijado": "01.01.2022",
+            "sector": "EN",
+            "nivTension": "G1",
+            "clCal": "CEPE",
+            "tp_tarifa": "GD_T4",
+            "unidad_lectura": "GSFCO"
+        },
+        "Create_OPERAND": {
+            "RT_CAT_CLI": {
+                "tipo": "RATE",
+                "carga": true,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "GD_NORM",
+                "grValoresConcretos": "T4_BT"
+            },
+            "RT_PROSUM": {
+                "tipo": "RATE",
+                "carga": false,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "",
+                "grValoresConcretos": ""
+            },
+            "QU_CUPOGEN": {
+                "tipo": "QUANT",
+                "carga": false,
+                "hasta": "31.12.9999",
+                "cantidad": "0"
+            },
+            "FL_GUDIS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_NO_CAP": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_EMP_REC": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_PRG_IND": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_CLUB": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_UNI": {
+                "tipo": "FLAG",
+                "carga": true,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_MAS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_BEN_INF": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            }
+        },
+        "Create_movein": {
+            "f_alta": "01.01.2022",
+            "imputacion": "S2010",
+            "segmento": "103",
+            "cdc": "CG",
+            "fac_conj": "2"
+        },
+        "Create_montaje": {
+            "f_alta": "01.01.2022",
+            "dipositivo": "1080",
+            "dispotivoGen": "",
+            "tp_aparato": "700034",
+            "motivo": "05"
+        },
+        "Create_CP": {
+            "fecha_ini": "01.01.2022",
+            "periodo": "40",
+            "contratadaP": "50",
+            "contratadaFP": "50",
+            "descripcion": "CASO: CASO COOP"
+        }
+    },
+    {
+        "OBJETOS": {
+            "IC": "268",
+            "OC": "610000000000182",
+            "CC": "700011287",
+            "PS": "600000493",
+            "UA": "650000000000513",
+            "UA_GEN": "",
+            "INS": "400000465",
+            "CONTRATO": "300000409",
+            "CP": "",
+            "ID": "13"
+        },
+        "Create_CC": {
+            "tp_cta_contrato": "DP",
+            "estrRegion": "S1010A13",
+            "nombre": "DP-CONTRATO-1081",
+            "cdc": "CG",
+            "catcta": "G001",
+            "condicion_pago": "Z003",
+            "gpo_sociedades": "Z001",
+            "soc_std": "1000",
+            "clase_impuesto": "01",
+            "lugar_comercial": "0069",
+            "region": "12",
+            "condado": "011",
+            "proc_rec_tension": "P2",
+            "bloqueo_interes": ""
+        },
+        "Create_PS": {
+            "clae": "239900"
+        },
+        "Create_UA": {
+            "denominacion": "DP-CONTRATO-1081",
+            "centro_empl": "2000"
+        },
+        "Create_INST": {
+            "dia_fijado": "01.01.2022",
+            "sector": "EN",
+            "nivTension": "G1",
+            "clCal": "CEPE",
+            "tp_tarifa": "GD_T4",
+            "unidad_lectura": "GSFCO"
+        },
+        "Create_OPERAND": {
+            "RT_CAT_CLI": {
+                "tipo": "RATE",
+                "carga": true,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "GD_NORM",
+                "grValoresConcretos": "T4_BT"
+            },
+            "RT_PROSUM": {
+                "tipo": "RATE",
+                "carga": false,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "",
+                "grValoresConcretos": ""
+            },
+            "QU_CUPOGEN": {
+                "tipo": "QUANT",
+                "carga": false,
+                "hasta": "31.12.9999",
+                "cantidad": "0"
+            },
+            "FL_GUDIS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_NO_CAP": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_EMP_REC": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_PRG_IND": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_CLUB": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_UNI": {
+                "tipo": "FLAG",
+                "carga": true,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_MAS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_BEN_INF": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            }
+        },
+        "Create_movein": {
+            "f_alta": "01.01.2022",
+            "imputacion": "S2010",
+            "segmento": "103",
+            "cdc": "CG",
+            "fac_conj": "2"
+        },
+        "Create_montaje": {
+            "f_alta": "01.01.2022",
+            "dipositivo": "1081",
+            "dispotivoGen": "",
+            "tp_aparato": "700034",
+            "motivo": "05"
+        },
+        "Create_CP": {
+            "fecha_ini": "01.01.2022",
+            "periodo": "40",
+            "contratadaP": "50",
+            "contratadaFP": "50",
+            "descripcion": "CASO: CASO COOP"
+        }
+    },
+    {
+        "OBJETOS": {
+            "IC": "268",
+            "OC": "610000000000182",
+            "CC": "700011288",
+            "PS": "600000494",
+            "UA": "650000000000514",
+            "UA_GEN": "",
+            "INS": "400000466",
+            "CONTRATO": "300000410",
+            "CP": "",
+            "ID": "14"
+        },
+        "Create_CC": {
+            "tp_cta_contrato": "DP",
+            "estrRegion": "S1010A13",
+            "nombre": "DP-CONTRATO-1082",
+            "cdc": "CG",
+            "catcta": "G001",
+            "condicion_pago": "Z003",
+            "gpo_sociedades": "Z001",
+            "soc_std": "1000",
+            "clase_impuesto": "01",
+            "lugar_comercial": "0069",
+            "region": "12",
+            "condado": "011",
+            "proc_rec_tension": "P2",
+            "bloqueo_interes": ""
+        },
+        "Create_PS": {
+            "clae": "239900"
+        },
+        "Create_UA": {
+            "denominacion": "DP-CONTRATO-1082",
+            "centro_empl": "2000"
+        },
+        "Create_INST": {
+            "dia_fijado": "01.01.2022",
+            "sector": "EN",
+            "nivTension": "G1",
+            "clCal": "CEPE",
+            "tp_tarifa": "GD_T4",
+            "unidad_lectura": "GSFCO"
+        },
+        "Create_OPERAND": {
+            "RT_CAT_CLI": {
+                "tipo": "RATE",
+                "carga": true,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "GD_NORM",
+                "grValoresConcretos": "T4_BT"
+            },
+            "RT_PROSUM": {
+                "tipo": "RATE",
+                "carga": false,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "",
+                "grValoresConcretos": ""
+            },
+            "QU_CUPOGEN": {
+                "tipo": "QUANT",
+                "carga": false,
+                "hasta": "31.12.9999",
+                "cantidad": "0"
+            },
+            "FL_GUDIS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_NO_CAP": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_EMP_REC": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_PRG_IND": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_CLUB": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_UNI": {
+                "tipo": "FLAG",
+                "carga": true,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_MAS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_BEN_INF": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            }
+        },
+        "Create_movein": {
+            "f_alta": "01.01.2022",
+            "imputacion": "S2010",
+            "segmento": "103",
+            "cdc": "CG",
+            "fac_conj": "2"
+        },
+        "Create_montaje": {
+            "f_alta": "01.01.2022",
+            "dipositivo": "1082",
+            "dispotivoGen": "",
+            "tp_aparato": "700034",
+            "motivo": "05"
+        },
+        "Create_CP": {
+            "fecha_ini": "01.01.2022",
+            "periodo": "40",
+            "contratadaP": "50",
+            "contratadaFP": "50",
+            "descripcion": "CASO: CASO COOP"
+        }
+    },
+    {
+        "OBJETOS": {
+            "IC": "268",
+            "OC": "610000000000182",
+            "CC": "700011289",
+            "PS": "600000495",
+            "UA": "650000000000515",
+            "UA_GEN": "",
+            "INS": "400000467",
+            "CONTRATO": "300000411",
+            "CP": "",
+            "ID": "15"
+        },
+        "Create_CC": {
+            "tp_cta_contrato": "DP",
+            "estrRegion": "S1010A13",
+            "nombre": "DP-CONTRATO-1083",
+            "cdc": "CG",
+            "catcta": "G001",
+            "condicion_pago": "Z003",
+            "gpo_sociedades": "Z001",
+            "soc_std": "1000",
+            "clase_impuesto": "01",
+            "lugar_comercial": "0069",
+            "region": "12",
+            "condado": "011",
+            "proc_rec_tension": "P2",
+            "bloqueo_interes": ""
+        },
+        "Create_PS": {
+            "clae": "239900"
+        },
+        "Create_UA": {
+            "denominacion": "DP-CONTRATO-1083",
+            "centro_empl": "2000"
+        },
+        "Create_INST": {
+            "dia_fijado": "01.01.2022",
+            "sector": "EN",
+            "nivTension": "G1",
+            "clCal": "CEPE",
+            "tp_tarifa": "GD_T4",
+            "unidad_lectura": "GSFCO"
+        },
+        "Create_OPERAND": {
+            "RT_CAT_CLI": {
+                "tipo": "RATE",
+                "carga": true,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "GD_NORM",
+                "grValoresConcretos": "T4_BT"
+            },
+            "RT_PROSUM": {
+                "tipo": "RATE",
+                "carga": false,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "",
+                "grValoresConcretos": ""
+            },
+            "QU_CUPOGEN": {
+                "tipo": "QUANT",
+                "carga": false,
+                "hasta": "31.12.9999",
+                "cantidad": "0"
+            },
+            "FL_GUDIS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_NO_CAP": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_EMP_REC": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_PRG_IND": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_CLUB": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_UNI": {
+                "tipo": "FLAG",
+                "carga": true,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_MAS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_BEN_INF": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            }
+        },
+        "Create_movein": {
+            "f_alta": "01.01.2022",
+            "imputacion": "S2010",
+            "segmento": "103",
+            "cdc": "CG",
+            "fac_conj": "2"
+        },
+        "Create_montaje": {
+            "f_alta": "01.01.2022",
+            "dipositivo": "1083",
+            "dispotivoGen": "",
+            "tp_aparato": "700034",
+            "motivo": "05"
+        },
+        "Create_CP": {
+            "fecha_ini": "01.01.2022",
+            "periodo": "40",
+            "contratadaP": "50",
+            "contratadaFP": "50",
+            "descripcion": "CASO: CASO COOP"
+        }
+    },
+    {
+        "OBJETOS": {
+            "IC": "268",
+            "OC": "610000000000182",
+            "CC": "700011290",
+            "PS": "600000496",
+            "UA": "650000000000516",
+            "UA_GEN": "",
+            "INS": "400000468",
+            "CONTRATO": "300000412",
+            "CP": "",
+            "ID": "16"
+        },
+        "Create_CC": {
+            "tp_cta_contrato": "DP",
+            "estrRegion": "S1010A13",
+            "nombre": "DP-CONTRATO-1084",
+            "cdc": "CG",
+            "catcta": "G001",
+            "condicion_pago": "Z003",
+            "gpo_sociedades": "Z001",
+            "soc_std": "1000",
+            "clase_impuesto": "01",
+            "lugar_comercial": "0069",
+            "region": "12",
+            "condado": "011",
+            "proc_rec_tension": "P2",
+            "bloqueo_interes": ""
+        },
+        "Create_PS": {
+            "clae": "239900"
+        },
+        "Create_UA": {
+            "denominacion": "DP-CONTRATO-1084",
+            "centro_empl": "2000"
+        },
+        "Create_INST": {
+            "dia_fijado": "01.01.2022",
+            "sector": "EN",
+            "nivTension": "G1",
+            "clCal": "CEPE",
+            "tp_tarifa": "GD_T4",
+            "unidad_lectura": "GSFCO"
+        },
+        "Create_OPERAND": {
+            "RT_CAT_CLI": {
+                "tipo": "RATE",
+                "carga": true,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "GD_NORM",
+                "grValoresConcretos": "T4_BT"
+            },
+            "RT_PROSUM": {
+                "tipo": "RATE",
+                "carga": false,
+                "f_hasta": "31.12.9999",
+                "clase tarifa": "",
+                "grValoresConcretos": ""
+            },
+            "QU_CUPOGEN": {
+                "tipo": "QUANT",
+                "carga": false,
+                "hasta": "31.12.9999",
+                "cantidad": "0"
+            },
+            "FL_GUDIS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_NO_CAP": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_EMP_REC": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_PRG_IND": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_CLUB": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_UNI": {
+                "tipo": "FLAG",
+                "carga": true,
+                "hasta": "31.12.9999"
+            },
+            "FL_COO_MAS": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            },
+            "FL_BEN_INF": {
+                "tipo": "FLAG",
+                "carga": false,
+                "hasta": "31.12.9999"
+            }
+        },
+        "Create_movein": {
+            "f_alta": "01.01.2022",
+            "imputacion": "S2010",
+            "segmento": "103",
+            "cdc": "CG",
+            "fac_conj": "2"
+        },
+        "Create_montaje": {
+            "f_alta": "01.01.2022",
+            "dipositivo": "1084",
             "dispotivoGen": "",
             "tp_aparato": "700034",
             "motivo": "05"

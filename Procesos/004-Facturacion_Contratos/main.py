@@ -21,8 +21,7 @@ script_gen_lecturas = 'generar_JSON_lecturas.py'
 script_gen_facturacion = 'generar_JSON_facturacion.py'
 script_modificar_csv = 'modificar_csv_carga_datos.py'  
 
-script_carga_datos_sap = 'cargar_datos_sap.py'  
-
+script_carga_datos_sap = 'carga_datos_sap.py'  
 script_facturacion_contratos = 'facturacion_contratos.py' 
 
 def ejecutar_script(script_name, path):
@@ -45,6 +44,6 @@ if __name__ == "__main__":
     ejecutar_script(script_gen_facturacion, procesos_path)
     print(f"Script ejecutado: {script_gen_facturacion}")
 
-    ejecutar_script(script_facturacion_contratos, facturacion_path)
-    print(f"Script ejecutado: {script_facturacion_contratos}")
+    #ejecutar_script(script_facturacion_contratos, facturacion_path)
+    #print(f"Script ejecutado: {script_facturacion_contratos}")
     

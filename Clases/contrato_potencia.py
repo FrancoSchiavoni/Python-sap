@@ -37,26 +37,30 @@ class ContratoPotencia:
     
 
     def MostarGrilla(self, tipo_cliente):
+        self.sap.session.findById("wnd[0]/usr/ctxtZZCONT_GC_CAB-ZZPERIODO_TIPO").setFocus()
         self.sap.session.findById("wnd[0]/usr/ctxtZZCONT_GC_CAB-ZZPERIODO_TIPO").text = str((self.periodo))
         if (tipo_cliente == "DP"):
             self.sap.session.findById("wnd[0]").sendVKey(4)
             self.sap.session.findById("wnd[1]/usr/lbl[1,6]").setFocus()
             self.sap.session.findById("wnd[1]/usr/lbl[1,6]").caretPosition = 2
+            self.sap.session.findById("wnd[1]").sendVKey(2)
+            self.sap.session.findById("wnd[0]").sendVKey(0)
         else:
             self.sap.session.findById("wnd[0]").sendVKey(4)
-            self.sap.session.findById("wnd[1]/usr/lbl[1,6]").setFocus()
-            self.sap.session.findById("wnd[1]/usr/lbl[1,6]").caretPosition = 2
-        self.sap.session.findById("wnd[1]").sendVKey(2)
-        self.sap.session.findById("wnd[0]").sendVKey(0)    
-        self.sap.session.findById("wnd[0]").maximize()
+            self.sap.session.findById("wnd[1]/usr/lbl[1,4]").setFocus()
+            self.sap.session.findById("wnd[1]/usr/lbl[1,4]").caretPosition = 0
+            self.sap.session.findById("wnd[1]").sendVKey(2)
+            self.sap.session.findById("wnd[0]").sendVKey(0)
+            self.sap.session.findById("wnd[1]/usr/btnBUTTON_1").press()
+        
 
     def CargaEstacionalidad(self):
         for index,mes in enumerate(self.periodos):
             if mes == "EA":
-                self.sap.session.findById("wnd[0]/usr/tblZDM_CONTRATOS_GCZZPERIODOS/ctxtZZCONT_GC_PERIOD-ZZPERIODO_CLASE[4," + str(index) + "]").text = "A"
+                self.sap.session.findById("wnd[0]/usr/tblZDM_CONTRATOS_GCZZPERIODOS/ctxtZZCONT_GC_PERIOD-ZZPERIODO_CLASE[3," + str(index) + "]").text = "A  "
             else:
-                self.sap.session.findById("wnd[0]/usr/tblZDM_CONTRATOS_GCZZPERIODOS/txtZZCONT_GC_PERIOD-ZZPOT_CONTRATADA_PIC[5," + str(index) + "]").text = self.contratadaP_B
-                self.sap.session.findById("wnd[0]/usr/tblZDM_CONTRATOS_GCZZPERIODOS/txtZZCONT_GC_PERIOD-ZZPOT_CONTRATADA_FPIC[7," + str(index) + "]").text = self.contratadaFP_B
+                self.sap.session.findById("wnd[0]/usr/tblZDM_CONTRATOS_GCZZPERIODOS/txtZZCONT_GC_PERIOD-ZZPOT_CONTRATADA_PIC[4," + str(index) + "]").text = self.contratadaP_B
+                self.sap.session.findById("wnd[0]/usr/tblZDM_CONTRATOS_GCZZPERIODOS/txtZZCONT_GC_PERIOD-ZZPOT_CONTRATADA_FPIC[6," + str(index) + "]").text = self.contratadaFP_B
         self.sap.session.findById("wnd[0]").sendVKey(0)
 
     def GuardarCP(self):

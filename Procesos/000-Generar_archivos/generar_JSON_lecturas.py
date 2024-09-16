@@ -2,7 +2,7 @@ import pandas as pd
 import json
 import os
 
-file_path = (r'Inputs\TT_Estacionales_SAP_PY.csv')
+file_path = (r'Inputs\Prueba_Contratos_CSV.csv')
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path, decimal=',', delimiter = ";")
@@ -24,11 +24,11 @@ result = {}
 for instalacion, group in grouped:
     # Inicializar arrays para las columnas relevantes
     periodos = group['Tipo de Contrato'].tolist()
-    dem_reg_pico = group['Dem.Reg.Pico'].tolist()
-    dem_reg_fpico = group['Dem.Reg.F.Pico'].tolist()
-    dem_reg_fpico2 = group['Dem.Reg.F.Pico'].tolist()  # Reutilizando el mismo valor
-    dem_cont_pico = group['Cap.Sum.Contratada Pico'].tolist() 
-    dem_cont_fpico = group['Cap.Sum.Contratada F.Pico'].tolist()
+    dem_reg_pico = [str(x) for x in group['Dem.Reg.Pico'].tolist()]
+    dem_reg_fpico = [str(x) for x in group['Dem.Reg.F.Pico'].tolist()]
+    dem_reg_fpico2 = [str(x) for x in group['Dem.Reg.F.Pico'].tolist()]  # Reutilizando el mismo valor
+    dem_cont_pico = [str(x) for x in group['Cap.Sum.Contratada Pico'].tolist()]
+    dem_cont_fpico = [str(x) for x in group['Cap.Sum.Contratada F.Pico'].tolist()]
     dem_reg_energ_consu1 = [1000] * len(group)  # Valores fijos
     dem_reg_energ_consu2 = [2000] * len(group)  # Valores fijos
     dem_reg_energ_consu3 = [3000] * len(group)  # Valores fijos

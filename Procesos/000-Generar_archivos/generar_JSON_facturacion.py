@@ -77,14 +77,8 @@ def generar_JSON_facturacion(input_csv):
     with open(ruta_json, 'w') as jsonfile:
         json.dump(objetos_json, jsonfile, indent=4)
 
-    # Si hay errores, guardarlos en un archivo de log
-    if errores:
-        with open(ruta_log, 'w', encoding='utf-8') as log:
-            for error in errores:
-                log.write(f"{error}\n")
 
-
-file_path = (r'Inputs\TT_Estacionales_SAP_PY.csv')
+file_path = (r'Inputs\Prueba_Contratos_CSV.csv')
 
 if os.path.exists(file_path):
     print("Archivo leído correctamente.")

@@ -50,6 +50,7 @@ datos = j.read_json(json_path)
 #flag_creaContrato = sys.argv[2]
 
 mdt = "390"
+sap_version = "java"
 flag_creaContrato = False
 
 #Conexion con SAP
@@ -236,7 +237,7 @@ for iteration, row in enumerate(datos):
 
         row['OBJETOS']['CONTRATO'] = Movein.id #Guarda CONTRATO SAP
 
-        # #Aparato
+        #Aparato
         if f_flag_prosumidor == True:
             ##Aparato
             Aparato = ap.Aparato(sap, id=Montaje.dipositivo, material= Montaje.tp_aparato)
@@ -263,14 +264,14 @@ for iteration, row in enumerate(datos):
             if f_flag_prosumidor == True:
                 Montaje.SetNumeradoresProsum()    
             elif Instalacion.tp_tarifa == "GD_T4":
-                Montaje.SetNumeradoresCooperativa()
+                Montaje.SetNumeradoresCooperativa(sap_version)
             else:
                 Montaje.SetNumeradores()
         elif mdt == "390":
             if f_flag_prosumidor == True:
                 Montaje.SetNumeradoresProsum390()    
             elif Instalacion.tp_tarifa == "GD_T4":
-                Montaje.SetNumeradoresCooperativa()
+                Montaje.SetNumeradoresCooperativa(sap_version)
             else:
                 Montaje.SetNumeradores390()
                      
