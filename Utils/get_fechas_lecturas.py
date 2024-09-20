@@ -15,7 +15,7 @@ def generar_fechas(fecha_str):
         fechas_lecturas.append(ultimo_dia_mes.strftime("%d.%m.%Y"))
         
         # Calcular la fecha de cálculo (día 10 del mes siguiente)
-        dia_10_mes_siguiente = (ultimo_dia_mes.replace(day=1) + timedelta(days=32)).replace(day=15)
+        dia_10_mes_siguiente = (ultimo_dia_mes.replace(day=1) + timedelta(days=32)).replace(day=10)
         fechas_calculo.append(dia_10_mes_siguiente.strftime("%d.%m.%Y"))
         
         # Avanzar al mes siguiente para la próxima iteración

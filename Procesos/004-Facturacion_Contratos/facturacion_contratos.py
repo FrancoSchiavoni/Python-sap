@@ -75,14 +75,14 @@ for iteration, row in enumerate(datos):
         Lecturas.trxCalculo = row.get('trxCalculo', '/nEA00')
         Lecturas.fecha_Calculo = row.get('fecha_Calculo', '10.02.2023')
         Lecturas.trxFactura = row.get('trxFactura', '/nEA19')
-        Lecturas.clave_rec = row.get('clave_rec', '240911-001')
+        Lecturas.clave_rec = row.get('clave_rec', '240919-001')
 
         # Fechas Lecturas y Calculo
         fechas_lecturas, fechas_calculo = fl.generar_fechas(Lecturas.fecha_Ord_Lectura_Desde)
 
         #Crear Orden de Lectura
-        #sap.StartTransaction(Lecturas.trxCreateOrd)
-        #Lecturas.GenerarOrdenLecturaMasiva(fechas_lecturas)
+        sap.StartTransaction(Lecturas.trxCreateOrd)
+        Lecturas.GenerarOrdenLecturaMasiva(fechas_lecturas)
 
         # Carga de Lecturas
         Lecturas_Masivas = lm.LecturasMasivas(sap=sap)
@@ -105,14 +105,14 @@ for iteration, row in enumerate(datos):
         Lecturas_Masivas.lectura_E_act_R4 = datos_lecturas_ins.get('lectura_E_act_R4', '')
         Lecturas_Masivas.lectura_E_act_V4 = datos_lecturas_ins.get('lectura_E_act_V4', '')
 
-        #sap.StartTransaction(Lecturas_Masivas.trxCargaLecturas)
+        sap.StartTransaction(Lecturas_Masivas.trxCargaLecturas)
     
         tipo_cliente = row.get('tipo_cliente', '')
         if tipo_cliente != 'DP':
             Lecturas_Masivas.CargaLecturasGD(mdt=mdt)
         else:
-            #Lecturas_Masivas.CargaLecturasCOOP(mdt=mdt)
-            print('')
+            Lecturas_Masivas.CargaLecturasCOOP(mdt=mdt)
+            
 
         # Crear Contrato
         IC = row.get('IC', '')
@@ -184,12 +184,12 @@ for iteration, row in enumerate(datos):
                 Contrato_Potencia.ValidarCP()
 
                 # Notificar
-                sap.StartTransaction(Contrato_Potencia.trxNotificaCP)
-                Contrato_Potencia.NotificarExceso(path_destino=notas_output_folder ,periodo= str(periodo))
+                #sap.StartTransaction(Contrato_Potencia.trxNotificaCP)
+                #Contrato_Potencia.NotificarExceso(path_destino=notas_output_folder ,periodo= str(periodo))
 
-                if periodo == 12:
-                    sap.StartTransaction(Contrato_Potencia.trxNotificaCP)
-                    Contrato_Potencia.NotificarFin(path_destino=notas_output_folder ,periodo= str(periodo))
+                #if periodo == 12:
+                    #sap.StartTransaction(Contrato_Potencia.trxNotificaCP)
+                    #Contrato_Potencia.NotificarFin(path_destino=notas_output_folder ,periodo= str(periodo))
             
             except Exception as eFact:
                 print(eFact)
