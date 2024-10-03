@@ -33,6 +33,11 @@ class Lecturas:
     self.lectura_E_act_P4 = ""
     self.lectura_E_act_R4 = ""
     self.lectura_E_act_V4 = ""
+    self.lectura_Pot_G1 = ""
+    self.lectura_Pot_G2 = ""
+    self.lectura_Pot_G3 = ""
+    self.lectura_Pot_G4 = ""
+    self.lectura_E_Bomb = ""
     self.lectura_E_react = "7500"
     self.trxCalculo = "/nEA00"
     self.fecha_Calculo = "10.02.2023"
@@ -110,6 +115,13 @@ class Lecturas:
     self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,12]").text = self.lectura_E_act_R4
     self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,13]").text = self.lectura_E_act_P4
     self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,14]").text = self.lectura_E_act_V4
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT").verticalScrollbar.position = 3
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT").verticalScrollbar.position = 5
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,10]").text = self.lectura_Pot_G1
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,11]").text = self.lectura_Pot_G2
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,12]").text = self.lectura_Pot_G3
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,13]").text = self.lectura_Pot_G4
+    self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,14]").text = self.lectura_E_Bomb
     self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
   
   def CargaLecturasPROSU(self,mdt):
