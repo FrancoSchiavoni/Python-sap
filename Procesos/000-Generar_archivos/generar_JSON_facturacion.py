@@ -49,7 +49,7 @@ def generar_JSON_facturacion(input_csv):
                 # Determinar tipo_contrato según la columna "Tipo de contrato"
                 if tipo_contrato in ["EA", "EB"]:
                     tipo_contrato_salida = "E"
-                elif tipo_contrato == "U":
+                elif tipo_contrato == "U" or tipo_contrato == "P":
                     tipo_contrato_salida = "U"
                 else:
                     errores.append(f"Contrato no válido en el ID {id_actual}, no se reconoce tipo de contrato")

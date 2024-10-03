@@ -75,7 +75,7 @@ for iteration, row in enumerate(datos):
         Lecturas.trxCalculo = row.get('trxCalculo', '/nEA00')
         Lecturas.fecha_Calculo = row.get('fecha_Calculo', '10.02.2023')
         Lecturas.trxFactura = row.get('trxFactura', '/nEA19')
-        Lecturas.clave_rec = row.get('clave_rec', '240919-001')
+        Lecturas.clave_rec = row.get('clave_rec', '240926-001')
 
         # Fechas Lecturas y Calculo
         fechas_lecturas, fechas_calculo = fl.generar_fechas(Lecturas.fecha_Ord_Lectura_Desde)

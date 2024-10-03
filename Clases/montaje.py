@@ -155,34 +155,97 @@ class Montaje:
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,7]").text = "GENERALES"
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,8]").text = "GENERALES"
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST").verticalScrollbar.position = 9
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]").maximize()
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-TARIFART[9,6]").text = "POAT4_G1"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,6]").text = "GENERALES"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,6]").setFocus
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,6]").caretPosition = 9
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-TARIFART[9,7]").text = "POAT4_G2"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,7]").text = "GENERALES"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,7]").setFocus
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,7]").caretPosition = 9
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-TARIFART[9,8]").text = "POAT4_G3"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,8]").text = "GENERALES"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,8]").setFocus
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,8]").caretPosition = 9
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-TARIFART[9,0]").text = "POAT4_G4"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,0]").text = "GENERALES"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,0]").setFocus
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,0]").caretPosition = 9
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-TARIFART[9,1]").text = "BOMB_T4"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,1]").text = "GENERALES"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,1]").setFocus
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/ctxtREG30-KONDIGRE[10,1]").caretPosition = 9
+        self.sap.session.findById("wnd[0]").sendVKey(0)
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,1]").text = "0"
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,2]").text = "0"
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,3]").text = "0"
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,4]").text = "0"
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,5]").text = "0"
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").setFocus()
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST").verticalScrollbar.position = 6
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,1]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,1]").text = "0"
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,2]").text = "0"
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").setFocus
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST").verticalScrollbar.position = 3
+        self.sap.session.findById("wnd[0]").sendVKey(0)
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,1]").text = "0"
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,2]").text = "0"
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").setFocus()
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST").verticalScrollbar.position = 0
+        self.sap.session.findById("wnd[0]").sendVKey(0)
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,1]").text = "0"
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,2]").text = "0"
-        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").setFocus()
         self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLE30DCONTROL_RE_INST/txtREG30-PERVERBR[7,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]").maximize()
         self.sap.session.findById("wnd[0]/tbar[1]/btn[32]").press()
         self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,0]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
         self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,1]").text = "0"
         self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,2]").text = "0"
         self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,3]").text = "0"
@@ -193,23 +256,30 @@ class Montaje:
         self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,8]").text = "0"
         self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,9]").text = "0"
         self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,10]").text = "0"
-        if sap_version == "java":
-            self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,10]").setFocus
-            self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,10]").caretPosition = 1
-            self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT").verticalScrollbar.position = 5
-            self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,6]").text = "0"
-            self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,7]").text = "0"
-            self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,8]").text = "0"
-            self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,9]").text = "0"
-            self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,9]").setFocus
-            self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,9]").caretPosition = 1
-        else:
-            self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,11]").text = "0"
-            self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,12]").text = "0"
-            self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,13]").text = "0"
-            self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,14]").text = "0"
-            self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,14]").setFocus()
-            self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,14]").caretPosition = 1
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,11]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,12]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,13]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,14]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,15]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,15]").setFocus
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,15]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT").verticalScrollbar.position = 5
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT").verticalScrollbar.position = 6
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,10]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,10]").setFocus
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,10]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,0]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,11]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,12]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,13]").text = "0"
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,13]").setFocus
+        self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,13]").caretPosition = 1
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]").sendVKey(0)
+        self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press
+        self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press
         self.sap.session.findById("wnd[0]/tbar[0]/btn[3]").press()
         self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
 
