@@ -3,19 +3,19 @@
         "OBJETOS": {
             "IC": "252",
             "OC": "610000000000166",
-            "CC": "",
-            "PS": "",
-            "UA": "",
+            "CC": "20000409",
+            "PS": "600004000",
+            "UA": "650000000004104",
             "UA_GEN": "",
-            "INS": "",
-            "CONTRATO": "",
+            "INS": "400003979",
+            "CONTRATO": "300003921",
             "CP": "",
             "ID": "1"
         },
         "Create_CC": {
             "tp_cta_contrato": "GD",
             "estrRegion": "S6020A21",
-            "nombre": "GD-CONTRATO-1225",
+            "nombre": "GD-CONTRATO-1227",
             "cdc": "CU",
             "catcta": "G003",
             "condicion_pago": "Z002",
@@ -32,7 +32,7 @@
             "clae": "239900"
         },
         "Create_UA": {
-            "denominacion": "GD-CONTRATO-1225",
+            "denominacion": "GD-CONTRATO-1227",
             "centro_empl": "4000"
         },
         "Create_INST": {
@@ -114,7 +114,7 @@
         },
         "Create_montaje": {
             "f_alta": "01.01.2022",
-            "dipositivo": "1225",
+            "dipositivo": "1227",
             "dispotivoGen": "",
             "tp_aparato": "700034",
             "motivo": "05"

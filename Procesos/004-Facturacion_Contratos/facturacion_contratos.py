@@ -75,7 +75,7 @@ for iteration, row in enumerate(datos):
         Lecturas.trxCalculo = row.get('trxCalculo', '/nEA00')
         Lecturas.fecha_Calculo = row.get('fecha_Calculo', '10.02.2023')
         Lecturas.trxFactura = row.get('trxFactura', '/nEA19')
-        Lecturas.clave_rec = row.get('clave_rec', '241031-001')
+        Lecturas.clave_rec = row.get('clave_rec', '241113-001')
         
 
         tipo_cliente = row.get('tipo_cliente', '')
