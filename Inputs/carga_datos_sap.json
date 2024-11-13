@@ -1,8 +1,8 @@
 [
     {
         "OBJETOS": {
-            "IC": "200172371",
-            "OC": "610000000178106",
+            "IC": "252",
+            "OC": "610000000000166",
             "CC": "",
             "PS": "",
             "UA": "",
@@ -10,12 +10,12 @@
             "INS": "",
             "CONTRATO": "",
             "CP": "",
-            "ID": ""
+            "ID": "1"
         },
         "Create_CC": {
             "tp_cta_contrato": "GD",
-            "estrRegion": "S1020A21",
-            "nombre": "GD-PRUEBA-DEUDA",
+            "estrRegion": "S6020A21",
+            "nombre": "GD-CONTRATO-1225",
             "cdc": "CU",
             "catcta": "G003",
             "condicion_pago": "Z002",
@@ -32,7 +32,7 @@
             "clae": "239900"
         },
         "Create_UA": {
-            "denominacion": "GD-PRUEBA-DEUDA",
+            "denominacion": "GD-CONTRATO-1225",
             "centro_empl": "4000"
         },
         "Create_INST": {
@@ -106,21 +106,21 @@
             }
         },
         "Create_movein": {
-            "f_alta": "01.05.2024",
+            "f_alta": "01.01.2022",
             "imputacion": "S4010",
             "segmento": "111",
             "cdc": "CU",
             "fac_conj": "2"
         },
         "Create_montaje": {
-            "f_alta": "01.05.2024",
-            "dipositivo": "1191",
+            "f_alta": "01.01.2022",
+            "dipositivo": "1225",
             "dispotivoGen": "",
             "tp_aparato": "700034",
             "motivo": "05"
         },
         "Create_CP": {
-            "fecha_ini": "01.05.2024",
+            "fecha_ini": "01.01.2022",
             "periodo": "00",
             "contratadaP": "50",
             "contratadaFP": "100",
