@@ -255,8 +255,8 @@ for iteration, row in enumerate(datos):
             Aparato.UpdateGN("GC-04313")  
 
         # #Montaje
-        #sap.StartTransaction(Montaje.trxCreateMON)
-        #Montaje.SetDatosGenerales(UbicacionAparato.id, Instalacion.id)
+        sap.StartTransaction(Montaje.trxCreateMON)
+        Montaje.SetDatosGenerales(UbicacionAparato.id, Instalacion.id)
 
         #Determina que numeradores debe cargar segunt mdt y tipo (Normal/Cooperativa/Prosumidor)
 
@@ -273,10 +273,10 @@ for iteration, row in enumerate(datos):
             elif Instalacion.tp_tarifa == "GD_T4":
                 Montaje.SetNumeradoresCooperativa(sap_version)
             else:
-                #Montaje.SetNumeradores390()
+                Montaje.SetNumeradores390()
                 print(".")
                      
-        #Montaje.Guardar()
+        Montaje.Guardar()
 
         ### Montaje medidor de Generacion
         MontajeGen = None

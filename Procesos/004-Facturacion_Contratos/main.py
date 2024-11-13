@@ -29,20 +29,20 @@ def ejecutar_script(script_name, path):
     subprocess.run(['python', script_path], check=True)
 
 if __name__ == "__main__":
-    #ejecutar_script(script_gen_carga_datos, procesos_path)
+    ejecutar_script(script_gen_carga_datos, procesos_path)
     print(f"Script ejecutado: {script_gen_carga_datos}")
     
     #ejecutar_script(script_carga_datos_sap, carga_datos_path)
-    print(f"Script ejecutado: {script_carga_datos_sap}")
+    # print(f"Script ejecutado: {script_carga_datos_sap}")
 
     #ejecutar_script(script_modificar_csv, procesos_path) 
-    print(f"Script ejecutado: {script_modificar_csv}")
+    # print(f"Script ejecutado: {script_modificar_csv}")
 
-    ejecutar_script(script_gen_lecturas, procesos_path)
-    print(f"Script ejecutado: {script_gen_lecturas}")
+    # ejecutar_script(script_gen_lecturas, procesos_path)
+    # print(f"Script ejecutado: {script_gen_lecturas}")
 
-    ejecutar_script(script_gen_facturacion, procesos_path)
-    print(f"Script ejecutado: {script_gen_facturacion}")
+    # ejecutar_script(script_gen_facturacion, procesos_path)
+    # print(f"Script ejecutado: {script_gen_facturacion}")
 
     #ejecutar_script(script_facturacion_contratos, facturacion_path)
     #print(f"Script ejecutado: {script_facturacion_contratos}")
