@@ -75,10 +75,12 @@ for iteration, row in enumerate(datos):
         Lecturas.trxCalculo = row.get('trxCalculo', '/nEA00')
         Lecturas.fecha_Calculo = row.get('fecha_Calculo', '10.02.2023')
         Lecturas.trxFactura = row.get('trxFactura', '/nEA19')
-        Lecturas.clave_rec = row.get('clave_rec', '240926-001')
+        Lecturas.clave_rec = row.get('clave_rec', '241031-001')
+        
 
+        tipo_cliente = row.get('tipo_cliente', '')
         # Fechas Lecturas y Calculo
-        fechas_lecturas, fechas_calculo = fl.generar_fechas(Lecturas.fecha_Ord_Lectura_Desde)
+        fechas_lecturas, fechas_calculo = fl.generar_fechas(Lecturas.fecha_Ord_Lectura_Desde, tipo = tipo_cliente)
 
         #Crear Orden de Lectura
         sap.StartTransaction(Lecturas.trxCreateOrd)
@@ -104,15 +106,19 @@ for iteration, row in enumerate(datos):
         Lecturas_Masivas.lectura_E_act_P4 = datos_lecturas_ins.get('lectura_E_act_P4', '')
         Lecturas_Masivas.lectura_E_act_R4 = datos_lecturas_ins.get('lectura_E_act_R4', '')
         Lecturas_Masivas.lectura_E_act_V4 = datos_lecturas_ins.get('lectura_E_act_V4', '')
+        Lecturas_Masivas.lectura_Pot_G1 = datos_lecturas_ins.get('lectura_Pot_G1', '')
+        Lecturas_Masivas.lectura_Pot_G2 = datos_lecturas_ins.get('lectura_Pot_G2', '')
+        Lecturas_Masivas.lectura_Pot_G3 = datos_lecturas_ins.get('lectura_Pot_G3', '')
+        Lecturas_Masivas.lectura_Pot_G4 = datos_lecturas_ins.get('lectura_Pot_G4', '')
+        Lecturas_Masivas.lectura_E_Bomb = datos_lecturas_ins.get('lectura_E_Bomb', '')
 
         sap.StartTransaction(Lecturas_Masivas.trxCargaLecturas)
-    
-        tipo_cliente = row.get('tipo_cliente', '')
+
         if tipo_cliente != 'DP':
             Lecturas_Masivas.CargaLecturasGD(mdt=mdt)
         else:
             Lecturas_Masivas.CargaLecturasCOOP(mdt=mdt)
-            
+
 
         # Crear Contrato
         IC = row.get('IC', '')

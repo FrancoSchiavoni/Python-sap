@@ -44,6 +44,12 @@ for instalacion, group in grouped:
         dem_reg_energ_consu11= [2001] * len(group)
         dem_reg_energ_consu12= [1001] * len(group)
         dem_reg_energ_consu13= [3001] * len(group)
+        dem_reg_energ_consu14= [100] * len(group)
+        dem_reg_energ_consu15= [100] * len(group)
+        dem_reg_energ_consu16= [100] * len(group)
+        dem_reg_energ_consu17= [100] * len(group)
+        dem_reg_energ_consu18= [1000] * len(group)
+
     else:
         dem_reg_energ_consu5 = [0] * len(group)
         dem_reg_energ_consu6 = [0] * len(group)
@@ -54,6 +60,12 @@ for instalacion, group in grouped:
         dem_reg_energ_consu11= [0] * len(group)
         dem_reg_energ_consu12= [0] * len(group)
         dem_reg_energ_consu13= [0] * len(group)
+        dem_reg_energ_consu14= [0] * len(group)
+        dem_reg_energ_consu15= [0] * len(group)
+        dem_reg_energ_consu16= [0] * len(group)
+        dem_reg_energ_consu17= [0] * len(group)
+        dem_reg_energ_consu18= [0] * len(group)
+
 
 
     # Estructurar el diccionario
@@ -78,6 +90,11 @@ for instalacion, group in grouped:
         'lectura_E_act_R4': dem_reg_energ_consu11,
         'lectura_E_act_P4': dem_reg_energ_consu12,
         'lectura_E_act_V4': dem_reg_energ_consu13,
+        'lectura_Pot_G1': dem_reg_energ_consu14,
+        'lectura_Pot_G2': dem_reg_energ_consu15,
+        'lectura_Pot_G3': dem_reg_energ_consu16,
+        'lectura_Pot_G4': dem_reg_energ_consu17,
+        'lectura_E_Bomb': dem_reg_energ_consu18,
     }
 # Convierte el resultado a JSON
 json_result = json.dumps(result, indent=4)

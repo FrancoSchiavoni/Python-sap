@@ -68,16 +68,17 @@ class LecturasMasivas:
       self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,8]").text  = self.lectura_E_act_V2[mes]
       self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,9]").text  = self.lectura_E_act_R3[mes]
       self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,10]").text = self.lectura_E_act_P3[mes]
-      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,11]").text = self.lectura_E_act_V3[mes]
-      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,12]").text = self.lectura_E_act_R4[mes]
-      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,13]").text = self.lectura_E_act_P4[mes]
-      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,14]").text = self.lectura_E_act_V4[mes]
-      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT").verticalScrollbar.position = 3
-      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT").verticalScrollbar.position = 5
-      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,10]").text = self.lectura_Pot_G1[mes]
-      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,11]").text = self.lectura_Pot_G2[mes]
-      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,12]").text = self.lectura_Pot_G3[mes]
-      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,13]").text = self.lectura_Pot_G4[mes]
-      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,14]").text = self.lectura_E_Bomb[mes]
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT").verticalScrollbar.position = 8
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT").verticalScrollbar.position = 9
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT").verticalScrollbar.position = 11
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,0]").text = self.lectura_E_act_V3[mes]
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,1]").text = self.lectura_E_act_R4[mes]
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,2]").text = self.lectura_E_act_P4[mes]
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,3]").text = self.lectura_E_act_V4[mes]
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,4]").text = self.lectura_Pot_G1[mes]
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,5]").text = self.lectura_Pot_G2[mes]
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,6]").text = self.lectura_Pot_G3[mes]
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,7]").text = self.lectura_Pot_G4[mes]
+      self.sap.session.findById("wnd[0]/usr/tblSAPLEL01CONTROL_SINGENT/txtREABLD-ZWSTAND[6,8]").text = self.lectura_E_Bomb[mes]
       self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
     self.sap.session.findById("wnd[0]/tbar[0]/btn[15]").press()

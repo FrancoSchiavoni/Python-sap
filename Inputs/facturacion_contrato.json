@@ -1,41 +1,11 @@
 [
     {
         "id": "",
-        "IC": "252",
-        "INS": "400000558",
-        "CC": "700011379",
-        "tipo_cliente": "GD",
-        "tipo_contrato": "U",
-        "fecha_Ord_Lectura_Desde": "31.01.2022",
-        "fecha_Inicio_Contrato": "01.01.2022"
-    },
-    {
-        "id": "",
-        "IC": "252",
-        "INS": "400000559",
-        "CC": "700011380",
-        "tipo_cliente": "GD",
-        "tipo_contrato": "U",
-        "fecha_Ord_Lectura_Desde": "31.01.2022",
-        "fecha_Inicio_Contrato": "01.01.2022"
-    },
-    {
-        "id": "",
-        "IC": "252",
-        "INS": "400000560",
-        "CC": "700011381",
-        "tipo_cliente": "GD",
-        "tipo_contrato": "U",
-        "fecha_Ord_Lectura_Desde": "31.01.2022",
-        "fecha_Inicio_Contrato": "01.01.2022"
-    },
-    {
-        "id": "",
-        "IC": "252",
-        "INS": "400000561",
-        "CC": "700011382",
-        "tipo_cliente": "GD",
-        "tipo_contrato": "U",
+        "IC": "268",
+        "INS": "400003936",
+        "CC": "700011703",
+        "tipo_cliente": "DP",
+        "tipo_contrato": "E",
         "fecha_Ord_Lectura_Desde": "31.01.2022",
         "fecha_Inicio_Contrato": "01.01.2022"
     }
