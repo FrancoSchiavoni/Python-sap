@@ -1,12 +1,12 @@
 [
     {
         "id": "",
-        "IC": "252",
-        "INS": "400003979",
-        "CC": "20000409",
+        "IC": "200003112",
+        "INS": "400003379",
+        "CC": "700010226",
         "tipo_cliente": "GD",
         "tipo_contrato": "U",
-        "fecha_Ord_Lectura_Desde": "31.01.2022",
-        "fecha_Inicio_Contrato": "01.01.2022"
+        "fecha_Ord_Lectura_Desde": "31.12.2024",
+        "fecha_Inicio_Contrato": "01.12.2024"
     }
 ]

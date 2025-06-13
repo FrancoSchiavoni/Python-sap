@@ -47,8 +47,8 @@ def procesar_csv(input_csv):
             if es_coop:
                 objeto = {
                     "OBJETOS": {
-                        "IC": "268",
-                        "OC": "610000000000182",
+                        "IC": "200003112",
+                        "OC": "610000000001005",
                         "CC": "",
                         "PS": "",
                         "UA": "",
@@ -60,7 +60,7 @@ def procesar_csv(input_csv):
                     },
                     "Create_CC": {
                         "tp_cta_contrato": "DP",
-                        "estrRegion": "S1010A13",
+                        "estrRegion": "S6020A21",
                         "nombre": f"DP-CONTRATO-{dispositivo_actual}",
                         "cdc": "CG",
                         "catcta": "G001",
@@ -79,10 +79,10 @@ def procesar_csv(input_csv):
                     },
                     "Create_UA": {
                         "denominacion": f"DP-CONTRATO-{dispositivo_actual}",
-                        "centro_empl": "2000"
+                        "centro_empl": "6000"
                     },
                     "Create_INST": {
-                        "dia_fijado": "01.01.2022",
+                        "dia_fijado": "01.12.2024",
                         "sector": "EN",
                         "nivTension": "G1",
                         "clCal": "CEPE",
@@ -152,21 +152,21 @@ def procesar_csv(input_csv):
                         }
                     },
                     "Create_movein": {
-                        "f_alta": "01.01.2022",
+                        "f_alta": "01.12.2024",
                         "imputacion": "S2010",
                         "segmento": "103",
                         "cdc": "CG",
                         "fac_conj": "2"
                     },
                     "Create_montaje": {
-                        "f_alta": "01.01.2022",
+                        "f_alta": "01.12.2024",
                         "dipositivo": str(dispositivo_actual),  # Usar el dispositivo actual
                         "dispotivoGen": "",
-                        "tp_aparato": "700034",
+                        "tp_aparato": "600000",
                         "motivo": "05"
                     },
                     "Create_CP": {
-                        "fecha_ini": "01.01.2022",
+                        "fecha_ini": "01.12.2024",
                         "periodo": "40",
                         "contratadaP": "50",
                         "contratadaFP": "50",
@@ -183,8 +183,8 @@ def procesar_csv(input_csv):
             else:
                 objeto = {
                     "OBJETOS": {
-                        "IC": "252",
-                        "OC": "610000000000166",
+                        "IC": "200003112",
+                        "OC": "610000000001005",
                         "CC": "",
                         "PS": "",
                         "UA": "",
@@ -215,10 +215,10 @@ def procesar_csv(input_csv):
                     },
                     "Create_UA": {
                         "denominacion": f"GD-CONTRATO-{dispositivo_actual}",
-                        "centro_empl": "4000"
+                        "centro_empl": "6000"
                     },
                     "Create_INST": {
-                        "dia_fijado": "01.01.2022",
+                        "dia_fijado": "01.12.2024",
                         "sector": "EN",
                         "nivTension": "G1",
                         "clCal": "CEPE",
@@ -288,21 +288,21 @@ def procesar_csv(input_csv):
                         }
                     },
                     "Create_movein": {
-                        "f_alta": "01.01.2022",
+                        "f_alta": "01.12.2024",
                         "imputacion": "S4010",
                         "segmento": "111",
                         "cdc": "CU",
                         "fac_conj": "2"
                     },
                     "Create_montaje": {
-                        "f_alta": "01.01.2022",
+                        "f_alta": "01.12.2024",
                         "dipositivo": str(dispositivo_actual),  # Usar el dispositivo actual
                         "dispotivoGen": "",
-                        "tp_aparato": "700034",
+                        "tp_aparato": "600000",
                         "motivo": "05"
                     },
                     "Create_CP": {
-                        "fecha_ini": "01.01.2022",
+                        "fecha_ini": "01.12.2024",
                         "periodo": "00",
                         "contratadaP": "50",
                         "contratadaFP": "100",

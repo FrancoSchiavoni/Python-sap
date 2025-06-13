@@ -1,5 +1,0 @@
-[
-	{
-		"INS":"400000172",		"CC":"700010701",		"tipo_cliente":"GD",		"fecha_Ord_Lectura_Desde":"31.01.2022",		"fecha_Calculo":"10.02.2022",		"lectura_Pot_P":"150",		"lectura_Pot_R":"150",		"lectura_Pot_V":"150",		"lectura_Pot_P2":"",		"lectura_Pot_R2":"",		"lectura_Pot_V2":"",		"lectura_E_act_P":"2500",		"lectura_E_act_R":"2000",		"lectura_E_act_V":"3000",		"lectura_E_act_P2":"",		"lectura_E_act_R2":"",		"lectura_E_act_V2":"",		"lectura_E_act_P3":"",		"lectura_E_act_R3":"",		"lectura_E_act_V3":"",		"lectura_E_act_P4":"",		"lectura_E_act_R4":"",		"lectura_E_act_V4":"",		"lectura_E_react":"5000",		"doc_calculo":"",		"doc_impresion":""
-	}
-]

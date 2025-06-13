@@ -141,7 +141,7 @@ class ContratoPotencia:
         self.sap.session.findById("wnd[0]/usr/ctxtS_CONTR-LOW").text = self.id
         self.sap.session.findById("wnd[0]/usr/ctxtP_ZZTIPO").setFocus()
         self.sap.session.findById("wnd[0]/usr/ctxtP_ZZTIPO").text = "1"
-        self.sap.session.findById("wnd[0]/usr/chkP_REIMP").selected = True
+        #self.sap.session.findById("wnd[0]/usr/chkP_REIMP").selected = True
         self.sap.session.findById("wnd[0]/usr/ctxtP_ZZTIPO").caretPosition = 1
         self.sap.session.findById("wnd[0]/tbar[1]/btn[8]").press()
         self.sap.session.findById("wnd[1]/tbar[0]/btn[8]").press()

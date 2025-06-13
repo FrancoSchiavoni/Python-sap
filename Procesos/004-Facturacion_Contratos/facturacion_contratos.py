@@ -2,6 +2,7 @@
 import os
 import sys
 from datetime import datetime
+from dotenv import load_dotenv
 
 # Import Utils 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Utils', '')))
@@ -43,6 +44,9 @@ error_log_path = os.path.join(facturacion_output_folder, error_file_pahtName + "
 # JSON file path
 json_log_path = os.path.join(facturacion_output_folder, facturacion_path + ".json")
 
+
+clave_reconciliacion = str(os.getenv('CLAVE_RECONCILIACION'))
+
 #Input Parameter MDT
 #mdt = sys.argv[1]
 mdt = "390"
@@ -75,14 +79,14 @@ for iteration, row in enumerate(datos):
         Lecturas.trxCalculo = row.get('trxCalculo', '/nEA00')
         Lecturas.fecha_Calculo = row.get('fecha_Calculo', '10.02.2023')
         Lecturas.trxFactura = row.get('trxFactura', '/nEA19')
-        Lecturas.clave_rec = row.get('clave_rec', '241113-001')
+        Lecturas.clave_rec = clave_reconciliacion
         
 
         tipo_cliente = row.get('tipo_cliente', '')
         # Fechas Lecturas y Calculo
-        fechas_lecturas, fechas_calculo = fl.generar_fechas(Lecturas.fecha_Ord_Lectura_Desde, tipo = tipo_cliente)
+        fechas_lecturas, fechas_calculo = fl.generar_fechas(Lecturas.fecha_Ord_Lectura_Desde, tipo = tipo_cliente)#
 
-        #Crear Orden de Lectura
+        ##Crear Orden de Lectura
         sap.StartTransaction(Lecturas.trxCreateOrd)
         Lecturas.GenerarOrdenLecturaMasiva(fechas_lecturas)
 
@@ -142,7 +146,7 @@ for iteration, row in enumerate(datos):
 
         sap.StartTransaction(Contrato_Potencia.trxCP)
         Contrato_Potencia.InitContratoPotencia(IC=IC, INS=INS, CC=CC)
-        
+    
         if tipo_contrato == "U":
             contrato_prueba = False
             if 'P' in datos_lecturas_ins['periodos']:
@@ -171,7 +175,6 @@ for iteration, row in enumerate(datos):
 
         Contrato_Potencia.GuardarCP()
 
-
         ## Calculo y Facturacion
         periodo = 0
         for f in fechas_calculo:
@@ -190,12 +193,12 @@ for iteration, row in enumerate(datos):
                 Contrato_Potencia.ValidarCP()
 
                 # Notificar
-                #sap.StartTransaction(Contrato_Potencia.trxNotificaCP)
-                #Contrato_Potencia.NotificarExceso(path_destino=notas_output_folder ,periodo= str(periodo))
+                sap.StartTransaction(Contrato_Potencia.trxNotificaCP)
+                Contrato_Potencia.NotificarExceso(path_destino=notas_output_folder ,periodo= str(periodo))
 
-                #if periodo == 12:
-                    #sap.StartTransaction(Contrato_Potencia.trxNotificaCP)
-                    #Contrato_Potencia.NotificarFin(path_destino=notas_output_folder ,periodo= str(periodo))
+                if periodo == 12:
+                    sap.StartTransaction(Contrato_Potencia.trxNotificaCP)
+                    Contrato_Potencia.NotificarFin(path_destino=notas_output_folder ,periodo= str(periodo))
             
             except Exception as eFact:
                 print(eFact)

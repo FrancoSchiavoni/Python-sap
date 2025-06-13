@@ -63,8 +63,8 @@ def generar_JSON_facturacion(input_csv):
                     "CC": cc,
                     "tipo_cliente": tipo_cliente,
                     "tipo_contrato": tipo_contrato_salida,
-                    "fecha_Ord_Lectura_Desde": "31.01.2022",
-                    "fecha_Inicio_Contrato": "01.01.2022"
+                    "fecha_Ord_Lectura_Desde": "31.12.2024",
+                    "fecha_Inicio_Contrato": "01.12.2024"
                 }
 
                 # Agregar el objeto a la lista general
