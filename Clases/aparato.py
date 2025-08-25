@@ -16,10 +16,11 @@ class Aparato:
         self.centro = None
         self.almacen = None
         self.nro_activo_fijo = None
+        self.subnumero = None
 
     def cargar_datos_medidor(self, tipo, fabricante, anio_constr, valido_de,
                           grupo_numerador, relev_verific, tipo_stock:str,
-                          centro, almacen, nro_activo_fijo):
+                          centro, almacen, nro_activo_fijo, subnumero):
         self.tipo = tipo
         self.fabricante = fabricante
         self.anio_constr = anio_constr
@@ -30,6 +31,7 @@ class Aparato:
         self.centro = centro
         self.almacen = almacen
         self.nro_activo_fijo = nro_activo_fijo
+        self.subnumero = subnumero
 
     def UpdateGN(self, grupo_num):
         self.grupo_Numerador = grupo_num 
@@ -69,10 +71,10 @@ class Aparato:
 
     def DetalleCreacion(self):
         self.sap.session.findById("wnd[1]/usr/ctxtEDEVICED-HERST").text = self.fabricante
-        self.sap.session.findById("wnd[1]/usr/ctxtEDEVICED-AB").text = self.valido_de
         self.sap.session.findById("wnd[1]/usr/txtEDEVICED-BAUJJ").text = self.anio_constr
         self.sap.session.findById("wnd[1]/usr/ctxtEDEVICED-ZWGRUPPE").text = self.grupo_Numerador
         self.sap.session.findById("wnd[1]/usr/ctxtEDEVICED-BESITZ").text = self.relev_verific
+        self.sap.session.findById("wnd[1]/usr/ctxtEDEVICED-AB").text = self.valido_de
         self.sap.session.findById("wnd[1]/tbar[0]/btn[8]").press()
 
     def DatosSerie(self):
@@ -85,6 +87,8 @@ class Aparato:
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP/tabpT\\03").select()
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP/tabpT\\03/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102A:SAPLITO0:1052/ctxtITOB-BUKRS").text = "1000"
         self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP/tabpT\\03/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102A:SAPLITO0:1052/ctxtITOB-ANLNR").text = self.nro_activo_fijo
+        if self.subnumero != 0:
+            self.sap.session.findById("wnd[0]/usr/tabsTABSTRIP/tabpT\\03/ssubSUB_DATA:SAPLITO0:0102/subSUB_0102A:SAPLITO0:1052/ctxtITOB-ANLUN").text = self.subnumero
         self.sap.session.findById("wnd[0]/tbar[0]/btn[11]").press()
         try:
             self.sap.session.findById("wnd[1]/usr/txtMESSTXT1")
