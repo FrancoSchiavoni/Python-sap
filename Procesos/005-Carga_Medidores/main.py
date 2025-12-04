@@ -72,8 +72,9 @@ def guardar_estado(df):
 def main():
     df = cargar_datos()
     sap = s.SapConnector()
-
     for index, row in df.iterrows():
+        print("-----------")
+        print(index)
         if row[STATUS_COL] in ['S']:
             continue
         aparato: ap.Aparato = crear_aparato(row, sap)
