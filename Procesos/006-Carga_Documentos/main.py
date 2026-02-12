@@ -13,9 +13,9 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..',
 import documento as doc_class 
 
 # Configuración del archivo de entrada
-INPUT_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Inputs', 'ajuste_seg_t4_202511_error.xlsx'))
+INPUT_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Inputs', 'ajuste_seg_t4_202512.xlsx'))
 
-SHEET_NAME = 'Hoja1'
+SHEET_NAME = 'Export'
 STATUS_COL = 'estado'
 MESSAGE_COL = 'mensaje'
 DOC_SAP_COL = 'documento_sap' 

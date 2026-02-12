@@ -1,4 +1,5 @@
 import win32com.client
+import time
 
 class SapConnector:
 
@@ -6,6 +7,7 @@ class SapConnector:
         self.SapGuiAuto = win32com.client.GetObject('SAPGUI')
         self.application = self.SapGuiAuto.GetScriptingEngine
         self.connection = self.application.Children(0)
+        time.sleep(1)
         self.session = self.connection.Children(0)
 
     def Close_connection(self):

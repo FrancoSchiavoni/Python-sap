@@ -11,9 +11,9 @@ import connector as s
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Clases', '')))
 import aparato as ap
 
-INPUT_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Inputs', 'medidores_input.xlsx'))
+INPUT_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'Inputs', 'PLANILLAS INICIALES CARGA MEDIDORES-1.xlsx'))
 
-SHEET_NAME = 'TOTALIZADOR'
+SHEET_NAME = 'planilla carga masiva'
 STATUS_COL = 'estado'
 MESSAGE_COL = 'mensaje'
 
